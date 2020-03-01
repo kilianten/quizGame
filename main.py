@@ -6,6 +6,9 @@ import pygame as pg
 import sys
 from settings import *
 from sprites import *
+from questions import *
+from os import path
+from os import listdir
 
 class Game:
     def __init__(self):
@@ -15,9 +18,19 @@ class Game:
         self.clock = pg.time.Clock()
         pg.key.set_repeat(500, 100)
         self.load_data()
+        self.categories = {}
 
     def load_data(self):
-        pass
+        self.game_folder = path.dirname(__file__)
+        self.loadQuestions()
+
+    def loadQuestions(self):
+        questionsPath = path.join(self.game_folder, "questions")
+        files = listdir(questionsPath)
+        for file in files:
+            categoryName = file.split(".")[0] #science.txt becomes sciene
+            if (ISCATEGORYENABLED[categoryName]):
+                print(categoryName)
 
     def new(self):
         # initialize all variables and do all the setup for a new game

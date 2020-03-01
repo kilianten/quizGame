@@ -17,3 +17,8 @@ BGCOLOR = DARKGREY
 TILESIZE = 32
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
+
+CATEGORIES = ["science", "Geography"]
+ISCATEGORYENABLED = {"science" : True, "geography" : True}
+
+QUESTIONFOLDER = "questions"
