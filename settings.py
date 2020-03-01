@@ -22,3 +22,4 @@ CATEGORIES = ["science", "Geography"]
 ISCATEGORYENABLED = {"science" : True, "geography" : True}
 
 QUESTIONFOLDER = "questions"
+LINESPLITTER = "|"

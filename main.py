@@ -6,7 +6,8 @@ import pygame as pg
 import sys
 from settings import *
 from sprites import *
-from questions import *
+from question import *
+from category import *
 from os import path
 from os import listdir
 
@@ -17,12 +18,21 @@ class Game:
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         pg.key.set_repeat(500, 100)
-        self.load_data()
         self.categories = {}
+        self.load_data()
+        self.testViewAllQuestions()
 
     def load_data(self):
         self.game_folder = path.dirname(__file__)
         self.loadQuestions()
+
+    def testViewAllQuestions(self):
+        for category in self.categories.values():
+            for difficultyLevel in category.questions:
+                for question in category.questions[difficultyLevel]: 
+                    print(question.question)
+                    print(question.answer)
+                    print(question.options)
 
     def loadQuestions(self):
         questionsPath = path.join(self.game_folder, "questions")
@@ -30,7 +40,11 @@ class Game:
         for file in files:
             categoryName = file.split(".")[0] #science.txt becomes sciene
             if (ISCATEGORYENABLED[categoryName]):
-                print(categoryName)
+                newCategory = Category(categoryName)
+                self.categories[categoryName] = newCategory
+                f = open(path.join(questionsPath, file),'r')
+                for question in f:
+                    newCategory.addQuestionToCategory(question)
 
     def new(self):
         # initialize all variables and do all the setup for a new game
