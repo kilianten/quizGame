@@ -1,2 +1,3 @@
 What is the capital of Liechtenstein?|Vaduz|Pristina|Lira|Liechtenstein City|3|
 The capital of Ireland is?|Dublin|London|Belfast|Scotland|1|
+What is the capital of Turkey?|Ankara|Istanbul|Catalhoyuk|Konya|3|

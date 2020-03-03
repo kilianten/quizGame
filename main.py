@@ -20,7 +20,7 @@ class Game:
         pg.key.set_repeat(500, 100)
         self.categories = {}
         self.load_data()
-        self.testViewAllQuestions()
+        #self.testViewAllQuestions()
 
     def load_data(self):
         self.game_folder = path.dirname(__file__)
@@ -29,7 +29,7 @@ class Game:
     def testViewAllQuestions(self):
         for category in self.categories.values():
             for difficultyLevel in category.questions:
-                for question in category.questions[difficultyLevel]: 
+                for question in category.questions[difficultyLevel]:
                     print(question.question)
                     print(question.answer)
                     print(question.options)
