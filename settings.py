@@ -24,9 +24,9 @@ ISCATEGORYENABLED = {"science" : True, "geography" : True}
 QUESTIONFOLDER = "questions"
 LINESPLITTER = "|"
 
-SETTINGS = {"ISFULLSCREEN":"True"}
+SETTINGS = {"ISFULLSCREEN":True}
+
+RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
 #IMAGES
 QUESTION_TILE = "metaltile.png"
-
-SCALE_FACTOR = 1
