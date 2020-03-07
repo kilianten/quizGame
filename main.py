@@ -10,7 +10,6 @@ from question import *
 from category import *
 from os import path
 from os import listdir
-from camera import *
 from round import *
 
 class Game:
@@ -55,11 +54,6 @@ class Game:
 
     def new(self):
         # initialize all variables and do all the setup for a new game
-        self.all_sprites = pg.sprite.Group()
-        self.walls = pg.sprite.Group()
-        self.player = Player(self, 10, 10)
-        for x in range(10, 20):
-            Wall(self, x, 5)
         self.all_sprites = pg.sprite.LayeredUpdates()
         self.questionTiles = pg.sprite.Group()
         self.round = Round(self)
@@ -91,8 +85,18 @@ class Game:
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
-        self.all_sprites.draw(self.screen)
+        for sprite in self.all_sprites:
+            self.screen.blit(sprite.image, (sprite.x, sprite.y))
         pg.display.flip()
+
+    def show_start_screen(self):
+        pass
+
+    def show_go_screen(self):
+        pass
+
+    def adjustResolution(self):
+        SCALE_FACTOR_WIDTH = 2
 
     def events(self):
         # catch all events here
@@ -102,20 +106,16 @@ class Game:
             if event.type == pg.KEYDOWN:
                 if event.key == pg.K_ESCAPE:
                     self.quit()
-                if event.key == pg.K_LEFT:
-                    self.player.move(dx=-1)
-                if event.key == pg.K_RIGHT:
-                    self.player.move(dx=1)
-                if event.key == pg.K_UP:
-                    self.player.move(dy=-1)
-                if event.key == pg.K_DOWN:
-                    self.player.move(dy=1)
-
-    def show_start_screen(self):
-        pass
-
-    def show_go_screen(self):
-        pass
+                if event.key == pg.K_F1:
+                    if (SETTINGS["ISFULLSCREEN"] == 'True'):
+                        #if fullscreen set to window
+                        print("Entering Windowed mode")
+                        self.screen = pg.display.set_mode((WIDTH,HEIGHT))
+                        SETTINGS["ISFULLSCREEN"] = "False"
+                    else:
+                        print("Entering Fullscreen mode")
+                        self.screen = pg.display.set_mode((WIDTH,HEIGHT), pg.FULLSCREEN)
+                        SETTINGS["ISFULLSCREEN"] = "True"
 
 # create the game object
 g = Game()
