@@ -1,2 +1,3 @@
-images/aes
-__pycache__
+images/aes/*
+__pycache__/*
+__pycache__/

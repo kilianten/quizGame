@@ -35,4 +35,7 @@ class QuestionTile(pg.sprite.Sprite):
     def scale(self):
         self.x = self.x * self.game.scaleWidth
         self.y = self.y * self.game.scaleHeight
+        newWidth = int(self.image.get_width()  * self.game.scaleWidth)
+        newHeight = int(self.image.get_height() * self.game.scaleHeight)
+        self.image = pg.transform.scale(self.image, (newWidth, newHeight))
         self.rect = self.image.get_rect()

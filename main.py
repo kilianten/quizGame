@@ -83,9 +83,9 @@ class Game:
         self.all_sprites.update()
 
     def draw_grid(self):
-        for x in range(0, self.screenWidth, self.tilesizeWidth):
+        for x in range(0, self.screenWidth, int(self.tilesizeWidth)):
             pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, self.screenHeight))
-        for y in range(0, self.screenHeight, self.tilesizeHeight):
+        for y in range(0, self.screenHeight, int(self.tilesizeHeight)):
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (self.screenWidth, y))
 
 
@@ -141,16 +141,18 @@ class Game:
             object.scale()
 
     def changeScreenSize(self):
-        self.screenWidth = int(self.screenWidth * self.scaleWidth)
-        self.screenHeight = int(self.screenHeight * self.scaleHeight)
+        self.screenWidth = self.screenWidth * self.scaleWidth
+        self.screenHeight = self.screenHeight * self.scaleHeight
+        self.screenWidth = int(self.screenWidth)
+        self.screenHeight = int(self.screenHeight)
         if (SETTINGS["ISFULLSCREEN"]):
             self.screen = pg.display.set_mode((self.screenWidth, self.screenHeight), pg.FULLSCREEN)
         else:
             self.screen = pg.display.set_mode((self.screenWidth, self.screenHeight))
 
     def scaleSelf(self):
-        self.tilesizeWidth = int(self.tilesizeWidth * self.scaleWidth)
-        self.tilesizeHeight = int(self.tilesizeHeight * self.scaleHeight)
+        self.tilesizeWidth = self.tilesizeWidth * self.scaleWidth
+        self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
 
 # create the game object
 g = Game()
