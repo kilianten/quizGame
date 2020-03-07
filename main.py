@@ -10,6 +10,8 @@ from question import *
 from category import *
 from os import path
 from os import listdir
+from camera import *
+from round import *
 
 class Game:
     def __init__(self):
@@ -25,6 +27,11 @@ class Game:
     def load_data(self):
         self.game_folder = path.dirname(__file__)
         self.loadQuestions()
+        self.loadImages()
+
+    def loadImages(self):
+        img_folder = path.join(self.game_folder, 'images')
+        self.questionTileImage = pg.image.load(path.join(img_folder, QUESTION_TILE)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -53,6 +60,9 @@ class Game:
         self.player = Player(self, 10, 10)
         for x in range(10, 20):
             Wall(self, x, 5)
+        self.all_sprites = pg.sprite.LayeredUpdates()
+        self.questionTiles = pg.sprite.Group()
+        self.round = Round(self)
 
     def run(self):
         # game loop - set self.playing = False to end the game
@@ -76,6 +86,7 @@ class Game:
             pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, HEIGHT))
         for y in range(0, HEIGHT, TILESIZE):
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
+
 
     def draw(self):
         self.screen.fill(BGCOLOR)
