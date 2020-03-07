@@ -21,6 +21,8 @@ class Game:
         pg.key.set_repeat(500, 100)
         self.categories = {}
         self.load_data()
+        self.tilesizeWidth = 32
+        self.tilesizeHeight = 32
         #self.testViewAllQuestions()
 
     def load_data(self):
@@ -81,10 +83,10 @@ class Game:
         self.all_sprites.update()
 
     def draw_grid(self):
-        for x in range(0, WIDTH, TILESIZE):
-            pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, HEIGHT))
-        for y in range(0, HEIGHT, TILESIZE):
-            pg.draw.line(self.screen, LIGHTGREY, (0, y), (WIDTH, y))
+        for x in range(0, self.screenWidth, self.tilesizeWidth):
+            pg.draw.line(self.screen, LIGHTGREY, (x, 0), (x, self.screenHeight))
+        for y in range(0, self.screenHeight, self.tilesizeHeight):
+            pg.draw.line(self.screen, LIGHTGREY, (0, y), (self.screenWidth, y))
 
 
     def draw(self):
@@ -130,12 +132,26 @@ class Game:
         print("Setting resolution to " +  str(resolution))
         self.scaleWidth = resolution[0]/self.screenWidth
         self.scaleHeight = resolution[1]/self.screenHeight
+        self.scaleSelf()
+        self.changeScreenSize()
+        self.scaleObjects()
+
+    def scaleObjects(self):
+        for object in self.scalable:
+            object.scale()
+
+    def changeScreenSize(self):
         self.screenWidth = int(self.screenWidth * self.scaleWidth)
         self.screenHeight = int(self.screenHeight * self.scaleHeight)
         if (SETTINGS["ISFULLSCREEN"]):
             self.screen = pg.display.set_mode((self.screenWidth, self.screenHeight), pg.FULLSCREEN)
         else:
             self.screen = pg.display.set_mode((self.screenWidth, self.screenHeight))
+
+    def scaleSelf(self):
+        self.tilesizeWidth = int(self.tilesizeWidth * self.scaleWidth)
+        self.tilesizeHeight = int(self.tilesizeHeight * self.scaleHeight)
+
 # create the game object
 g = Game()
 g.show_start_screen()

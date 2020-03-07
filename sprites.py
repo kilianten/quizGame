@@ -24,10 +24,15 @@ class Player(pg.sprite.Sprite):
 class QuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.questionTiles, game.all_sprites
+        self.groups = game.questionTiles, game.all_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.image = game.questionTileImage
         self.x = x
         self.y = y
+        self.rect = self.image.get_rect()
+
+    def scale(self):
+        self.x = self.x * self.game.scaleWidth
+        self.y = self.y * self.game.scaleHeight
         self.rect = self.image.get_rect()

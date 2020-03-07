@@ -24,7 +24,7 @@ ISCATEGORYENABLED = {"science" : True, "geography" : True}
 QUESTIONFOLDER = "questions"
 LINESPLITTER = "|"
 
-SETTINGS = {"ISFULLSCREEN":True}
+SETTINGS = {"ISFULLSCREEN":False}
 
 RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
