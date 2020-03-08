@@ -23,7 +23,7 @@ class QuestionTile(pg.sprite.Sprite):
         self.game = game
         self.originalImage = game.questionTileImage
         img = game.questionTileImage
-        self.image = pg.transform.scale(img, (img.get_width() * game.scaleWidth, (img.get_height() * game.scaleHeight)))
+        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
@@ -49,7 +49,6 @@ class SelectedTile(pg.sprite.Sprite):
         self.game = game
         self.originalImage = game.selectedTimeImage
         img = game.selectedTimeImage
-        print(game.scaleWidth)
         self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
         self.x = questionTile.x
         self.y = questionTile.y

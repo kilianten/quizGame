@@ -18,13 +18,15 @@ TILESIZE = 32
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
 
-CATEGORIES = ["science", "Geography"]
+CATEGORIES = ["science", "geography"]
 ISCATEGORYENABLED = {"science" : True, "geography" : True}
 
 QUESTIONFOLDER = "questions"
 LINESPLITTER = "|"
 
 SETTINGS = {"ISFULLSCREEN":False}
+
+DIFFICULTYLEVELS = ['1', '2', '3', '4', '5']
 
 RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
