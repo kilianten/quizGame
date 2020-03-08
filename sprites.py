@@ -32,3 +32,15 @@ class QuestionTile(pg.sprite.Sprite):
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
+
+class SelectedTile(pg.sprite.Sprite):
+    def __init__(self, game, questionTile):
+        self._layer = 3
+        self.groups = game.all_sprites, game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.originalImage = game.selectedTimeImage
+        self.image = game.selectedTimeImage
+        self.x = questionTile.x
+        self.y = questionTile.y
+        self.rect = self.image.get_rect()

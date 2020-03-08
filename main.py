@@ -33,6 +33,7 @@ class Game:
     def loadImages(self):
         img_folder = path.join(self.game_folder, 'images')
         self.questionTileImage = pg.image.load(path.join(img_folder, QUESTION_TILE)).convert_alpha()
+        self.selectedTimeImage = pg.image.load(path.join(img_folder, SELECTED_TILE_IMAGE)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
