@@ -10,10 +10,10 @@ class Round:
         self.createQuestionTiles()
 
     def createQuestionTiles(self):
-        self.bottomLeft = QuestionTile(self.game, 64, 592)
-        self.bottomRight = QuestionTile(self.game, 672, 592)
-        self.topLeft = QuestionTile(self.game, 64, 432)
-        self.bottomRight = QuestionTile(self.game, 672, 432)
+        self.bottomLeft = QuestionTile(self.game, 64, 608)
+        self.bottomRight = QuestionTile(self.game, 672, 608)
+        self.topLeft = QuestionTile(self.game, 64, 464)
+        self.bottomRight = QuestionTile(self.game, 672, 464)
 
     def createSelectedTile(self):
         self.selectedTile = SelectedTile(self.game, self.topLeft)

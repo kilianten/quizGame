@@ -23,6 +23,10 @@ class Game:
         self.load_data()
         self.tilesizeWidth = 32
         self.tilesizeHeight = 32
+        self.scaleWidth = 1
+        self.scaleHeight = 1
+        self.fromOriginalWidth = 1
+        self.fromOriginalHeight = 1
         #self.testViewAllQuestions()
 
     def load_data(self):
@@ -64,8 +68,6 @@ class Game:
         self.round = Round(self)
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
-        self.scaleWidth = 1
-        self.scaleHeight = 1
         self.player = Player(self, 0, 0)
         self.mouse = Sprite_Mouse_Location(0, 0, self)
 
@@ -143,6 +145,8 @@ class Game:
 
     def changeResolution(self, resolution):
         print("Setting resolution to " +  str(resolution))
+        self.fromOriginalWidth = resolution[0]/WIDTH
+        self.fromOriginalHeight = resolution[1]/HEIGHT
         self.scaleWidth = resolution[0]/self.screenWidth
         self.scaleHeight = resolution[1]/self.screenHeight
         self.scaleSelf()
@@ -157,6 +161,8 @@ class Game:
             newHeight = int(object.image.get_height() * self.scaleHeight)
             object.image = pg.transform.scale(object.originalImage, (newWidth, newHeight))
             object.rect = object.image.get_rect()
+            object.rect.x = object.x
+            object.rect.y = object.y
 
     def changeScreenSize(self):
         self.screenWidth = self.screenWidth * self.scaleWidth

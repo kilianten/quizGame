@@ -15,7 +15,6 @@ class Player(pg.sprite.Sprite):
     def update(self):
         pass
 
-
 class QuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
@@ -23,7 +22,8 @@ class QuestionTile(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.questionTileImage
-        self.image = game.questionTileImage
+        img = game.questionTileImage
+        self.image = pg.transform.scale(img, (img.get_width() * game.scaleWidth, (img.get_height() * game.scaleHeight)))
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
@@ -48,7 +48,9 @@ class SelectedTile(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.selectedTimeImage
-        self.image = game.selectedTimeImage
+        img = game.selectedTimeImage
+        print(game.scaleWidth)
+        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
         self.x = questionTile.x
         self.y = questionTile.y
         self.rect = self.image.get_rect()
