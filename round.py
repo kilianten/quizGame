@@ -1,3 +1,4 @@
+import pygame as pg
 from sprites import QuestionTile
 from sprites import SelectedTile
 from settings import WIDTH
@@ -7,7 +8,6 @@ class Round:
     def __init__(self, game):
         self.game = game
         self.createQuestionTiles()
-        self.createSelectedTile()
 
     def createQuestionTiles(self):
         self.bottomLeft = QuestionTile(self.game, 64, 592)
@@ -17,3 +17,6 @@ class Round:
 
     def createSelectedTile(self):
         self.selectedTile = SelectedTile(self.game, self.topLeft)
+
+    def update(self):
+        pass

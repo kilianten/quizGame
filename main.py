@@ -60,11 +60,14 @@ class Game:
         self.all_sprites = pg.sprite.LayeredUpdates()
         self.questionTiles = pg.sprite.Group()
         self.scalable = pg.sprite.Group()
+        self.collidable_sprites = pg.sprite.Group()
         self.round = Round(self)
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
         self.scaleWidth = 1
         self.scaleHeight = 1
+        self.player = Player(self, 0, 0)
+        self.mouse = Sprite_Mouse_Location(0, 0, self)
 
     def run(self):
         # game loop - set self.playing = False to end the game
@@ -81,7 +84,10 @@ class Game:
 
     def update(self):
         # update portion of the game loop
+        self.mouse.rect.x, self.mouse.rect.y = pg.mouse.get_pos()
+        self.mouse.x, self.mouse.y =  pg.mouse.get_pos()
         self.all_sprites.update()
+        self.round.update()
 
     def draw_grid(self):
         for x in range(0, self.screenWidth, int(self.tilesizeWidth)):
@@ -108,6 +114,12 @@ class Game:
 
     def events(self):
         # catch all events here
+        for sprite in self.collidable_sprites:
+            if pg.sprite.collide_rect(sprite, self.mouse):
+                sprite.collide()
+            else:
+                sprite.isHoveredOn = False
+
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 self.quit()
@@ -159,6 +171,13 @@ class Game:
     def scaleSelf(self):
         self.tilesizeWidth = self.tilesizeWidth * self.scaleWidth
         self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
+
+class Sprite_Mouse_Location(pg.sprite.Sprite):
+    def __init__(self,x,y, game):
+        pg.sprite.Sprite.__init__(self)
+        self.rect = pg.Rect(x,y,1,1)
+        self.x = self.rect.x
+        self.y = self.rect.y
 
 # create the game object
 g = Game()

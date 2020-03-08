@@ -6,25 +6,20 @@ class Player(pg.sprite.Sprite):
         self.groups = game.all_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
+        self.x = 0
+        self.y = 0
         self.image = pg.Surface((TILESIZE, TILESIZE))
         self.image.fill(YELLOW)
         self.rect = self.image.get_rect()
-        self.x = x
-        self.y = y
-
-    def move(self, dx=0, dy=0):
-        self.x += dx
-        self.y += dy
 
     def update(self):
-        self.rect.x = self.x * TILESIZE
-        self.rect.y = self.y * TILESIZE
+        pass
 
 
 class QuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.questionTiles, game.all_sprites, game.scalable
+        self.groups = game.questionTiles, game.all_sprites, game.scalable, game.collidable_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.questionTileImage
@@ -32,6 +27,19 @@ class QuestionTile(pg.sprite.Sprite):
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y
+        self.isHoveredOn = False
+        self.selected = None
+
+    def collide(self):
+        if self.isHoveredOn == False:
+            self.selected = SelectedTile(self.game, self)
+            self.isHoveredOn = True
+
+    def update(self):
+        if self.isHoveredOn == False and self.selected != None:
+            self.selected.kill()
 
 class SelectedTile(pg.sprite.Sprite):
     def __init__(self, game, questionTile):
