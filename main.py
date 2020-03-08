@@ -138,7 +138,12 @@ class Game:
 
     def scaleObjects(self):
         for object in self.scalable:
-            object.scale()
+            object.x = object.x * self.scaleWidth
+            object.y = object.y * self.scaleHeight
+            newWidth = int(object.image.get_width()  * self.scaleWidth)
+            newHeight = int(object.image.get_height() * self.scaleHeight)
+            object.image = pg.transform.scale(object.originalImage, (newWidth, newHeight))
+            object.rect = object.image.get_rect()
 
     def changeScreenSize(self):
         self.screenWidth = self.screenWidth * self.scaleWidth

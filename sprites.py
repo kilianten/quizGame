@@ -27,15 +27,8 @@ class QuestionTile(pg.sprite.Sprite):
         self.groups = game.questionTiles, game.all_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
+        self.originalImage = game.questionTileImage
         self.image = game.questionTileImage
         self.x = x
         self.y = y
-        self.rect = self.image.get_rect()
-
-    def scale(self):
-        self.x = self.x * self.game.scaleWidth
-        self.y = self.y * self.game.scaleHeight
-        newWidth = int(self.image.get_width()  * self.game.scaleWidth)
-        newHeight = int(self.image.get_height() * self.game.scaleHeight)
-        self.image = pg.transform.scale(self.image, (newWidth, newHeight))
         self.rect = self.image.get_rect()
