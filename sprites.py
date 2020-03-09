@@ -32,6 +32,10 @@ class QuestionTile(pg.sprite.Sprite):
         self.isHoveredOn = False
         self.selected = None
         self.text = None
+        self.clicked = False
+
+    def changeImage(self, img):
+        self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
 
     def collide(self):
         if self.isHoveredOn == False:
@@ -39,7 +43,6 @@ class QuestionTile(pg.sprite.Sprite):
             self.isHoveredOn = True
 
     def update(self):
-        print(self.text)
         if self.isHoveredOn == False and self.selected != None:
             self.selected.kill()
 
@@ -47,9 +50,6 @@ class QuestionTile(pg.sprite.Sprite):
         if self.text:
             self.game.renderText(self.text, self.x, self.y)
             pass
-
-    def printOption(self, option):
-        self.text = option
 
 class LongQuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
@@ -71,6 +71,9 @@ class LongQuestionTile(pg.sprite.Sprite):
         if self.text:
             self.game.renderText(self.text, self.x, self.y)
             pass
+
+    def collide(self):
+        pass
 
 
 

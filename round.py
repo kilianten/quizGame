@@ -57,4 +57,8 @@ class Round:
 
 
     def update(self):
-        pass
+        for tile in self.tiles:
+            if tile.clicked:
+                if tile.text == self.question.answer:
+                    newImage = self.game.correctQuestionTileImage
+                    tile.changeImage(newImage)

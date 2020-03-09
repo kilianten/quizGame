@@ -41,6 +41,7 @@ class Game:
         self.questionTileImage = pg.image.load(path.join(img_folder, QUESTION_TILE)).convert_alpha()
         self.selectedTimeImage = pg.image.load(path.join(img_folder, SELECTED_TILE_IMAGE)).convert_alpha()
         self.longQuestionTileImage = pg.image.load(path.join(img_folder, LONG_QUESTION_TILE)).convert_alpha()
+        self.correctQuestionTileImage = pg.image.load(path.join(img_folder, CORRECT_TILE)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -125,7 +126,6 @@ class Game:
                 sprite.collide()
             else:
                 sprite.isHoveredOn = False
-
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 self.quit()
@@ -148,6 +148,11 @@ class Game:
                     self.changeResolution(RESOLUTIONS[1])
                 if event.key == pg.K_F9:
                     self.round.generateQuestion()
+            if event.type == pg.MOUSEBUTTONUP:
+                for sprite in self.collidable_sprites:
+                    if pg.sprite.collide_rect(sprite, self.mouse):
+                        sprite.clicked = True
+
 
     def changeResolution(self, resolution):
         print("Setting resolution to " +  str(resolution))

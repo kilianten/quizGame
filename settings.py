@@ -36,3 +36,4 @@ RESOLUTIONS = [(1920, 1080), (1280, 768)]
 QUESTION_TILE = "metaltile.png"
 SELECTED_TILE_IMAGE = "boxOutline.png"
 LONG_QUESTION_TILE = "questionTile.png"
+CORRECT_TILE = "metalTileCorrect.png"
