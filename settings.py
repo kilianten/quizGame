@@ -20,8 +20,8 @@ TILESIZE = 32
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
 
-CATEGORIES = ["science", "geography"]
-ISCATEGORYENABLED = {"science" : True, "geography" : True}
+CATEGORIES = ["science", "geography", "history"]
+ISCATEGORYENABLED = {"science" : True, "geography" : True, "history" : True}
 
 QUESTIONFOLDER = "questions"
 LINESPLITTER = "|"
