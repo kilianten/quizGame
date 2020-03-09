@@ -1,6 +1,7 @@
 import pygame as pg
 from sprites import QuestionTile
 from sprites import SelectedTile
+from sprites import LongQuestionTile
 from settings import *
 from random import choice
 
@@ -11,26 +12,42 @@ class Round:
         self.createQuestionTiles()
         self.questions = game.categories
         self.generateQuestion()
+        self.createLongQuestionTile()
 
     def createQuestionTiles(self):
         self.bottomLeft = QuestionTile(self.game, 64, 608)
         self.bottomRight = QuestionTile(self.game, 672, 608)
         self.topLeft = QuestionTile(self.game, 64, 464)
-        self.bottomRight = QuestionTile(self.game, 672, 464)
+        self.topRight = QuestionTile(self.game, 672, 464)
+        self.tiles = [self.bottomLeft, self.bottomRight, self.topLeft, self.topRight]
+
+    def createLongQuestionTile(self):
+        self.longQuestionTile = LongQuestionTile(self.game, 64, 340)
 
     def createSelectedTile(self):
         self.selectedTile = SelectedTile(self.game, self.topLeft)
 
     def generateQuestion(self):
-        question = None;
+        self.question = None;
 
-        while question == None:
+        while self.question == None:
             randomCategory = choice(CATEGORIES)
             category = self.questions[randomCategory]
             difficulty = choice(DIFFICULTYLEVELS)
             if category.questions[difficulty]:
-                question = choice(category.questions[difficulty])
-        print(question.question)
+                self.question = choice(category.questions[difficulty])
+        self.drawQuestion(self.question)
+
+    def drawQuestion(self, question):
+        tileTemp = self.tiles
+        options = question.options
+        options.append(question.answer)
+        while options:
+            option = choice(options)
+            tile = choice(tileTemp)
+            tile.text = option
+            tileTemp.remove(tile)
+            options.remove(option)
 
 
     def update(self):

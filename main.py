@@ -15,6 +15,7 @@ from round import *
 class Game:
     def __init__(self):
         pg.init()
+        pg.font.init()
         self.screen = pg.display.set_mode((WIDTH, HEIGHT))
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
@@ -28,6 +29,7 @@ class Game:
         self.fromOriginalWidth = 1
         self.fromOriginalHeight = 1
         #self.testViewAllQuestions()
+        self.myfont = pg.font.SysFont("Roman", 20)
 
     def load_data(self):
         self.game_folder = path.dirname(__file__)
@@ -38,6 +40,7 @@ class Game:
         img_folder = path.join(self.game_folder, 'images')
         self.questionTileImage = pg.image.load(path.join(img_folder, QUESTION_TILE)).convert_alpha()
         self.selectedTimeImage = pg.image.load(path.join(img_folder, SELECTED_TILE_IMAGE)).convert_alpha()
+        self.longQuestionTileImage = pg.image.load(path.join(img_folder, LONG_QUESTION_TILE)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -97,12 +100,13 @@ class Game:
         for y in range(0, self.screenHeight, int(self.tilesizeHeight)):
             pg.draw.line(self.screen, LIGHTGREY, (0, y), (self.screenWidth, y))
 
-
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
+        for question in self.questionTiles:
+            question.drawQuestions()
         pg.display.flip()
 
     def show_start_screen(self):
@@ -177,6 +181,10 @@ class Game:
     def scaleSelf(self):
         self.tilesizeWidth = self.tilesizeWidth * self.scaleWidth
         self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
+
+    def renderText(self, text, x, y):
+        levelText = self.myfont.render("{}".format(text), False, (0, 0, 0))
+        self.screen.blit(levelText, (x, y))
 
 class Sprite_Mouse_Location(pg.sprite.Sprite):
     def __init__(self,x,y, game):

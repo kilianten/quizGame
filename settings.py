@@ -1,3 +1,5 @@
+import pygame as pg
+
 # define some colors (R, G, B)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -33,3 +35,4 @@ RESOLUTIONS = [(1920, 1080), (1280, 768)]
 #IMAGES
 QUESTION_TILE = "metaltile.png"
 SELECTED_TILE_IMAGE = "boxOutline.png"
+LONG_QUESTION_TILE = "questionTile.png"
