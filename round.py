@@ -10,9 +10,9 @@ class Round:
     def __init__(self, game):
         self.game = game
         self.createQuestionTiles()
+        self.createLongQuestionTile()
         self.questions = game.categories
         self.generateQuestion()
-        self.createLongQuestionTile()
 
     def createQuestionTiles(self):
         self.bottomLeft = QuestionTile(self.game, 64, 608)
@@ -39,15 +39,21 @@ class Round:
         self.drawQuestion(self.question)
 
     def drawQuestion(self, question):
-        tileTemp = self.tiles
-        options = question.options
-        options.append(question.answer)
-        while options:
-            option = choice(options)
+        self.longQuestionTile.text = question.question
+        tileTemp = []
+        for tile in self.tiles:
+            tile.text = None
+            tileTemp.append(tile)
+        optionsTemp = []
+        for option in  question.options:
+            optionsTemp.append(option)
+        optionsTemp.append(question.answer)
+        while optionsTemp:
+            option = choice(optionsTemp)
             tile = choice(tileTemp)
             tile.text = option
             tileTemp.remove(tile)
-            options.remove(option)
+            optionsTemp.remove(option)
 
 
     def update(self):

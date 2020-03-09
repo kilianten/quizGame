@@ -146,6 +146,8 @@ class Game:
                     self.changeResolution(RESOLUTIONS[0])
                 if event.key == pg.K_F3:
                     self.changeResolution(RESOLUTIONS[1])
+                if event.key == pg.K_F9:
+                    self.round.generateQuestion()
 
     def changeResolution(self, resolution):
         print("Setting resolution to " +  str(resolution))
