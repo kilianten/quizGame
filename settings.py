@@ -32,6 +32,7 @@ DIFFICULTYLEVELS = ['1', '2', '3', '4', '5']
 
 RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
+
 #IMAGES
 QUESTION_TILE = "metaltile.png"
 SELECTED_TILE_IMAGE = "boxOutline.png"

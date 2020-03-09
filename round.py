@@ -15,14 +15,14 @@ class Round:
         self.generateQuestion()
 
     def createQuestionTiles(self):
-        self.bottomLeft = QuestionTile(self.game, 64, 608)
-        self.bottomRight = QuestionTile(self.game, 672, 608)
-        self.topLeft = QuestionTile(self.game, 64, 464)
-        self.topRight = QuestionTile(self.game, 672, 464)
+        self.bottomLeft = QuestionTile(self.game, 64, 640)
+        self.bottomRight = QuestionTile(self.game, 672, 640)
+        self.topLeft = QuestionTile(self.game, 64, 512)
+        self.topRight = QuestionTile(self.game, 672, 512)
         self.tiles = [self.bottomLeft, self.bottomRight, self.topLeft, self.topRight]
 
     def createLongQuestionTile(self):
-        self.longQuestionTile = LongQuestionTile(self.game, 64, 340)
+        self.longQuestionTile = LongQuestionTile(self.game, 64, 384)
 
     def createSelectedTile(self):
         self.selectedTile = SelectedTile(self.game, self.topLeft)
