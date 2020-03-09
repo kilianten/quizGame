@@ -42,6 +42,7 @@ class Game:
         self.selectedTimeImage = pg.image.load(path.join(img_folder, SELECTED_TILE_IMAGE)).convert_alpha()
         self.longQuestionTileImage = pg.image.load(path.join(img_folder, LONG_QUESTION_TILE)).convert_alpha()
         self.correctQuestionTileImage = pg.image.load(path.join(img_folder, CORRECT_TILE)).convert_alpha()
+        self.incorrectQuestionTileImage = pg.image.load(path.join(img_folder, INCORRECT_TILE)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():

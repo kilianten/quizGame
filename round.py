@@ -62,3 +62,7 @@ class Round:
                 if tile.text == self.question.answer:
                     newImage = self.game.correctQuestionTileImage
                     tile.changeImage(newImage)
+                else:
+                    newImage = self.game.incorrectQuestionTileImage
+                    tile.changeImage(newImage)
+                tile.clicked = False
