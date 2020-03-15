@@ -40,3 +40,4 @@ LONG_QUESTION_TILE = "questionTile.png"
 CORRECT_TILE = "metalTileCorrect.png"
 INCORRECT_TILE = "metalTileIncorrect.png"
 SHOTGUN_IMAGE = "shotgun.png"
+COUNTDOWN_ICON_IMAGES = ["countdownICON01.png", "countdownICON02.png", "countdownICON03.png", "countdownICON04.png", "countdownICON05.png", "countdownICON06.png", "countdownICON07.png", "countdownICON08.png", "countdownICON09.png", "countdownICON10.png"]

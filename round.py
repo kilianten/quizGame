@@ -74,3 +74,4 @@ class TriggerHappy(Round):
 
     def draw(self):
         self.screen.blit(self.game.shotgunImage, (2 * TILESIZE, 8 * TILESIZE))
+        self.screen.blit(self.game.countdownIconImages[0], (36 * TILESIZE, 1 * TILESIZE))
