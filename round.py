@@ -7,12 +7,9 @@ from random import choice
 
 class Round:
 
-    def __init__(self, game):
+    def __init__(self, game, screen):
         self.game = game
-        self.createQuestionTiles()
-        self.createLongQuestionTile()
-        self.questions = game.categories
-        self.generateQuestion()
+        self.screen = screen
 
     def createQuestionTiles(self):
         self.bottomLeft = QuestionTile(self.game, 64, 640)
@@ -66,3 +63,14 @@ class Round:
                     newImage = self.game.incorrectQuestionTileImage
                     tile.changeImage(newImage)
                 tile.clicked = False
+
+class TriggerHappy(Round):
+    def __init__(self, game, screen):
+        super().__init__(game, screen)
+        self.createQuestionTiles()
+        self.createLongQuestionTile()
+        self.questions = game.categories
+        self.generateQuestion()
+
+    def draw(self):
+        self.screen.blit(self.game.shotgunImage, (2 * TILESIZE, 8 * TILESIZE))

@@ -43,6 +43,7 @@ class Game:
         self.longQuestionTileImage = pg.image.load(path.join(img_folder, LONG_QUESTION_TILE)).convert_alpha()
         self.correctQuestionTileImage = pg.image.load(path.join(img_folder, CORRECT_TILE)).convert_alpha()
         self.incorrectQuestionTileImage = pg.image.load(path.join(img_folder, INCORRECT_TILE)).convert_alpha()
+        self.shotgunImage = pg.image.load(path.join(img_folder, SHOTGUN_IMAGE)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -70,7 +71,7 @@ class Game:
         self.questionTiles = pg.sprite.Group()
         self.scalable = pg.sprite.Group()
         self.collidable_sprites = pg.sprite.Group()
-        self.round = Round(self)
+        self.round = TriggerHappy(self, self.screen)
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
         self.player = Player(self, 0, 0)
@@ -109,6 +110,7 @@ class Game:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
         for question in self.questionTiles:
             question.drawQuestions()
+        self.round.draw()
         pg.display.flip()
 
     def show_start_screen(self):
