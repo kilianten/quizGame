@@ -33,6 +33,8 @@ DIFFICULTYLEVELS = ['1', '2', '3', '4', '5']
 RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
 TRIGGER_HAPPY_QUESTION_TIME = 10 #MILIS 20 seconds
+TIME_BEFORE_NEW_QUESTION = 3
+CORRECT_UPDATE_ANIM = 100 #millisecs
 
 #IMAGES
 QUESTION_TILE = "metaltile.png"
@@ -42,3 +44,4 @@ CORRECT_TILE = "metalTileCorrect.png"
 INCORRECT_TILE = "metalTileIncorrect.png"
 SHOTGUN_IMAGE = "shotgun.png"
 COUNTDOWN_ICON_IMAGES = ["countdownICON001.png", "countdownICON002.png", "countdownICON003.png", "countdownICON004.png", "countdownICON005.png", "countdownICON006.png", "countdownICON007.png", "countdownICON008.png", "countdownICON009.png", "countdownICON010.png"]
+CORRECT_IMAGES = ["correct1.png", "correct2.png", "correct3.png", "correct4.png", "correct5.png", "correct6.png"]

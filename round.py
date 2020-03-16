@@ -15,7 +15,6 @@ class Round:
             self.topRight.kill()
             self.topLeft.kill()
             self.bottomRight.kill()
-            print(self.tiles)
         except:
             pass
         self.bottomLeft = QuestionTile(self.game, 64, 640)
@@ -65,6 +64,7 @@ class Round:
                 if tile.text == self.question.answer:
                     newImage = self.game.correctQuestionTileImage
                     tile.changeImage(newImage)
+                    correctIncorrectHUD(self.game, "correct")
                 else:
                     newImage = self.game.incorrectQuestionTileImage
                     tile.changeImage(newImage)

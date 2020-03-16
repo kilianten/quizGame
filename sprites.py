@@ -130,3 +130,28 @@ class CountdownTimer(pg.sprite.Sprite):
             img = self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2]
             self.originalImage = img
             self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+
+class correctIncorrectHUD(pg.sprite.Sprite):
+    def __init__(self, game, answerResult):
+        self._layer = 3
+        self.groups = game.all_sprites, game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.currImage = 0
+        if answerResult == "correct":
+            self.originalImage = game.correctImages[self.currImage]
+            img = game.correctImages[self.currImage]
+            self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        self.x = 10 * self.game.tilesizeWidth
+        self.y = 10 * self.game.tilesizeHeight
+        self.rect = self.image.get_rect()
+        self.lastUpdate = pg.time.get_ticks()
+
+    def update(self):
+        if pg.time.get_ticks() - self.lastUpdate > CORRECT_UPDATE_ANIM:
+            self.lastUpdate = pg.time.get_ticks()
+            self.currImage += 1
+            self.currImage = self.currImage % len(self.game.correctImages)
+            img = self.game.correctImages[self.currImage]
+            self.originalImage = img
+            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))

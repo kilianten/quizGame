@@ -47,6 +47,9 @@ class Game:
         self.countdownIconImages = []
         for image in COUNTDOWN_ICON_IMAGES:
             self.countdownIconImages.append(pg.image.load(path.join(img_folder, image)).convert_alpha())
+        self.correctImages = []
+        for image in CORRECT_IMAGES:
+            self.correctImages.append(pg.image.load(path.join(img_folder, image)).convert_alpha())
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
