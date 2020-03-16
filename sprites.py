@@ -116,20 +116,23 @@ class CountdownTimer(pg.sprite.Sprite):
         self.startTime = pg.time.get_ticks()
         self.lastUpdate = pg.time.get_ticks()
         self.tenthOfTime = TRIGGER_HAPPY_QUESTION_TIME / 10
+        self.answerSelected = False
+        self.finished = False
 
     def update(self):
-        timeRunning = pg.time.get_ticks() - self.startTime
-        if int(timeRunning/1000) > TRIGGER_HAPPY_QUESTION_TIME:
-            self.game.round.generateQuestion()
-            self.startTime = pg.time.get_ticks()
-            self.lastUpdate = pg.time.get_ticks()
-            self.tenthOfTime =  TRIGGER_HAPPY_QUESTION_TIME / 10
+        if not self.answerSelected:
+            timeRunning = pg.time.get_ticks() - self.startTime
+            if int(timeRunning/1000) > TRIGGER_HAPPY_QUESTION_TIME:
+                self.finished = True
+                self.startTime = pg.time.get_ticks()
+                self.lastUpdate = pg.time.get_ticks()
+                self.tenthOfTime =  TRIGGER_HAPPY_QUESTION_TIME / 10
 
-        if timeRunning/1000 > self.tenthOfTime:
-            self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
-            img = self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2]
-            self.originalImage = img
-            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+            if timeRunning/1000 > self.tenthOfTime:
+                self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
+                img = self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2]
+                self.originalImage = img
+                self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
 
 class correctIncorrectHUD(pg.sprite.Sprite):
     def __init__(self, game, answerResult):
@@ -143,7 +146,7 @@ class correctIncorrectHUD(pg.sprite.Sprite):
             img = game.correctImages[self.currImage]
             self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
         self.x = 10 * self.game.tilesizeWidth
-        self.y = 10 * self.game.tilesizeHeight
+        self.y = 2 * self.game.tilesizeHeight
         self.rect = self.image.get_rect()
         self.lastUpdate = pg.time.get_ticks()
 

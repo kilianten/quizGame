@@ -116,7 +116,6 @@ class Game:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
         for question in self.questionTiles:
             question.drawQuestions()
-        self.round.draw()
         pg.display.flip()
 
     def show_start_screen(self):

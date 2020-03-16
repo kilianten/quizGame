@@ -8,19 +8,18 @@ class Round:
     def __init__(self, game, screen):
         self.game = game
         self.screen = screen
+        self.answerSelected = False
+        self.correctText = None
+        self.selectedTile = None
+        self.tiles = []
+        self.timer = None
 
     def createQuestionTiles(self):
-        try:
-            self.bottomLeft.kill()
-            self.topRight.kill()
-            self.topLeft.kill()
-            self.bottomRight.kill()
-        except:
-            pass
-        self.bottomLeft = QuestionTile(self.game, 64, 640)
-        self.bottomRight = QuestionTile(self.game, 672, 640)
-        self.topLeft = QuestionTile(self.game, 64, 512)
-        self.topRight = QuestionTile(self.game, 672, 512)
+        self.killAllObjects()
+        self.bottomLeft = QuestionTile(self.game, self.game.tilesizeWidth * 2, self.game.tilesizeHeight * 20)
+        self.bottomRight = QuestionTile(self.game, self.game.tilesizeWidth * 21, self.game.tilesizeHeight * 20)
+        self.topLeft = QuestionTile(self.game, self.game.tilesizeWidth * 2, self.game.tilesizeHeight * 16)
+        self.topRight = QuestionTile(self.game, self.game.tilesizeWidth * 21, self.game.tilesizeHeight * 16)
         self.tiles = [self.bottomLeft, self.bottomRight, self.topLeft, self.topRight]
 
     def createLongQuestionTile(self):
@@ -32,6 +31,8 @@ class Round:
     def generateQuestion(self):
         self.question = None;
         self.createQuestionTiles()
+        self.answerSelected = False
+
         while self.question == None:
             randomCategory = choice(CATEGORIES)
             category = self.questions[randomCategory]
@@ -57,18 +58,39 @@ class Round:
             tileTemp.remove(tile)
             optionsTemp.remove(option)
 
+    def checkReset(self):
+        if pg.time.get_ticks() - self.lastUpdate > RESET_TIME:
+            self.lastUpdate = 0
+            self.generateQuestion()
 
     def update(self):
+        if not self.answerSelected:
+            for tile in self.tiles:
+                if tile.clicked:
+                    self.answerSelected = True
+                    self.lastUpdate = pg.time.get_ticks()
+                    if tile.text == self.question.answer:
+                        newImage = self.game.correctQuestionTileImage
+                        tile.changeImage(newImage)
+                        self.correctText = correctIncorrectHUD(self.game, "correct")
+                    else:
+                        newImage = self.game.incorrectQuestionTileImage
+                        tile.changeImage(newImage)
+                    tile.clicked = False
+        else:
+            self.checkReset()
+
+    def killAllObjects(self):
+        objects = [self.correctText, self.selectedTile, self.timer]
         for tile in self.tiles:
-            if tile.clicked:
-                if tile.text == self.question.answer:
-                    newImage = self.game.correctQuestionTileImage
-                    tile.changeImage(newImage)
-                    correctIncorrectHUD(self.game, "correct")
-                else:
-                    newImage = self.game.incorrectQuestionTileImage
-                    tile.changeImage(newImage)
-                tile.clicked = False
+            objects.append(tile.selected)
+            objects.append(tile)
+
+        for object in objects:
+            try:
+                object.kill()
+            except:
+                pass
 
 class TriggerHappy(Round):
     def __init__(self, game, screen):
@@ -79,6 +101,17 @@ class TriggerHappy(Round):
         self.generateQuestion()
         self.shotgun = Shotgun(self.game)
         self.timer = CountdownTimer(self.game)
+        print("test")
 
-    def draw(self):
-        pass
+    def update(self):
+        super().update()
+        if self.timer.finished == True:
+            self.generateQuestion()
+
+    def generateQuestion(self):
+        super().generateQuestion()
+        try:
+            self.timer.kill()
+        except:
+            pass
+        self.timer = CountdownTimer(self.game)
