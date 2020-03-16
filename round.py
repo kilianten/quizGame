@@ -1,7 +1,5 @@
 import pygame as pg
-from sprites import QuestionTile
-from sprites import SelectedTile
-from sprites import LongQuestionTile
+from sprites import *
 from settings import *
 from random import choice
 
@@ -71,7 +69,8 @@ class TriggerHappy(Round):
         self.createLongQuestionTile()
         self.questions = game.categories
         self.generateQuestion()
+        self.shotgun = Shotgun(self.game)
+        self.timer = CountdownTimer(self.game)
 
     def draw(self):
-        self.screen.blit(self.game.shotgunImage, (2 * TILESIZE, 8 * TILESIZE))
-        self.screen.blit(self.game.countdownIconImages[0], (36 * TILESIZE, 1 * TILESIZE))
+        pass

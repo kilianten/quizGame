@@ -152,8 +152,6 @@ class Game:
                     self.changeResolution(RESOLUTIONS[0])
                 if event.key == pg.K_F3:
                     self.changeResolution(RESOLUTIONS[1])
-                if event.key == pg.K_F9:
-                    self.round.generateQuestion()
             if event.type == pg.MOUSEBUTTONUP:
                 for sprite in self.collidable_sprites:
                     if pg.sprite.collide_rect(sprite, self.mouse):

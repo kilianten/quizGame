@@ -75,8 +75,6 @@ class LongQuestionTile(pg.sprite.Sprite):
     def collide(self):
         pass
 
-
-
 class SelectedTile(pg.sprite.Sprite):
     def __init__(self, game, questionTile):
         self._layer = 3
@@ -89,3 +87,47 @@ class SelectedTile(pg.sprite.Sprite):
         self.x = questionTile.x
         self.y = questionTile.y
         self.rect = self.image.get_rect()
+
+class Shotgun(pg.sprite.Sprite):
+    def __init__(self, game):
+        self._layer = 3
+        self.groups = game.all_sprites, game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.originalImage = game.shotgunImage
+        img = game.shotgunImage
+        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        self.x = 2 * self.game.tilesizeWidth
+        self.y = 8 * self.game.tilesizeHeight
+        self.rect = self.image.get_rect()
+
+class CountdownTimer(pg.sprite.Sprite):
+    def __init__(self, game):
+        self._layer = 3
+        self.groups = game.all_sprites, game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.originalImage = game.countdownIconImages[0]
+        img = game.countdownIconImages[0]
+        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        self.x = 36 * self.game.tilesizeWidth
+        self.y = 1 * self.game.tilesizeHeight
+        self.rect = self.image.get_rect()
+        self.startTime = pg.time.get_ticks()
+        self.lastUpdate = pg.time.get_ticks()
+        self.tenthOfTime = TRIGGER_HAPPY_QUESTION_TIME / 10
+
+    def update(self):
+        timeRunning = pg.time.get_ticks() - self.startTime
+        if int(timeRunning/1000) > TRIGGER_HAPPY_QUESTION_TIME:
+            self.game.round.generateQuestion()
+            self.startTime = pg.time.get_ticks()
+            self.lastUpdate = pg.time.get_ticks()
+            self.tenthOfTime =  TRIGGER_HAPPY_QUESTION_TIME / 10
+
+        if timeRunning/1000 > self.tenthOfTime:
+            self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
+            print(int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2)
+            print(self.game.countdownIconImages)
+            img = self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2]
+            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))

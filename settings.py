@@ -20,8 +20,8 @@ TILESIZE = 32
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
 
-CATEGORIES = ["science", "geography", "history"]
-ISCATEGORYENABLED = {"science" : True, "geography" : True, "history" : True}
+CATEGORIES = ["science", "geography", "history", "entertainment"]
+ISCATEGORYENABLED = {"science" : True, "geography" : True, "history" : True, "entertainment" : True}
 
 QUESTIONFOLDER = "questions"
 LINESPLITTER = "|"
@@ -32,6 +32,7 @@ DIFFICULTYLEVELS = ['1', '2', '3', '4', '5']
 
 RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
+TRIGGER_HAPPY_QUESTION_TIME = 20 #MILIS 20 seconds
 
 #IMAGES
 QUESTION_TILE = "metaltile.png"
@@ -40,4 +41,4 @@ LONG_QUESTION_TILE = "questionTile.png"
 CORRECT_TILE = "metalTileCorrect.png"
 INCORRECT_TILE = "metalTileIncorrect.png"
 SHOTGUN_IMAGE = "shotgun.png"
-COUNTDOWN_ICON_IMAGES = ["countdownICON01.png", "countdownICON02.png", "countdownICON03.png", "countdownICON04.png", "countdownICON05.png", "countdownICON06.png", "countdownICON07.png", "countdownICON08.png", "countdownICON09.png", "countdownICON10.png"]
+COUNTDOWN_ICON_IMAGES = ["countdownICON001.png", "countdownICON002.png", "countdownICON003.png", "countdownICON004.png", "countdownICON005.png", "countdownICON006.png", "countdownICON007.png", "countdownICON008.png", "countdownICON009.png", "countdownICON010.png"]
