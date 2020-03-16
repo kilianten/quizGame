@@ -127,7 +127,6 @@ class CountdownTimer(pg.sprite.Sprite):
 
         if timeRunning/1000 > self.tenthOfTime:
             self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
-            print(int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2)
-            print(self.game.countdownIconImages)
             img = self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2]
+            self.originalImage = img
             self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
