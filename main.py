@@ -139,6 +139,7 @@ class Game:
                 if event.key == pg.K_ESCAPE:
                     self.quit()
                 if event.key == pg.K_F1:
+
                     if (SETTINGS["ISFULLSCREEN"] == True):
                         #if fullscreen set to window
                         print("Entering Windowed mode")

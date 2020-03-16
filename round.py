@@ -10,6 +10,14 @@ class Round:
         self.screen = screen
 
     def createQuestionTiles(self):
+        try:
+            self.bottomLeft.kill()
+            self.topRight.kill()
+            self.topLeft.kill()
+            self.bottomRight.kill()
+            print(self.tiles)
+        except:
+            pass
         self.bottomLeft = QuestionTile(self.game, 64, 640)
         self.bottomRight = QuestionTile(self.game, 672, 640)
         self.topLeft = QuestionTile(self.game, 64, 512)
@@ -24,7 +32,7 @@ class Round:
 
     def generateQuestion(self):
         self.question = None;
-
+        self.createQuestionTiles()
         while self.question == None:
             randomCategory = choice(CATEGORIES)
             category = self.questions[randomCategory]
