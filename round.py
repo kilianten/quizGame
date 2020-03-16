@@ -101,7 +101,6 @@ class TriggerHappy(Round):
         self.generateQuestion()
         self.shotgun = Shotgun(self.game)
         self.timer = CountdownTimer(self.game)
-        print("test")
 
     def update(self):
         super().update()

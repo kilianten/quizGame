@@ -5,3 +5,4 @@ What is the capital of Lebanon?|Beirut|Sidon|Oman|Damascus|3|
 What is the capital of Kazakhstan?|Nur-Sultan|Tashkent|Kazakhstan City|Semey|3|
 What of these cities was previously named Astana?|Nur-Sultan|Tashkent|Rome|Hanoi|3|
 What is the capital of India?|New Dehli|Mumbai|Hyderabad|Kolkata|2|
+What is the capital of Ukraine?|Kiev|Odesa|Lviv|Dnipro|2|
