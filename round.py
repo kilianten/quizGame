@@ -68,6 +68,7 @@ class Round:
             for tile in self.tiles:
                 if tile.clicked:
                     self.answerSelected = True
+                    self.timer.answerSelected = True
                     self.lastUpdate = pg.time.get_ticks()
                     if tile.text == self.question.answer:
                         newImage = self.game.correctQuestionTileImage
