@@ -65,6 +65,7 @@ class Main:
                     print(question.options)
 
     def loadQuestions(self):
+        self.numberOfQuestions = 0
         questionsPath = path.join(self.game_folder, "questions")
         files = listdir(questionsPath)
         for file in files:
@@ -75,6 +76,8 @@ class Main:
                 f = open(path.join(questionsPath, file),'r')
                 for question in f:
                     newCategory.addQuestionToCategory(question)
+                    self.numberOfQuestions += 1
+        print("NUMBER OF QUESTIONS:{}".format(self.numberOfQuestions))
 
     def new(self):
         # initialize all variables and do all the setup for a new game

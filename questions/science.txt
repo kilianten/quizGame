@@ -3,3 +3,6 @@ Which of the basic 5 tastes is known as Umami?|Savory|Sweet|Salty|Bitter|4|
 Who famously stated that the Sun was the center of the universe?|Nicolaus Copernicus|Archimedes|Plato|Galileo Galilei|2|
 The Chironex fleckeri, is commonly dubbed the most poisonous animal in the world, it is a type of ____ ?|Jellyfish|Snake|Scorpion|Spider|4|
 Halitosis is the technical term for what?|Bad Breath|Acne|Arthritis|Knuckle-Cracking|3|
+The medical name for nearsightedness is?|Myopia|Hyperopia|Presbyopia|Cataracts|3|
+The medical term for far-sightedness is?|Hyperopia|Myopia|Cataracts|Amblyopia|4|
+The medical term for a 'lazy eye' is?|Amblyopia|Myopia|Presbyopia|Hyperopia|5|

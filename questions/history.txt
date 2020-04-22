@@ -13,3 +13,4 @@ Who assassinated Abraham Lincoln?|John Wilkes Booth|James Earl Ray|Alfred Linkla
 In which theatre was Abraham Lincoln assassinated?|Ford's Theatre|Central City Opera House|Fox Theatre|Dock Street Theatre|3|
 Assassinated in 44BC, what was Caesar's full name?|Gaius Julius Caesar|Julius Caesar|Julius Senneca Caesar|Julius Albertus Caesar|4|
 When was Julius Caesar alive?|12 July 100BC - 15 March 44BC|2 May 50AD - 104AD|29 October 80BC - 13 July 20BC|3 September 40BC - 2 July 20AD|3|
+When was Hitler was named Chancellor?|30th of January 1933|1st of September 1939|16th of June 1935|31st of October 1941|3|
