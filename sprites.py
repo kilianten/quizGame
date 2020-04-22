@@ -158,3 +158,28 @@ class correctIncorrectHUD(pg.sprite.Sprite):
             img = self.game.correctImages[self.currImage]
             self.originalImage = img
             self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+
+class MainMenuTile(pg.sprite.Sprite):
+    def __init__(self, game, x, y):
+        self._layer = 2
+        self.groups = game.menu_sprites, game.scalable, game.collidable_sprites
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.originalImage = game.menuTiles[0]
+        img = game.menuTiles[0]
+        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        self.x = x
+        self.y = y
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y
+        self.isHoveredOn = False
+        self.selected = None
+        self.text = None
+        self.clicked = False
+
+    def changeImage(self, img):
+        self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+
+    def collide(self):
+        pass

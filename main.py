@@ -8,11 +8,12 @@ from settings import *
 from sprites import *
 from question import *
 from category import *
+from mainMenu import *
 from os import path
 from os import listdir
 from round import *
 
-class Game:
+class Main:
     def __init__(self):
         pg.init()
         pg.font.init()
@@ -30,6 +31,7 @@ class Game:
         self.fromOriginalHeight = 1
         #self.testViewAllQuestions()
         self.myfont = pg.font.SysFont("Roman", 20)
+        self.module = None
 
     def load_data(self):
         self.game_folder = path.dirname(__file__)
@@ -50,6 +52,9 @@ class Game:
         self.correctImages = []
         for image in CORRECT_IMAGES:
             self.correctImages.append(pg.image.load(path.join(img_folder, image)).convert_alpha())
+        self.menuTiles = []
+        for image in MENU_TILES:
+            self.menuTiles.append(pg.image.load(path.join(img_folder, image)).convert_alpha())
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -74,6 +79,7 @@ class Game:
     def new(self):
         # initialize all variables and do all the setup for a new game
         self.all_sprites = pg.sprite.LayeredUpdates()
+        self.menu_sprites = pg.sprite.LayeredUpdates()
         self.questionTiles = pg.sprite.Group()
         self.scalable = pg.sprite.Group()
         self.collidable_sprites = pg.sprite.Group()
@@ -82,6 +88,7 @@ class Game:
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
         self.player = Player(self, 0, 0)
         self.mouse = Sprite_Mouse_Location(0, 0, self)
+        self.module = mainMenu(self)
 
     def run(self):
         # game loop - set self.playing = False to end the game
@@ -100,6 +107,7 @@ class Game:
         # update portion of the game loop
         self.mouse.rect.x, self.mouse.rect.y = pg.mouse.get_pos()
         self.mouse.x, self.mouse.y =  pg.mouse.get_pos()
+        self.module.update()
         self.all_sprites.update()
         self.round.update()
 
@@ -113,6 +121,8 @@ class Game:
         self.screen.fill(BGCOLOR)
         self.draw_grid()
         for sprite in self.all_sprites:
+            self.screen.blit(sprite.image, (sprite.x, sprite.y))
+        for sprite in self.module.sprites:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
         for question in self.questionTiles:
             question.drawQuestions()
@@ -141,7 +151,6 @@ class Game:
                 if event.key == pg.K_ESCAPE:
                     self.quit()
                 if event.key == pg.K_F1:
-
                     if (SETTINGS["ISFULLSCREEN"] == True):
                         #if fullscreen set to window
                         print("Entering Windowed mode")
@@ -208,7 +217,7 @@ class Sprite_Mouse_Location(pg.sprite.Sprite):
         self.y = self.rect.y
 
 # create the game object
-g = Game()
+g = Main()
 g.show_start_screen()
 while True:
     g.new()

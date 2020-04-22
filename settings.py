@@ -20,8 +20,8 @@ TILESIZE = 32
 GRIDWIDTH = WIDTH / TILESIZE
 GRIDHEIGHT = HEIGHT / TILESIZE
 
-CATEGORIES = ["science", "geography", "history", "entertainment"]
-ISCATEGORYENABLED = {"science" : True, "geography" : True, "history" : True, "entertainment" : True}
+CATEGORIES = ["science", "geography", "history", "entertainment", "misc", "dictionary"]
+ISCATEGORYENABLED = {"science" : True, "geography" : True, "history" : True, "entertainment" : True, "misc":True, "dictionary":True}
 
 QUESTIONFOLDER = "questions"
 LINESPLITTER = "|"
@@ -46,3 +46,7 @@ INCORRECT_TILE = "metalTileIncorrect.png"
 SHOTGUN_IMAGE = "shotgun.png"
 COUNTDOWN_ICON_IMAGES = ["countdownICON001.png", "countdownICON002.png", "countdownICON003.png", "countdownICON004.png", "countdownICON005.png", "countdownICON006.png", "countdownICON007.png", "countdownICON008.png", "countdownICON009.png", "countdownICON010.png"]
 CORRECT_IMAGES = ["correct1.png", "correct2.png", "correct3.png", "correct4.png", "correct5.png", "correct6.png"]
+MENU_TILES = ["menuTile001.png", "menuTile002.png", "menuTile003.png", "menuTile004.png", "menuTile005.png" ,"menuTile006.png", "menuTile007.png", "menuTile008.png", "menuTile009.png", "menuTile010.png", "menuTile011.png", "menuTile012.png", "menuTile013.png", "menuTile014.png"]
+
+#PRIEST IMAGES
+PRIEST_IMAGE = "priestIdle.png"
