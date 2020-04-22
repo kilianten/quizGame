@@ -50,3 +50,6 @@ MENU_TILES = ["menuTile001.png", "menuTile002.png", "menuTile003.png", "menuTile
 
 #PRIEST IMAGES
 PRIEST_IMAGE = "priestIdle.png"
+
+#MAIN MENU
+NEW_GAME_TEXT = "New Game"

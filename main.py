@@ -84,6 +84,7 @@ class Main:
         self.all_sprites = pg.sprite.LayeredUpdates()
         self.menu_sprites = pg.sprite.LayeredUpdates()
         self.questionTiles = pg.sprite.Group()
+        self.texts = pg.sprite.Group()
         self.scalable = pg.sprite.Group()
         self.collidable_sprites = pg.sprite.Group()
         self.round = TriggerHappy(self, self.screen)
@@ -129,6 +130,8 @@ class Main:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
         for question in self.questionTiles:
             question.drawQuestions()
+        for text in self.texts:
+            text.drawText()
         pg.display.flip()
 
     def show_start_screen(self):

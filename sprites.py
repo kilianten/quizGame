@@ -160,9 +160,9 @@ class correctIncorrectHUD(pg.sprite.Sprite):
             self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
 
 class MainMenuTile(pg.sprite.Sprite):
-    def __init__(self, game, x, y):
+    def __init__(self, game, x, y, text):
         self._layer = 2
-        self.groups = game.menu_sprites, game.scalable, game.collidable_sprites
+        self.groups = game.menu_sprites, game.scalable, game.collidable_sprites, game.texts
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.menuTiles[0]
@@ -175,7 +175,7 @@ class MainMenuTile(pg.sprite.Sprite):
         self.rect.y = self.y
         self.isHoveredOn = False
         self.selected = None
-        self.text = None
+        self.text = text
         self.clicked = False
 
     def changeImage(self, img):
@@ -187,5 +187,9 @@ class MainMenuTile(pg.sprite.Sprite):
             self.isHoveredOn = True
 
     def update(self):
+        self.game.renderText(self.text, 1, 1)
         if self.isHoveredOn == False and self.selected != True:
             self.selected = False
+
+    def drawText(self):
+        self.game.renderText(self.text, (self.game.tilesizeWidth * 6.5 + self.x), (self.game.tilesizeHeight * 1.5 + self.y))
