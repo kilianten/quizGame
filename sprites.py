@@ -177,6 +177,8 @@ class MainMenuTile(pg.sprite.Sprite):
         self.selected = None
         self.text = text
         self.clicked = False
+        self.currImage = 0
+        self.animating = False
 
     def changeImage(self, img):
         self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
@@ -185,11 +187,23 @@ class MainMenuTile(pg.sprite.Sprite):
         if self.isHoveredOn == False:
             self.selected = True
             self.isHoveredOn = True
+            self.animating = True
+            self.lastUpdate = pg.time.get_ticks()
 
     def update(self):
         self.game.renderText(self.text, 1, 1)
         if self.isHoveredOn == False and self.selected != True:
             self.selected = False
+        if self.animating == True and pg.time.get_ticks() - self.lastUpdate > MAIN_MENU_UPDATE_ANIM:
+            self.lastUpdate = pg.time.get_ticks()
+            self.currImage += 1
+            self.currImage = self.currImage % len(self.game.menuTiles)
+            img = self.game.menuTiles[self.currImage]
+            self.originalImage = img
+            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+            if self.currImage == len(self.game.menuTiles) - 1:
+                self.animating = False
+
 
     def drawText(self):
         self.game.renderText(self.text, (self.game.tilesizeWidth * 6.5 + self.x), (self.game.tilesizeHeight * 1.5 + self.y))

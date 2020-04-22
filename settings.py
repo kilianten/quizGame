@@ -53,3 +53,4 @@ PRIEST_IMAGE = "priestIdle.png"
 
 #MAIN MENU
 NEW_GAME_TEXT = "New Game"
+MAIN_MENU_UPDATE_ANIM = 17
