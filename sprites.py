@@ -182,4 +182,10 @@ class MainMenuTile(pg.sprite.Sprite):
         self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
 
     def collide(self):
-        pass
+        if self.isHoveredOn == False:
+            self.selected = True
+            self.isHoveredOn = True
+
+    def update(self):
+        if self.isHoveredOn == False and self.selected != True:
+            self.selected = False
