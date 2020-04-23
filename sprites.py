@@ -3,7 +3,7 @@ from settings import *
 
 class Player(pg.sprite.Sprite):
     def __init__(self, game, x, y):
-        self.groups = game.all_sprites
+        self.groups = game.game_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.x = 0
@@ -18,7 +18,7 @@ class Player(pg.sprite.Sprite):
 class QuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.questionTiles, game.all_sprites, game.scalable, game.collidable_sprites
+        self.groups = game.game_texts, game.game_sprites, game.scalable, game.collidable_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.questionTileImage
@@ -46,7 +46,7 @@ class QuestionTile(pg.sprite.Sprite):
         if self.isHoveredOn == False and self.selected != None:
             self.selected.kill()
 
-    def drawQuestions(self):
+    def drawText(self):
         if self.text:
             self.game.renderText(self.text, self.x, self.y)
             pass
@@ -54,7 +54,7 @@ class QuestionTile(pg.sprite.Sprite):
 class LongQuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.questionTiles, game.all_sprites, game.scalable
+        self.groups = game.game_texts, game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.longQuestionTileImage
@@ -67,7 +67,7 @@ class LongQuestionTile(pg.sprite.Sprite):
         self.rect.y = self.y
         self.text = None
 
-    def drawQuestions(self):
+    def drawText(self):
         if self.text:
             self.game.renderText(self.text, self.x, self.y)
             pass
@@ -78,7 +78,7 @@ class LongQuestionTile(pg.sprite.Sprite):
 class SelectedTile(pg.sprite.Sprite):
     def __init__(self, game, questionTile):
         self._layer = 3
-        self.groups = game.all_sprites, game.scalable
+        self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.selectedTimeImage
@@ -91,7 +91,7 @@ class SelectedTile(pg.sprite.Sprite):
 class Shotgun(pg.sprite.Sprite):
     def __init__(self, game):
         self._layer = 3
-        self.groups = game.all_sprites, game.scalable
+        self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.shotgunImage
@@ -104,7 +104,7 @@ class Shotgun(pg.sprite.Sprite):
 class CountdownTimer(pg.sprite.Sprite):
     def __init__(self, game):
         self._layer = 3
-        self.groups = game.all_sprites, game.scalable
+        self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.countdownIconImages[0]
@@ -137,7 +137,7 @@ class CountdownTimer(pg.sprite.Sprite):
 class correctIncorrectHUD(pg.sprite.Sprite):
     def __init__(self, game, answerResult):
         self._layer = 3
-        self.groups = game.all_sprites, game.scalable
+        self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.currImage = 0
@@ -162,7 +162,7 @@ class correctIncorrectHUD(pg.sprite.Sprite):
 class MainMenuTile(pg.sprite.Sprite):
     def __init__(self, game, x, y, text):
         self._layer = 2
-        self.groups = game.menu_sprites, game.scalable, game.collidable_sprites, game.texts
+        self.groups = game.menu_sprites, game.scalable, game.menu_collidable_sprites, game.menu_texts
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.originalImage = game.menuTiles[0]

@@ -81,11 +81,15 @@ class Main:
 
     def new(self):
         # initialize all variables and do all the setup for a new game
-        self.all_sprites = pg.sprite.LayeredUpdates()
+        self.game_sprites = pg.sprite.LayeredUpdates()
         self.menu_sprites = pg.sprite.LayeredUpdates()
-        self.questionTiles = pg.sprite.Group()
-        self.texts = pg.sprite.Group()
+        self.current_sprites = self.menu_sprites
+        self.game_texts = pg.sprite.Group()
+        self.menu_texts = pg.sprite.Group()
+        self.texts = self.menu_texts
         self.scalable = pg.sprite.Group()
+        self.menu_collidable_sprites = pg.sprite.Group()
+        self.collidables = self.menu_collidable_sprites
         self.collidable_sprites = pg.sprite.Group()
         self.round = TriggerHappy(self, self.screen)
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
@@ -112,7 +116,7 @@ class Main:
         self.mouse.rect.x, self.mouse.rect.y = pg.mouse.get_pos()
         self.mouse.x, self.mouse.y =  pg.mouse.get_pos()
         self.module.update()
-        self.all_sprites.update()
+        self.current_sprites.update()
         self.round.update()
 
     def draw_grid(self):
@@ -124,12 +128,8 @@ class Main:
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
-        for sprite in self.all_sprites:
+        for sprite in self.current_sprites:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
-        for sprite in self.module.sprites:
-            self.screen.blit(sprite.image, (sprite.x, sprite.y))
-        for question in self.questionTiles:
-            question.drawQuestions()
         for text in self.texts:
             text.drawText()
         pg.display.flip()
@@ -145,7 +145,7 @@ class Main:
 
     def events(self):
         # catch all events here
-        for sprite in self.collidable_sprites:
+        for sprite in self.collidables:
             if pg.sprite.collide_rect(sprite, self.mouse):
                 sprite.collide()
             else:
@@ -171,7 +171,7 @@ class Main:
                 if event.key == pg.K_F3:
                     self.changeResolution(RESOLUTIONS[1])
             if event.type == pg.MOUSEBUTTONUP:
-                for sprite in self.collidable_sprites:
+                for sprite in self.collidables:
                     if pg.sprite.collide_rect(sprite, self.mouse):
                         sprite.clicked = True
 

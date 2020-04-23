@@ -9,3 +9,7 @@ class mainMenu:
 
     def update(self):
         self.sprites.update()
+        if self.newGameTile.clicked:
+            self.game.texts = self.game.game_texts
+            self.game.current_sprites = self.game.game_sprites
+            self.game.collidables = self.game.collidable_sprites

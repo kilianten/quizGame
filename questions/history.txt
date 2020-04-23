@@ -17,3 +17,6 @@ When was Hitler was named Chancellor?|30th of January 1933|1st of September 1939
 In what year did The Wall Street Crash take place?|1929|1937|1940|1935|4|
 Prohibition in the United States saw the nationwide ban of what?|Alcoholic Beverages|Guns|Slavery|Fidget spinners|1|
 When did Prohibition in the United States take place?|1920-1933|1903-1917|1884-1900|1989-1902|4|
+What was the name of the WW2 Project that produced the first atomic bombs?|The Manhattan Project|The Nuclear Project|The Boom Project|Project Orange|1|
+Who led the Manhattan Project?|Julius Robert Oppenheimer|Albert Fert|Marie Curie|Joseph Strong|2|
+What was the name of the bomb used in the Trinity test in New Mexico?|The Gadget|Fatman|Agent Orange|Tiny boy|2|
