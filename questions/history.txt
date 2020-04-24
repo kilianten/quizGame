@@ -19,4 +19,8 @@ Prohibition in the United States saw the nationwide ban of what?|Alcoholic Bever
 When did Prohibition in the United States take place?|1920-1933|1903-1917|1884-1900|1989-1902|4|
 What was the name of the WW2 Project that produced the first atomic bombs?|The Manhattan Project|The Nuclear Project|The Boom Project|Project Orange|1|
 Who led the Manhattan Project?|Julius Robert Oppenheimer|Albert Fert|Marie Curie|Joseph Strong|2|
-What was the name of the bomb used in the Trinity test in New Mexico?|The Gadget|Fatman|Agent Orange|Tiny boy|2|
+What was the name of the bomb used in the Trinity test in New Mexico?|The Gadget|Fatman|Agent Orange|Tiny boy|3|
+What was the name of the bomb dropped on Nagasaki?|Fatman|Little Boy|Big Dude|The Gadget|2|
+What was the name of Hitler's wife?|Eva Braun|Marie Müller|Luarie Schneider|Mia Fischer|2|
+Who was assassinated on 30 January 1948?|Mahatma Gandhi|Indira Gandhi|Franz Ferdinand|Malcolm X|2|
+What is the name of the hypothesis that the invention of artificial superintelligence will abruptly trigger runaway technological growth, resulting in unfathomable changes to human civilization?|The singularity|Big Freeze|The Technological Shadow|Brink|1|
