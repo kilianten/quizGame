@@ -6,3 +6,5 @@ Halitosis is the technical term for what?|Bad Breath|Acne|Arthritis|Knuckle-Crac
 The medical name for nearsightedness is?|Myopia|Hyperopia|Presbyopia|Cataracts|3|
 The medical term for far-sightedness is?|Hyperopia|Myopia|Cataracts|Amblyopia|4|
 The medical term for a 'lazy eye' is?|Amblyopia|Myopia|Presbyopia|Hyperopia|5|
+Which of these is not one of the four conventionally accepted fundamental interactions?|Friction|Gravitation|Electromagnetism|The Weak Interaction|4|
+What is a quantum of light is called?|Photon|Luminary|Loomary|Luridite|2|
