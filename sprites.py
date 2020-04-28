@@ -33,6 +33,8 @@ class QuestionTile(pg.sprite.Sprite):
         self.selected = None
         self.text = None
         self.clicked = False
+        self.xPadding = DEFAULT_XPADDING
+        self.yPadding = DEFAULT_YPADDING
 
     def changeImage(self, img):
         self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
@@ -48,7 +50,7 @@ class QuestionTile(pg.sprite.Sprite):
 
     def drawText(self):
         if self.text:
-            self.game.renderText(self.text, self.x, self.y)
+            self.game.renderText(self.text, self.x, self.y, self)
             pass
 
 class LongQuestionTile(pg.sprite.Sprite):
@@ -66,10 +68,12 @@ class LongQuestionTile(pg.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y
         self.text = None
+        self.xPadding = DEFAULT_XPADDING
+        self.yPadding = DEFAULT_YPADDING
 
     def drawText(self):
         if self.text:
-            self.game.renderText(self.text, self.x, self.y)
+            self.game.renderText(self.text, self.x, self.y, self)
             pass
 
     def collide(self):
