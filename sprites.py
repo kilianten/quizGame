@@ -183,6 +183,8 @@ class MainMenuTile(pg.sprite.Sprite):
         self.clicked = False
         self.currImage = 0
         self.animating = False
+        self.xPadding = DEFAULT_XPADDING
+        self.yPadding = DEFAULT_YPADDING
 
     def changeImage(self, img):
         self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
@@ -210,4 +212,4 @@ class MainMenuTile(pg.sprite.Sprite):
 
 
     def drawText(self):
-        self.game.renderText(self.text, (self.game.tilesizeWidth * 6.5 + self.x), (self.game.tilesizeHeight * 1.5 + self.y))
+        self.game.renderText(self.text, self.x, self.y, self)

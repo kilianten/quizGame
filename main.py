@@ -211,7 +211,20 @@ class Main:
         self.tilesizeWidth = self.tilesizeWidth * self.scaleWidth
         self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
 
-    def renderText(self, text, x, y):
+    def renderText(self, text, x, y, object=None):
+        levelText = self.myfont.render("{}".format(text), False, (0, 0, 0))
+        if(object):
+            objectWidth = object.rect.width
+            textSize = self.myfont.size(text)
+            availableWidth = objectWidth - object.xPadding * 2
+            if(textSize[0] < availableWidth):
+                xOffset = (availableWidth - textSize[0]) / 2
+                x = x + xOffset
+                yOffset = (object.rect.height - textSize[1]) / 2
+                y = y + yOffset
+            else:
+                y = y + object.yPadding
+
         levelText = self.myfont.render("{}".format(text), False, (0, 0, 0))
         self.screen.blit(levelText, (x, y))
 
