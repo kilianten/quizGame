@@ -8,3 +8,13 @@ The medical term for far-sightedness is?|Hyperopia|Myopia|Cataracts|Amblyopia|4|
 The medical term for a 'lazy eye' is?|Amblyopia|Myopia|Presbyopia|Hyperopia|5|
 Which of these is not one of the four conventionally accepted fundamental interactions?|Friction|Gravitation|Electromagnetism|The Weak Interaction|4|
 What is a quantum of light is called?|Photon|Luminary|Loomary|Luridite|2|
+How far does light travel in a light-year?|Ten trillion kilometers|One year|Ten billion kilometers|Ten million kilometers|4|
+What is a nanosecond?|A billionth of a second|A millionth of a second|A thousandth of a second|A trillionth of a second|4|
+What is a picosecond?|A trillionth of a second|A millionth of a second|A thousandth of a second|A billionth of a second|4|
+Who discovered the universe is expanding?|Edwin Hubble|Albert Einstein|Alexander Friedmann|Isaac Newton|3|
+When was is discovered that the universe is expanding?|1929|1829|1909|1802|2|
+On which planet is Olympus Mons located?|Mars|Jupiter|Saturn|Venus|3|
+The Five-hundred-meter Aperture Spherical radio Telescope (FAST) is located where?|China|United States|Australia|India|4|
+In 1979 the World Health Organization declared which disease had been eradicated?|Smallpox|Rinderpest|Rabies|Malaria|1|
+On 13 January 2016, The World Health Organization (WHO) declared last of the countries affected, Liberia, free of what?|Ebola|Malaria|Covid-19|SARS|1|
+According The World Health Organization (WHO) on 13 January 2016, what countries was the last to be affected by Ebola?|Liberia|Angola|Egypt|Democratic Republic of the Congo|5|

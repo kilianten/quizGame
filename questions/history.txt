@@ -4,7 +4,6 @@ Buddha spent how many days and nights under a fig tree?|49|29|19|39|4|
 Buddha means what in Sanskrit?|Enlightened One|Blessed One|Patient One|Holy One|2|
 Which Volcano buried Pompeii and Herculaneum?|Mount Vesuvius|Krakatoa|Mouth Etna|Mount Fuji|2|
 In what year did Mount Vesuvius Erupt?|79 AD|105 AD|105 BC|79 BC|2|
-Vitruvian Man was painted by which artist?|Leonardo da Vinci|Vincent van Gogh|Pablo Picasso|Michelangelo|1|
 Where was surfing first observed by Europeans?|Tahiti|Australia|Jamica|Hawaii|4|
 What was issued by Abraham Lincoln in 1863 freeing more than 3 million slaves?|The Emancipation Proclamation|The Declaration of Independence|Prohibition|United States Bill of Rights|1|
 When was the Emancipation Proclamation was issued by Abraham Lincoln?|January 1, 1863|October 22, 1862|June 6, 1865|September 19, 1861|3|
@@ -24,3 +23,9 @@ What was the name of the bomb dropped on Nagasaki?|Fatman|Little Boy|Big Dude|Th
 What was the name of Hitler's wife?|Eva Braun|Marie Müller|Luarie Schneider|Mia Fischer|2|
 Who was assassinated on 30 January 1948?|Mahatma Gandhi|Indira Gandhi|Franz Ferdinand|Malcolm X|2|
 What is the name of the hypothesis that the invention of artificial superintelligence will abruptly trigger runaway technological growth, resulting in unfathomable changes to human civilization?|The singularity|Big Freeze|The Technological Shadow|Brink|1|
+When did the Black Death start and end?|1342 – 1353|1442 – 1453|1542 – 1553|1142 – 1153|5|
+Which explorer became the first European to travel to Hawaii?|James Cook|Hernan Cortes|Christopher Columbus|Amerigo Vespucci|2|
+When did James cook reach Hawaii?|18th of January 1778|18th of January 1878|18th of January 1578|18th of January 1378|4|
+When did World War 1 take place?|1914-1919|1939-1945|1899-1902|1901-1910|1|
+The United States Declaration of Independence states that citizens have the right to life, liberty and the persuit of?|Happines|A home|A career|Love|1|
+In 1989, the  communist politician Nicolae Ceausescu was executed. Which country did he lead?|Romania|Russia|Poland|Cuba|2|

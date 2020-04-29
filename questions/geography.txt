@@ -9,3 +9,7 @@ What is the capital of Ukraine?|Kiev|Odesa|Lviv|Dnipro|2|
 Edo is the former name of which capital city?|Tokyo|Beijing|Australia|Sri Lanka|4|
 In which city in India is the Taj Mahal located?|Agra|New Delhi|Mumbai|Pune|4|
 Becoming the 28th U.S state, in 1845, which state was annexed to the United States?|Texas|Iowa|Wisconsin|Missouri|4|
+Kinshasa is the capital of which country?|Democratic Republic of the Congo|Sri Lanka|Angola|Burkina Faso|3|
+In 2009 outrage spread as 250,000 animals were sacrificed to the Hindu goddess Gadhimai in which country?|Nepal|Sri Lanka|Pakistan|Bangladesh|4|
+Bucharest is the capital of which city?|Romania|Hungary|India|Skopje|2|
+The country linked to which of these capital cities comes first alphabetically?|Bucharest|Lisbon|Warsaw|Bratislava|3|
