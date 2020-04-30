@@ -21,9 +21,7 @@ class QuestionTile(pg.sprite.Sprite):
         self.groups = game.game_texts, game.game_sprites, game.scalable, game.collidable_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.questionTileImage
-        img = game.questionTileImage
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.questionTileImage)
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
@@ -59,9 +57,7 @@ class LongQuestionTile(pg.sprite.Sprite):
         self.groups = game.game_texts, game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.longQuestionTileImage
-        img = game.longQuestionTileImage
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.longQuestionTileImage)
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
@@ -85,9 +81,7 @@ class SelectedTile(pg.sprite.Sprite):
         self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.selectedTimeImage
-        img = game.selectedTimeImage
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.selectedTimeImage)
         self.x = questionTile.x
         self.y = questionTile.y
         self.rect = self.image.get_rect()
@@ -98,9 +92,7 @@ class Shotgun(pg.sprite.Sprite):
         self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.shotgunImage
-        img = game.shotgunImage
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.shotgunImage)
         self.x = 2 * self.game.tilesizeWidth
         self.y = 8 * self.game.tilesizeHeight
         self.rect = self.image.get_rect()
@@ -111,9 +103,7 @@ class CountdownTimer(pg.sprite.Sprite):
         self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.countdownIconImages[0]
-        img = game.countdownIconImages[0]
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.countdownIconImages[0])
         self.x = 36 * self.game.tilesizeWidth
         self.y = 1 * self.game.tilesizeHeight
         self.rect = self.image.get_rect()
@@ -134,9 +124,7 @@ class CountdownTimer(pg.sprite.Sprite):
 
             if timeRunning/1000 > self.tenthOfTime:
                 self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
-                img = self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2]
-                self.originalImage = img
-                self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+                setImage(self, self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2])
 
 class correctIncorrectHUD(pg.sprite.Sprite):
     def __init__(self, game, answerResult):
@@ -146,9 +134,7 @@ class correctIncorrectHUD(pg.sprite.Sprite):
         self.game = game
         self.currImage = 0
         if answerResult == "correct":
-            self.originalImage = game.correctImages[self.currImage]
-            img = game.correctImages[self.currImage]
-            self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+            setImage(self, game.correctImages[self.currImage])
         self.x = 10 * self.game.tilesizeWidth
         self.y = 2 * self.game.tilesizeHeight
         self.rect = self.image.get_rect()
@@ -159,9 +145,7 @@ class correctIncorrectHUD(pg.sprite.Sprite):
             self.lastUpdate = pg.time.get_ticks()
             self.currImage += 1
             self.currImage = self.currImage % len(self.game.correctImages)
-            img = self.game.correctImages[self.currImage]
-            self.originalImage = img
-            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+            setImage(self, self.game.correctImages[self.currImage])
 
 class MainMenuTile(pg.sprite.Sprite):
     def __init__(self, game, x, y, text):
@@ -169,9 +153,7 @@ class MainMenuTile(pg.sprite.Sprite):
         self.groups = game.menu_sprites, game.scalable, game.menu_collidable_sprites, game.menu_texts
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.menuTiles[0]
-        img = game.menuTiles[0]
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.menuTiles[0])
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
@@ -204,9 +186,7 @@ class MainMenuTile(pg.sprite.Sprite):
             self.lastUpdate = pg.time.get_ticks()
             self.currImage += 1
             self.currImage = self.currImage % len(self.game.menuTiles)
-            img = self.game.menuTiles[self.currImage]
-            self.originalImage = img
-            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+            setImage(self, self.game.menuTiles[self.currImage])
             if self.currImage == len(self.game.menuTiles) - 1:
                 self.animating = False
 
@@ -220,9 +200,7 @@ class ArrowRightIcon(pg.sprite.Sprite):
         self.groups = game.createChar_sprites, game.scalable, game.createChar_collidable_sprites
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
-        self.originalImage = game.arrowRightImage
-        img = self.originalImage
-        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        setImage(self, game.arrowRightImage)
         self.x = x
         self.y = y
         self.rect = self.image.get_rect()
@@ -237,12 +215,12 @@ class ArrowRightIcon(pg.sprite.Sprite):
     def collide(self):
         if self.isHoveredOn == False:
             self.isHoveredOn = True
-            img = self.game.arrowRightHoverImage
-            self.originalImage = img
-            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+            setImage(self, self.game.arrowRightHoverImage)
 
     def update(self):
         if self.isHoveredOn == False and self.originalImage == self.game.arrowRightHoverImage:
-            img = self.game.arrowRightImage
-            self.originalImage = img
-            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+            setImage(self, self.game.arrowRightImage)
+
+def setImage(object, image):
+    object.originalImage = image
+    object.image = pg.transform.scale(image, (int(image.get_width() * object.game.fromOriginalWidth), int(image.get_height() * object.game.fromOriginalHeight)))
