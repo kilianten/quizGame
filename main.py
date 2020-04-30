@@ -12,7 +12,7 @@ from mainMenu import *
 from createCharacter import *
 from os import path
 from os import listdir
-from round import *
+from game import *
 
 class Main:
     def __init__(self):
@@ -85,27 +85,12 @@ class Main:
 
     def new(self):
         # initialize all variables and do all the setup for a new game
-        self.createChar_sprites = pg.sprite.LayeredUpdates()
-        self.game_sprites = pg.sprite.LayeredUpdates()
-        self.menu_sprites = pg.sprite.LayeredUpdates()
-        self.current_sprites = self.menu_sprites
-        self.game_texts = pg.sprite.Group()
-        self.menu_texts = pg.sprite.Group()
-        self.createChar_texts = pg.sprite.Group()
-        self.texts = self.menu_texts
-        self.scalable = pg.sprite.Group()
-        self.menu_collidable_sprites = pg.sprite.Group()
-        self.collidables = self.menu_collidable_sprites
-        self.collidable_sprites = pg.sprite.Group()
-        self.createChar_collidable_sprites = pg.sprite.Group()
-        self.round = TriggerHappy(self, self.screen)
+        self.createModules()
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
         self.player = Player(self, 0, 0)
         self.mouse = Sprite_Mouse_Location(0, 0, self)
-        self.mainMenu = mainMenu(self)
         self.module = self.mainMenu
-        self.createChar = createChar(self)
 
     def run(self):
         # game loop - set self.playing = False to end the game
@@ -125,8 +110,7 @@ class Main:
         self.mouse.rect.x, self.mouse.rect.y = pg.mouse.get_pos()
         self.mouse.x, self.mouse.y =  pg.mouse.get_pos()
         self.module.update()
-        self.current_sprites.update()
-        self.round.update()
+        self.module.components["sprites"].update()
 
     def draw_grid(self):
         for x in range(0, self.screenWidth, int(self.tilesizeWidth)):
@@ -137,9 +121,9 @@ class Main:
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
-        for sprite in self.current_sprites:
+        for sprite in self.module.components["sprites"]:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
-        for text in self.texts:
+        for text in self.module.components["texts"]:
             text.drawText()
         pg.display.flip()
 
@@ -154,7 +138,7 @@ class Main:
 
     def events(self):
         # catch all events here
-        for sprite in self.collidables:
+        for sprite in self.module.components["collidables"]:
             if pg.sprite.collide_rect(sprite, self.mouse):
                 sprite.collide()
             else:
@@ -179,11 +163,9 @@ class Main:
                 if event.key == pg.K_F3:
                     self.changeResolution(RESOLUTIONS[1])
             if event.type == pg.MOUSEBUTTONUP:
-                for sprite in self.collidables:
+                for sprite in self.module.components["collidables"]:
                     if pg.sprite.collide_rect(sprite, self.mouse):
                         sprite.clicked = True
-
-
 
     def changeResolution(self, resolution):
         print("Setting resolution to " +  str(resolution))
@@ -236,6 +218,19 @@ class Main:
 
         levelText = self.myfont.render("{}".format(text), False, (0, 0, 0))
         self.screen.blit(levelText, (x, y))
+
+    def createModules(self):
+        self.scalable = pg.sprite.Group()
+
+        self.createChar = createChar(self)
+        self.createChar.createSprites()
+        self.mainMenu = mainMenu(self)
+        self.mainMenu.createSprites()
+        self.quizGame = Game(self, self.screen)
+        self.quizGame.createSprites()
+
+    def changeModule(self, module):
+        self.module =   module
 
 class Sprite_Mouse_Location(pg.sprite.Sprite):
     def __init__(self,x,y, game):

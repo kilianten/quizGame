@@ -3,7 +3,7 @@ from settings import *
 
 class Player(pg.sprite.Sprite):
     def __init__(self, game, x, y):
-        self.groups = game.game_sprites
+        self.groups = game.quizGame.components["sprites"]
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         self.x = 0
@@ -18,7 +18,7 @@ class Player(pg.sprite.Sprite):
 class QuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.game_texts, game.game_sprites, game.scalable, game.collidable_sprites
+        self.groups = game.quizGame.components["texts"], game.quizGame.components["sprites"], game.scalable, game.quizGame.components["collidables"]
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.questionTileImage)
@@ -54,7 +54,7 @@ class QuestionTile(pg.sprite.Sprite):
 class LongQuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.game_texts, game.game_sprites, game.scalable
+        self.groups = game.quizGame.components["texts"], game.quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.longQuestionTileImage)
@@ -78,7 +78,7 @@ class LongQuestionTile(pg.sprite.Sprite):
 class SelectedTile(pg.sprite.Sprite):
     def __init__(self, game, questionTile):
         self._layer = 3
-        self.groups = game.game_sprites, game.scalable
+        self.groups = game.quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.selectedTimeImage)
@@ -89,7 +89,7 @@ class SelectedTile(pg.sprite.Sprite):
 class Shotgun(pg.sprite.Sprite):
     def __init__(self, game):
         self._layer = 3
-        self.groups = game.game_sprites, game.scalable
+        self.groups = game.quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.shotgunImage)
@@ -100,7 +100,7 @@ class Shotgun(pg.sprite.Sprite):
 class CountdownTimer(pg.sprite.Sprite):
     def __init__(self, game):
         self._layer = 3
-        self.groups = game.game_sprites, game.scalable
+        self.groups = game.quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.countdownIconImages[0])
@@ -147,7 +147,7 @@ class correctIncorrectHUD(Animation):
     def __init__(self, game, answerResult):
         super().__init__(game, game.correctImages, CORRECT_UPDATE_ANIM)
         self._layer = 3
-        self.groups = game.game_sprites, game.scalable
+        self.groups = game.quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.x = 10 * self.game.tilesizeWidth
         self.y = 2 * self.game.tilesizeHeight
@@ -160,7 +160,7 @@ class MainMenuTile(Animation):
     def __init__(self, game, x, y, text):
         super().__init__(game, game.menuTiles, MAIN_MENU_UPDATE_ANIM)
         self._layer = 2
-        self.groups = game.menu_sprites, game.scalable, game.menu_collidable_sprites, game.menu_texts
+        self.groups = game.mainMenu.components["sprites"], game.mainMenu.components["texts"], game.mainMenu.components["collidables"]
         pg.sprite.Sprite.__init__(self, self.groups)
         setImage(self, game.menuTiles[0])
         self.x = x
@@ -199,9 +199,9 @@ class MainMenuTile(Animation):
 class ArrowRightIcon(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2
-        self.groups = game.createChar_sprites, game.scalable, game.createChar_collidable_sprites
-        pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
+        self.groups = game.createChar.components["sprites"], game.scalable, game.createChar.components["collidables"]
+        pg.sprite.Sprite.__init__(self, self.groups)
         setImage(self, game.arrowRightImage)
         self.x = x
         self.y = y
