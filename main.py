@@ -9,6 +9,7 @@ from sprites import *
 from question import *
 from category import *
 from mainMenu import *
+from createCharacter import *
 from os import path
 from os import listdir
 from round import *
@@ -55,6 +56,9 @@ class Main:
         self.menuTiles = []
         for image in MENU_TILES:
             self.menuTiles.append(pg.image.load(path.join(img_folder, image)).convert_alpha())
+        self.arrowRightImage = pg.image.load(path.join(img_folder, ARROW_RIGHT)).convert_alpha()
+        self.arrowRightHoverImage = pg.image.load(path.join(img_folder, ARROW_RIGHT_HOVER)).convert_alpha()
+
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -81,22 +85,26 @@ class Main:
 
     def new(self):
         # initialize all variables and do all the setup for a new game
+        self.createChar_sprites = pg.sprite.LayeredUpdates()
         self.game_sprites = pg.sprite.LayeredUpdates()
         self.menu_sprites = pg.sprite.LayeredUpdates()
         self.current_sprites = self.menu_sprites
         self.game_texts = pg.sprite.Group()
         self.menu_texts = pg.sprite.Group()
+        self.createChar_texts = pg.sprite.Group()
         self.texts = self.menu_texts
         self.scalable = pg.sprite.Group()
         self.menu_collidable_sprites = pg.sprite.Group()
         self.collidables = self.menu_collidable_sprites
         self.collidable_sprites = pg.sprite.Group()
+        self.createChar_collidable_sprites = pg.sprite.Group()
         self.round = TriggerHappy(self, self.screen)
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
         self.player = Player(self, 0, 0)
         self.mouse = Sprite_Mouse_Location(0, 0, self)
         self.module = mainMenu(self)
+        self.createChar = createChar(self)
 
     def run(self):
         # game loop - set self.playing = False to end the game

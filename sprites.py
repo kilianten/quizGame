@@ -213,3 +213,36 @@ class MainMenuTile(pg.sprite.Sprite):
 
     def drawText(self):
         self.game.renderText(self.text, self.x, self.y, self)
+
+class ArrowRightIcon(pg.sprite.Sprite):
+    def __init__(self, game, x, y):
+        self._layer = 2
+        self.groups = game.createChar_sprites, game.scalable, game.createChar_collidable_sprites
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        self.originalImage = game.arrowRightImage
+        img = self.originalImage
+        self.image = pg.transform.scale(img, (int(img.get_width() * game.fromOriginalWidth), int(img.get_height() * game.fromOriginalHeight)))
+        self.x = x
+        self.y = y
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y
+        self.isHoveredOn = False
+        self.clicked = False
+
+    def changeImage(self, img):
+        self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+
+    def collide(self):
+        if self.isHoveredOn == False:
+            self.isHoveredOn = True
+            img = self.game.arrowRightHoverImage
+            self.originalImage = img
+            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+
+    def update(self):
+        if self.isHoveredOn == False and self.originalImage == self.game.arrowRightHoverImage:
+            img = self.game.arrowRightImage
+            self.originalImage = img
+            self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
