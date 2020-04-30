@@ -13,3 +13,9 @@ Kinshasa is the capital of which country?|Democratic Republic of the Congo|Sri L
 In 2009 outrage spread as 250,000 animals were sacrificed to the Hindu goddess Gadhimai in which country?|Nepal|Sri Lanka|Pakistan|Bangladesh|4|
 Bucharest is the capital of which city?|Romania|Hungary|India|Skopje|2|
 The country linked to which of these capital cities comes first alphabetically?|Bucharest|Lisbon|Warsaw|Bratislava|3|
+What is the capital of South Korea?|Seoul|Pyongyang|Busan|Ulsan|1|
+What is the capital of Finland?|Helsinki|Oslo|Copenhagen|Stockholm|2|
+When did Norway became fully independent from Sweden?|1905|1620|1780|1830|4|
+What is the capital of Norway?|Oslo|Stockholm|Helsinki|Copenhagen|2|
+Vilnius is the capital of which country?|Lithuania|Latvia|Romania|Andorra|2|
+Halkidiki is a popular tourist region in which Country?|Greece|Thailand|Armenia|Brazil|2|
