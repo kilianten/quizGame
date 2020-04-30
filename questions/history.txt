@@ -23,7 +23,7 @@ What was the name of the bomb dropped on Nagasaki?|Fatman|Little Boy|Big Dude|Th
 What was the name of Hitler's wife?|Eva Braun|Marie Müller|Luarie Schneider|Mia Fischer|2|
 Who was assassinated on 30 January 1948?|Mahatma Gandhi|Indira Gandhi|Franz Ferdinand|Malcolm X|2|
 What is the name of the hypothesis that the invention of artificial superintelligence will abruptly trigger runaway technological growth, resulting in unfathomable changes to human civilization?|The singularity|Big Freeze|The Technological Shadow|Brink|1|
-When did the Black Death start and end?|1342 – 1353|1442 – 1453|1542 – 1553|1142 – 1153|5|
+When did the Black Death start and end?|1342 - 1353|1442 - 1453|1542 - 1553|1142 - 1153|5|
 Which explorer became the first European to travel to Hawaii?|James Cook|Hernan Cortes|Christopher Columbus|Amerigo Vespucci|2|
 When did James cook reach Hawaii?|18th of January 1778|18th of January 1878|18th of January 1578|18th of January 1378|4|
 When did World War 1 take place?|1914-1919|1939-1945|1899-1902|1901-1910|1|
