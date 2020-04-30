@@ -126,33 +126,42 @@ class CountdownTimer(pg.sprite.Sprite):
                 self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
                 setImage(self, self.game.countdownIconImages[int(self.tenthOfTime / TRIGGER_HAPPY_QUESTION_TIME * 10) - 2])
 
-class correctIncorrectHUD(pg.sprite.Sprite):
+class Animation(pg.sprite.Sprite):
+    def __init__(self, game, images, updateRate, startImage=0, startAnimating=False):
+        self.game = game
+        self.currImage = startImage
+        self.lastUpdate = pg.time.get_ticks()
+        self.images = images
+        setImage(self, game.correctImages[startImage])
+        self.updateRate = updateRate
+        self.animating = startAnimating
+
+    def update(self):
+        if pg.time.get_ticks() - self.lastUpdate > self.updateRate:
+            self.lastUpdate = pg.time.get_ticks()
+            self.currImage += 1
+            self.currImage = self.currImage % len(self.images)
+            setImage(self, self.images[self.currImage])
+
+class correctIncorrectHUD(Animation):
     def __init__(self, game, answerResult):
+        super().__init__(game, game.correctImages, CORRECT_UPDATE_ANIM)
         self._layer = 3
         self.groups = game.game_sprites, game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
-        self.game = game
-        self.currImage = 0
-        if answerResult == "correct":
-            setImage(self, game.correctImages[self.currImage])
         self.x = 10 * self.game.tilesizeWidth
         self.y = 2 * self.game.tilesizeHeight
         self.rect = self.image.get_rect()
-        self.lastUpdate = pg.time.get_ticks()
 
     def update(self):
-        if pg.time.get_ticks() - self.lastUpdate > CORRECT_UPDATE_ANIM:
-            self.lastUpdate = pg.time.get_ticks()
-            self.currImage += 1
-            self.currImage = self.currImage % len(self.game.correctImages)
-            setImage(self, self.game.correctImages[self.currImage])
+        super().update()
 
-class MainMenuTile(pg.sprite.Sprite):
+class MainMenuTile(Animation):
     def __init__(self, game, x, y, text):
+        super().__init__(game, game.menuTiles, MAIN_MENU_UPDATE_ANIM)
         self._layer = 2
         self.groups = game.menu_sprites, game.scalable, game.menu_collidable_sprites, game.menu_texts
         pg.sprite.Sprite.__init__(self, self.groups)
-        self.game = game
         setImage(self, game.menuTiles[0])
         self.x = x
         self.y = y
@@ -163,8 +172,6 @@ class MainMenuTile(pg.sprite.Sprite):
         self.selected = None
         self.text = text
         self.clicked = False
-        self.currImage = 0
-        self.animating = False
         self.xPadding = DEFAULT_XPADDING
         self.yPadding = DEFAULT_YPADDING
 
@@ -183,13 +190,8 @@ class MainMenuTile(pg.sprite.Sprite):
         if self.isHoveredOn == False and self.selected != True:
             self.selected = False
         if self.animating == True and pg.time.get_ticks() - self.lastUpdate > MAIN_MENU_UPDATE_ANIM:
-            self.lastUpdate = pg.time.get_ticks()
-            self.currImage += 1
-            self.currImage = self.currImage % len(self.game.menuTiles)
-            setImage(self, self.game.menuTiles[self.currImage])
             if self.currImage == len(self.game.menuTiles) - 1:
                 self.animating = False
-
 
     def drawText(self):
         self.game.renderText(self.text, self.x, self.y, self)

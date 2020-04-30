@@ -15,9 +15,16 @@ class mainMenu:
             self.game.texts = self.game.game_texts
             self.game.current_sprites = self.game.game_sprites
             self.game.collidables = self.game.collidable_sprites
+            self.newGameTile.clicked = False
         if self.customChar.clicked:
+            self.game.module = self.game.createChar
             self.game.texts = self.game.createChar_texts
             self.game.current_sprites = self.game.createChar_sprites
             self.game.collidables = self.game.createChar_collidable_sprites
+            self.customChar.clicked = False
         if self.exitGameTile.clicked:
+            self.game.quit()
+
+    def checkKeyDownEvent(self, event):
+        if event.key == pg.K_ESCAPE:
             self.game.quit()

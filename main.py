@@ -103,7 +103,8 @@ class Main:
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
         self.player = Player(self, 0, 0)
         self.mouse = Sprite_Mouse_Location(0, 0, self)
-        self.module = mainMenu(self)
+        self.mainMenu = mainMenu(self)
+        self.module = self.mainMenu
         self.createChar = createChar(self)
 
     def run(self):
@@ -162,8 +163,7 @@ class Main:
             if event.type == pg.QUIT:
                 self.quit()
             if event.type == pg.KEYDOWN:
-                if event.key == pg.K_ESCAPE:
-                    self.quit()
+                self.module.checkKeyDownEvent(event)
                 if event.key == pg.K_F1:
                     if (SETTINGS["ISFULLSCREEN"] == True):
                         #if fullscreen set to window
@@ -182,6 +182,7 @@ class Main:
                 for sprite in self.collidables:
                     if pg.sprite.collide_rect(sprite, self.mouse):
                         sprite.clicked = True
+
 
 
     def changeResolution(self, resolution):
