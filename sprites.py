@@ -24,9 +24,7 @@ class QuestionTile(pg.sprite.Sprite):
         setImage(self, game.questionTileImage)
         self.x = x
         self.y = y
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
+        setRect(self)
         self.isHoveredOn = False
         self.selected = None
         self.text = None
@@ -60,9 +58,7 @@ class LongQuestionTile(pg.sprite.Sprite):
         setImage(self, game.longQuestionTileImage)
         self.x = x
         self.y = y
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
+        setRect(self)
         self.text = None
         self.xPadding = DEFAULT_XPADDING
         self.yPadding = DEFAULT_YPADDING
@@ -165,9 +161,7 @@ class MainMenuTile(Animation):
         setImage(self, game.menuTiles[0])
         self.x = x
         self.y = y
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
+        setRect(self)
         self.isHoveredOn = False
         self.selected = None
         self.text = text
@@ -205,9 +199,7 @@ class ArrowRightIcon(pg.sprite.Sprite):
         setImage(self, game.arrowRightImage)
         self.x = x
         self.y = y
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
+        setRect(self)
         self.isHoveredOn = False
         self.clicked = False
 
@@ -226,3 +218,8 @@ class ArrowRightIcon(pg.sprite.Sprite):
 def setImage(object, image):
     object.originalImage = image
     object.image = pg.transform.scale(image, (int(image.get_width() * object.game.fromOriginalWidth), int(image.get_height() * object.game.fromOriginalHeight)))
+
+def setRect(object):
+    object.rect = object.image.get_rect()
+    object.rect.x = object.x
+    object.rect.y = object.y
