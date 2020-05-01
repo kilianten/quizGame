@@ -19,3 +19,12 @@ When did Norway became fully independent from Sweden?|1905|1620|1780|1830|4|
 What is the capital of Norway?|Oslo|Stockholm|Helsinki|Copenhagen|2|
 Vilnius is the capital of which country?|Lithuania|Latvia|Romania|Andorra|2|
 Halkidiki is a popular tourist region in which Country?|Greece|Thailand|Armenia|Brazil|2|
+What is the largest island in the world?|Greenlands|New Guinea|Borneo|Madagascar|2|
+What is the second largest island in the world?|New Guinea|Sumantra|Great Britain|Victoria|3|
+What of these islands is the smallest?|Great Britain|Madagascar|New Guinea|Greenlands|3|
+What is the largest island in Asia?|Borneo|Honshu|Sumatra|Baffin|4|
+Which of these country does not have territory on the island of Borneo?|The Philippines|Brunei|Malaysia|Indonesia|4|
+The fifth largest island in the world, where is Baffin Island located?|Canada|United States|Guyana|Australia|3|
+The sixth largest island in the world, where is Honshu Island located?|Japan|China|Malaysia|Papa New Guinea|3|
+What is the capital of Mali?|Bamako|Conakry|Niamey|Dakar|4|
+What is the capital of Nepal?|Kathmandu|Islamabad|Dili|Pokhara|3|

@@ -5,3 +5,6 @@ Vitruvian Man was painted by which artist?|Leonardo da Vinci|Vincent van Gogh|Pa
 Guernica was painted by which artist?|Pablo Picasso|Leonardo da Vinci|Raphael|Vincent van Gogh|2|
 In 1917 what did Marcel Duchamp purchase, declare it art and named it Fountain?|A unrinal|A bird feeder|A pile of bibles|A hose|4|
 'That 2,000-Yard Stare' by Tom Lea depicts a nameless Marine at which battle?|The Battle of Peleliu|The Battle of Tarawa|The Battle of Guam|The battle of Iwo Jima|5|
+"Silent Night" was originally written in 1818, in what language?|German|English|Italian|Dutch|3|
+Who wrote the original German lyrics to "Silent Night"?|Joseph Mohr|Ronald Leiber|Woldemar Kadelburg|Jonathan Suhren|5|
+In what year was Superman first Published?|1938|1903|1920|1879|4|
