@@ -3,6 +3,10 @@ from settings import *
 from module import *
 from random import choice
 
+class GameMode:
+    def __init__(self):
+        pass
+
 class Game(Module):
     def __init__(self, game, screen):
         super().__init__(game)
@@ -103,3 +107,4 @@ class Game(Module):
         self.topLeft = QuestionTile(self.game, self.game.tilesizeWidth * 2, self.game.tilesizeHeight * 16)
         self.topRight = QuestionTile(self.game, self.game.tilesizeWidth * 21, self.game.tilesizeHeight * 16)
         self.tiles = [self.bottomLeft, self.bottomRight, self.topLeft, self.topRight]
+        self.timer = CountdownTimer(self.game)

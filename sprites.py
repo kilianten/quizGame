@@ -156,7 +156,7 @@ class MainMenuTile(Animation):
     def __init__(self, game, x, y, text):
         super().__init__(game, game.menuTiles, MAIN_MENU_UPDATE_ANIM)
         self._layer = 2
-        self.groups = game.mainMenu.components["sprites"], game.mainMenu.components["texts"], game.mainMenu.components["collidables"]
+        self.groups = game.mainMenu.components["sprites"], game.mainMenu.components["texts"], game.mainMenu.components["collidables"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         setImage(self, game.menuTiles[0])
         self.x = x

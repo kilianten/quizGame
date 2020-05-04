@@ -28,3 +28,9 @@ The fifth largest island in the world, where is Baffin Island located?|Canada|Un
 The sixth largest island in the world, where is Honshu Island located?|Japan|China|Malaysia|Papa New Guinea|3|
 What is the capital of Mali?|Bamako|Conakry|Niamey|Dakar|4|
 What is the capital of Nepal?|Kathmandu|Islamabad|Dili|Pokhara|3|
+Which of these is not a capital of South Africa?|Johannesburg|Cape Town|Bloemfontein|Pretoria|3|
+What is the capital of Myanmar?|Naypyitaw|Kotte|Taipei|Mandalay|4|
+Which country was formerly named Burma?|Myanmar|Nepal|Vietnam|Laos|2|
+What city was previously named Rangoon?|Yangon|Kathmandu|Bangkok|Dawei|5|
+In the 16th century, tulips were brought to Holland from which country?|Turkey|Norway|Philippines|India|3|
+What is the capital of Nigeria?|Abuja|Niamey|Lagos|Warri|3|
