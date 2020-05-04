@@ -10,6 +10,7 @@ from question import *
 from category import *
 from mainMenu import *
 from createCharacter import *
+from options import *
 from os import path
 from os import listdir
 from game import *
@@ -85,6 +86,7 @@ class Main:
 
     def new(self):
         # initialize all variables and do all the setup for a new game
+        self.options = Options()
         self.createModules()
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
@@ -226,7 +228,7 @@ class Main:
         self.createChar.createSprites()
         self.mainMenu = mainMenu(self)
         self.mainMenu.createSprites()
-        self.quizGame = GameMode(self, self.screen)
+        self.quizGame = StandardGameMode(self, self.screen, self.options.numberOfAIPlayers, self.options.roundsEnabled)
         self.quizGame.createSprites()
 
     def changeModule(self, module):

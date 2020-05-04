@@ -106,9 +106,10 @@ class Game(Module):
         self.tiles = [self.bottomLeft, self.bottomRight, self.topLeft, self.topRight]
         self.timer = CountdownTimer(self.game)
 
-class GameMode(Game):
-    def __init__(self, game, screen):
+class StandardGameMode(Game):
+    def __init__(self, game, screen, numberOfAIPlayers, roundsEnabled):
         super().__init__(game, screen)
+        self.numberOfAIPlayers = numberOfAIPlayers
 
 class Round:
     def __init__(self, game):
