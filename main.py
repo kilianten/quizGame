@@ -226,7 +226,7 @@ class Main:
         self.createChar.createSprites()
         self.mainMenu = mainMenu(self)
         self.mainMenu.createSprites()
-        self.quizGame = Game(self, self.screen)
+        self.quizGame = GameMode(self, self.screen)
         self.quizGame.createSprites()
 
     def changeModule(self, module):
