@@ -113,17 +113,8 @@ class Game(Module):
         return person
 
     def createPerson(self, male):
-        if(male):
-            name = choice(MALE_NAMES)
-            hair, hairImage = choice(list(MALE_HAIRSTYLES.items()))
-            if(hair in self.game.loadedPeopleImages):
-                hair = self.game.loadedPeopleImages[hair]
-            else:
-                image = self.game.loadImage(hairImage)
-                self.game.loadedPeopleImages[hair] = image
-                hair = image
-        person = Person(name, self.game, self)
-        person.setHair(hair)
+        person = Person(self.game, male)
+        person.makeRandom()
         return person
 
 class StandardGameMode(Game):
@@ -150,10 +141,26 @@ class RoundTriggerHappy(Round):
         super().__init__(game, contestants)
 
 class Person:
-    def __init__(self, name, game, quizGame):
-        self.name = name
+    def __init__(self, game, male):
         self.game = game
-        self.quizGame = quizGame
+        self.isMale = male
+
+    def makeRandom(self):
+        self.name = choice(MALE_NAMES if self.isMale else None)
+        self.hair = self.getRandomHair()
+
+    def getRandomHair(self):
+        hairStyles = MALE_HAIRSTYLES if self.isMale else None
+        print(hairStyles)
+        hair, hairImage = choice(list(hairStyles.items()))
+        print(hair)
+        if(hair in self.game.loadedPeopleImages):
+            hair = self.game.loadedPeopleImages[hair]
+        else:
+            image = self.game.loadImage(hairImage)
+            self.game.loadedPeopleImages[hair] = image
+            hair = image
+        self.setHair(hair)
 
     def setHair(self, hair):
-        self.hair = BodyPart(self.game, hair, self.quizGame)
+        self.hair = BodyPart(self.game, hair)

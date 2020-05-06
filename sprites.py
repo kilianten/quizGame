@@ -225,11 +225,11 @@ def setRect(object):
     object.rect.y = object.y
 
 class BodyPart(pg.sprite.Sprite):
-    def __init__(self, game, image, quizGame):
+    def __init__(self, game, image):
         self._layer = 2
         self.game = game
         self.image = image
-        self.groups = game.scalable, quizGame.components["sprites"]
+        self.groups = game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.x = 13 * self.game.tilesizeWidth
         self.y = 0
