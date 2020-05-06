@@ -225,8 +225,8 @@ def setRect(object):
     object.rect.y = object.y
 
 class BodyPart(pg.sprite.Sprite):
-    def __init__(self, game, image):
-        self._layer = 2
+    def __init__(self, game, image, layer):
+        self._layer = layer
         self.game = game
         self.image = image
         self.groups = game.scalable

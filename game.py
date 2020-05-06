@@ -108,12 +108,8 @@ class Game(Module):
 
     def createRandomCharacter(self, male=None):
         male = choice([True, False])
-        male = True #TBR
-        person = self.createPerson(male)
-        return person
-
-    def createPerson(self, male):
-        person = Person(self.game, male)
+        male = True #TBC
+        person = Person(self.game, male, self)
         person.makeRandom()
         return person
 
@@ -139,28 +135,37 @@ class Round:
 class RoundTriggerHappy(Round):
     def __init__(self, game, contestants):
         super().__init__(game, contestants)
+        startingPlayer = choice(contestants)
+        self.currentPlayer = startingPlayer
+        startingPlayer.setToCurrentPlayer()
 
 class Person:
-    def __init__(self, game, male):
+    def __init__(self, game, male, quizGame):
         self.game = game
         self.isMale = male
+        self.quizGame = quizGame
 
     def makeRandom(self):
         self.name = choice(MALE_NAMES if self.isMale else None)
-        self.hair = self.getRandomHair()
+        self.getRandomHair()
+        headImage = self.game.loadImage(MALE_HEADS["01"])  #TBC
+        self.head = BodyPart(self.game, headImage, 2)
+        self.body = [self.hair, self.head]
 
     def getRandomHair(self):
         hairStyles = MALE_HAIRSTYLES if self.isMale else None
-        print(hairStyles)
         hair, hairImage = choice(list(hairStyles.items()))
-        print(hair)
-        if(hair in self.game.loadedPeopleImages):
-            hair = self.game.loadedPeopleImages[hair]
-        else:
-            image = self.game.loadImage(hairImage)
-            self.game.loadedPeopleImages[hair] = image
-            hair = image
-        self.setHair(hair)
+        hair = self.checkIsImageAlreadyLoaded(hair, hairImage)
+        self.hair = BodyPart(self.game, hair, 3)
 
-    def setHair(self, hair):
-        self.hair = BodyPart(self.game, hair)
+    def checkIsImageAlreadyLoaded(self, imageName, image):
+        if(imageName in self.game.loadedPeopleImages):
+            image = self.game.loadedPeopleImages[imageName]
+        else:
+            image = self.game.loadImage(image)
+            self.game.loadedPeopleImages[imageName] = image
+        return image
+
+    def setToCurrentPlayer(self):
+        for bodyPart in self.body:
+            self.quizGame.components["sprites"].add(bodyPart)

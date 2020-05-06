@@ -64,7 +64,7 @@ DEFAULT_YPADDING = 15
 
 #CHARACTERS
 MALE_HEADS = {"01":"head0002.png"}
-MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Test":"hair0002.png"}
+MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png"}
 
 #rounds
 
