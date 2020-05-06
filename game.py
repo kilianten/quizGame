@@ -1,7 +1,7 @@
 from sprites import *
 from settings import *
 from module import *
-from random import choice
+from random import choice, randint
 
 
 class Game(Module):
@@ -106,11 +106,54 @@ class Game(Module):
         self.tiles = [self.bottomLeft, self.bottomRight, self.topLeft, self.topRight]
         self.timer = CountdownTimer(self.game)
 
+    def createRandomCharacter(self, male=None):
+        male = choice([True, False])
+        male = True #TBR
+        person = self.createPerson(male)
+        return person
+
+    def createPerson(self, male):
+        if(male):
+            name = choice(MALE_NAMES)
+            hair, hairImage = choice(list(MALE_HAIRSTYLES.items()))
+            if(hair in self.game.loadedPeopleImages):
+                hair = self.game.loadedPeopleImages[hair]
+            else:
+                image = self.game.loadImage(hairImage)
+                self.game.loadedPeopleImages[hair] = image
+                hair = image
+        person = Person(name, self.game, self)
+        person.setHair(hair)
+        return person
+
 class StandardGameMode(Game):
-    def __init__(self, game, screen, numberOfAIPlayers, roundsEnabled):
+    def __init__(self, game, screen, numberOfBots, roundsEnabled, customCharacters):
         super().__init__(game, screen)
-        self.numberOfAIPlayers = numberOfAIPlayers
+        self.numberOfBots = numberOfBots
+        self.numberOfPlayersAlive = numberOfBots + 1
+        self.contestants = customCharacters
+        numberOfBotsToCreate = numberOfBots - len(self.contestants)
+        while(numberOfBotsToCreate > 0):
+            self.contestants.append(self.createRandomCharacter())
+            numberOfBotsToCreate -= 1
+        round = choice(self.game.options.roundsEnabled)
+        if(round == "Trigger Happy"):
+            self.round = RoundTriggerHappy(self.game, self.contestants)
 
 class Round:
-    def __init__(self, game):
+    def __init__(self, game, contestants):
         self.game = game
+        self.contestants = contestants
+
+class RoundTriggerHappy(Round):
+    def __init__(self, game, contestants):
+        super().__init__(game, contestants)
+
+class Person:
+    def __init__(self, name, game, quizGame):
+        self.name = name
+        self.game = game
+        self.quizGame = quizGame
+
+    def setHair(self, hair):
+        self.hair = BodyPart(self.game, hair, self.quizGame)

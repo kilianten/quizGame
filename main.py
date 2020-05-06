@@ -42,6 +42,7 @@ class Main:
 
     def loadImages(self):
         img_folder = path.join(self.game_folder, 'images')
+        self.img_folder = path.join(self.game_folder, 'images')
         self.questionTileImage = pg.image.load(path.join(img_folder, QUESTION_TILE)).convert_alpha()
         self.selectedTimeImage = pg.image.load(path.join(img_folder, SELECTED_TILE_IMAGE)).convert_alpha()
         self.longQuestionTileImage = pg.image.load(path.join(img_folder, LONG_QUESTION_TILE)).convert_alpha()
@@ -60,6 +61,8 @@ class Main:
         self.arrowRightImage = pg.image.load(path.join(img_folder, ARROW_RIGHT)).convert_alpha()
         self.arrowRightHoverImage = pg.image.load(path.join(img_folder, ARROW_RIGHT_HOVER)).convert_alpha()
 
+    def loadImage(self, image):
+         return pg.image.load(path.join(self.img_folder, image)).convert_alpha()
 
     def testViewAllQuestions(self):
         for category in self.categories.values():
@@ -87,6 +90,7 @@ class Main:
     def new(self):
         # initialize all variables and do all the setup for a new game
         self.options = Options()
+        self.loadedPeopleImages = {}
         self.createModules()
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
@@ -223,12 +227,11 @@ class Main:
 
     def createModules(self):
         self.scalable = pg.sprite.Group()
-
         self.createChar = createChar(self)
         self.createChar.createSprites()
         self.mainMenu = mainMenu(self)
         self.mainMenu.createSprites()
-        self.quizGame = StandardGameMode(self, self.screen, self.options.numberOfAIPlayers, self.options.roundsEnabled)
+        self.quizGame = StandardGameMode(self, self.screen, self.options.numberOfBots, self.options.roundsEnabled, self.options.customerCharacters)
         self.quizGame.createSprites()
 
     def changeModule(self, module):

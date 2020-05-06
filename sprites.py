@@ -223,3 +223,18 @@ def setRect(object):
     object.rect = object.image.get_rect()
     object.rect.x = object.x
     object.rect.y = object.y
+
+class BodyPart(pg.sprite.Sprite):
+    def __init__(self, game, image, quizGame):
+        self._layer = 2
+        self.game = game
+        self.image = image
+        self.groups = game.scalable, quizGame.components["sprites"]
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.x = 13 * self.game.tilesizeWidth
+        self.y = 0
+        setImage(self, image)
+        setRect(self)
+
+    def update(self):
+        pass

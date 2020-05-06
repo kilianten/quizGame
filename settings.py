@@ -61,3 +61,12 @@ MAIN_MENU_UPDATE_ANIM = 17
 
 DEFAULT_XPADDING = 15
 DEFAULT_YPADDING = 15
+
+#CHARACTERS
+MALE_HEADS = {"01":"head0002.png"}
+MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Test":"hair0002.png"}
+
+#rounds
+
+#names
+MALE_NAMES = ["Kilian", "Thomas", "Ian", "Stephen", "Paul", "Sean", "Johnny", "Paddy", "Patrick", "Thom", "Ros", "Brendan", "Rick", "Richard", "Carl", "Karl", "Brian", "David", "Dave", "Peter", "Mark", "Greg", "Owen", "Eoin", "Fergus", "Niall", "Jack", "Jake", "Darragh", "Oliver", "Bill"]
