@@ -94,7 +94,6 @@ class Main:
         self.createModules()
         self.screenWidth = 1280   # 16 * 64 or 32 * 32 or 64 * 16
         self.screenHeight = 768  # 16 * 48 or 32 * 24 or 64 * 12
-        self.player = Player(self, 0, 0)
         self.mouse = Sprite_Mouse_Location(0, 0, self)
         self.module = self.mainMenu
 
@@ -231,8 +230,6 @@ class Main:
         self.createChar.createSprites()
         self.mainMenu = mainMenu(self)
         self.mainMenu.createSprites()
-        self.quizGame = StandardGameMode(self, self.screen, self.options.numberOfBots, self.options.roundsEnabled, self.options.customerCharacters)
-        self.quizGame.createSprites()
 
     def changeModule(self, module):
         self.module =   module

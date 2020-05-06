@@ -118,11 +118,12 @@ class StandardGameMode(Game):
         super().__init__(game, screen)
         self.numberOfBots = numberOfBots
         self.numberOfPlayersAlive = numberOfBots + 1
-        self.contestants = customCharacters
+        self.contestants = list(customCharacters)
         numberOfBotsToCreate = numberOfBots - len(self.contestants)
-        while(numberOfBotsToCreate > 0):
+        test = 8
+        while(test > 0):
             self.contestants.append(self.createRandomCharacter())
-            numberOfBotsToCreate -= 1
+            test -= 1
         round = choice(self.game.options.roundsEnabled)
         if(round == "Trigger Happy"):
             self.round = RoundTriggerHappy(self.game, self.contestants)
@@ -148,15 +149,27 @@ class Person:
     def makeRandom(self):
         self.name = choice(MALE_NAMES if self.isMale else None)
         self.getRandomHair()
+        self.getRandomEyes()
+        self.getRandomNose()
         headImage = self.game.loadImage(MALE_HEADS["01"])  #TBC
         self.head = BodyPart(self.game, headImage, 2)
-        self.body = [self.hair, self.head]
+        self.body = [self.hair, self.head, self.eyes, self.nose]
 
     def getRandomHair(self):
         hairStyles = MALE_HAIRSTYLES if self.isMale else None
         hair, hairImage = choice(list(hairStyles.items()))
         hair = self.checkIsImageAlreadyLoaded(hair, hairImage)
         self.hair = BodyPart(self.game, hair, 3)
+
+    def getRandomEyes(self):
+        eyes, eyeImage = choice(list(EYES.items()))
+        eyes = self.checkIsImageAlreadyLoaded(eyes, eyeImage)
+        self.eyes = BodyPart(self.game, eyes, 3)
+
+    def getRandomNose(self):
+        nose, noseImage = choice(list(NOSES.items()))
+        nose = self.checkIsImageAlreadyLoaded(nose, noseImage)
+        self.nose = BodyPart(self.game, nose, 3)
 
     def checkIsImageAlreadyLoaded(self, imageName, image):
         if(imageName in self.game.loadedPeopleImages):

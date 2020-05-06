@@ -1,20 +1,6 @@
 import pygame as pg
 from settings import *
 
-class Player(pg.sprite.Sprite):
-    def __init__(self, game, x, y):
-        self.groups = game.quizGame.components["sprites"]
-        pg.sprite.Sprite.__init__(self, self.groups)
-        self.game = game
-        self.x = 0
-        self.y = 0
-        self.image = pg.Surface((TILESIZE, TILESIZE))
-        self.image.fill(YELLOW)
-        self.rect = self.image.get_rect()
-
-    def update(self):
-        pass
-
 class QuestionTile(pg.sprite.Sprite):
     def __init__(self, game, x, y):
         self._layer = 2

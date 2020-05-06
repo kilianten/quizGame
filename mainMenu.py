@@ -1,6 +1,7 @@
 from sprites import MainMenuTile
 from settings import *
 from module import *
+from game import StandardGameMode
 
 class mainMenu(Module):
     def __init__(self, game):
@@ -8,6 +9,12 @@ class mainMenu(Module):
 
     def update(self):
         if self.newGameTile.clicked:
+            try:
+                self.game.quizGame.kill()
+            except:
+                pass
+            self.game.quizGame = StandardGameMode(self.game, self.game.screen, self.game.options.numberOfBots, self.game.options.roundsEnabled, self.game.options.customerCharacters)
+            self.game.quizGame.createSprites()
             self.game.changeModule(self.game.quizGame)
             self.newGameTile.clicked = False
         if self.customChar.clicked:
