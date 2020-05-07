@@ -32,3 +32,8 @@ In 1989, the  communist politician Nicolae Ceausescu was executed. Which country
 On average, how many people died each day between 1939 and 1945 as a consequence of global conflict?|27,000|3,500|9,700|700|3|
 Operation Barbarossa took place during which war?|World War 2|World War 1|Vietnam War|Korean War|3|
 What was the code name for the Axis invasion of the Soviet Union in 1941?|Operation Barbarossa|Operation Yellow Snow|Operation Thunder|Operation Chimera|3|
+Where did Hitler and Eva Braun meet?|Munich|FrankFurt|Paris|Moscow|3|
+What age was Eva Braun when she met Hitler?|17|27|37|47|3|
+What was the name of Hitlers wife?|Eva Braun|Eva Goebbels|Eva Stalin|Eva Himmler|1|
+When did Eva Anna Paula die?|1945|1903|1965|1919|1|
+During World War 2, Project Orcon, led by B.F. Skinner was an attempt to develop guided bombs controlled by what?|Pigeons|Lasers|Heat|Parachutes|3|
