@@ -83,8 +83,12 @@ class Main:
                 self.categories[categoryName] = newCategory
                 f = open(path.join(questionsPath, file),'r')
                 for question in f:
-                    newCategory.addQuestionToCategory(question)
-                    self.numberOfQuestions += 1
+                    try:
+                        newCategory.addQuestionToCategory(question)
+                        self.numberOfQuestions += 1
+                    except:
+                        print("Error with question:{}".format(question))
+                        
         print("NUMBER OF QUESTIONS:{}".format(self.numberOfQuestions))
 
     def new(self):
