@@ -34,6 +34,7 @@ DIFFICULTYLEVELS = ['1', '2', '3', '4', '5']
 
 RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
+TRIGGER_HAPPY_STARTING_DEATH_CHANCE = 1000 #1 in a thousand
 TRIGGER_HAPPY_QUESTION_TIME = 15 #MILIS 20 seconds
 TIME_BEFORE_NEW_QUESTION = 3
 CORRECT_UPDATE_ANIM = 100 #millisecs
@@ -70,8 +71,6 @@ MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png", "Posh":"hair
 
 EYES = {"Alert":"eyes0001.png"}
 NOSES = {"The Pointer":"nose0001.png", "The ShadowMaker":"nose0002.png"}
-
-#rounds
 
 #names
 MALE_NAMES = ["Kilian", "Thomas", "Ian", "Stephen", "Paul", "Sean", "Johnny", "Paddy", "Patrick", "Thom", "Ros", "Brendan", "Rick", "Richard", "Carl", "Karl", "Brian", "David", "Dave", "Peter", "Mark", "Greg", "Owen", "Eoin", "Fergus", "Niall", "Jack", "Jake", "Darragh", "Oliver", "Bill"]

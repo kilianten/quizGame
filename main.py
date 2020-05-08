@@ -88,7 +88,7 @@ class Main:
                         self.numberOfQuestions += 1
                     except:
                         print("Error with question:{}".format(question))
-                        
+
         print("NUMBER OF QUESTIONS:{}".format(self.numberOfQuestions))
 
     def new(self):
@@ -130,6 +130,7 @@ class Main:
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
+        self.module.draw()
         for sprite in self.module.components["sprites"]:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
         for text in self.module.components["texts"]:
@@ -212,7 +213,6 @@ class Main:
         self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
 
     def renderText(self, text, x, y, object=None):
-        levelText = self.myfont.render("{}".format(text), False, (0, 0, 0))
         if(object):
             objectWidth = object.rect.width
             textSize = self.myfont.size(text)

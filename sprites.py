@@ -2,9 +2,9 @@ import pygame as pg
 from settings import *
 
 class QuestionTile(pg.sprite.Sprite):
-    def __init__(self, game, x, y):
+    def __init__(self, game, x, y, quizGame):
         self._layer = 2
-        self.groups = game.quizGame.components["texts"], game.quizGame.components["sprites"], game.scalable, game.quizGame.components["collidables"]
+        self.groups = quizGame.components["texts"], quizGame.components["sprites"], game.scalable, quizGame.components["collidables"]
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.questionTileImage)
@@ -36,9 +36,9 @@ class QuestionTile(pg.sprite.Sprite):
             pass
 
 class LongQuestionTile(pg.sprite.Sprite):
-    def __init__(self, game, x, y):
+    def __init__(self, game, x, y, quizGame):
         self._layer = 2
-        self.groups = game.quizGame.components["texts"], game.quizGame.components["sprites"], game.scalable
+        self.groups = quizGame.components["texts"], quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.longQuestionTileImage)
@@ -69,9 +69,9 @@ class SelectedTile(pg.sprite.Sprite):
         self.rect = self.image.get_rect()
 
 class Shotgun(pg.sprite.Sprite):
-    def __init__(self, game):
+    def __init__(self, game, quizGame):
         self._layer = 3
-        self.groups = game.quizGame.components["sprites"], game.scalable
+        self.groups = quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.shotgunImage)
@@ -80,9 +80,9 @@ class Shotgun(pg.sprite.Sprite):
         self.rect = self.image.get_rect()
 
 class CountdownTimer(pg.sprite.Sprite):
-    def __init__(self, game):
+    def __init__(self, game, quizGame):
         self._layer = 3
-        self.groups = game.quizGame.components["sprites"], game.scalable
+        self.groups = quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
         setImage(self, game.countdownIconImages[0])
