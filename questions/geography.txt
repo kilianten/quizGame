@@ -34,3 +34,4 @@ Which country was formerly named Burma?|Myanmar|Nepal|Vietnam|Laos|2|
 What city was previously named Rangoon?|Yangon|Kathmandu|Bangkok|Dawei|5|
 In the 16th century, tulips were brought to Holland from which country?|Turkey|Norway|Philippines|India|3|
 What is the capital of Nigeria?|Abuja|Niamey|Lagos|Warri|3|
+Mount Everest is located in China and which other country?|Nepal|India|Pakistan|Mongolia|2|

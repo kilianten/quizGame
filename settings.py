@@ -9,6 +9,8 @@ GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 
+HAIR_COLORS = [(190, 123, 22), (170,136,102),(83, 61, 53), (99, 79, 79)]
+
 # game settings
 WIDTH = 1280   # 16 * 64 or 32 * 32 or 64 * 16
 HEIGHT = 768  # 16 * 48 or 32 * 24 or 64 * 12
@@ -64,7 +66,7 @@ DEFAULT_YPADDING = 15
 
 #CHARACTERS
 MALE_HEADS = {"01":"head0002.png"}
-MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png", "Posh":"hair0003.png"}
+MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png", "Posh":"hair0003.png", "Messy":"hair0004.png"}
 
 EYES = {"Alert":"eyes0001.png"}
 NOSES = {"The Pointer":"nose0001.png", "The ShadowMaker":"nose0002.png"}

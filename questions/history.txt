@@ -37,3 +37,7 @@ What age was Eva Braun when she met Hitler?|17|27|37|47|3|
 What was the name of Hitlers wife?|Eva Braun|Eva Goebbels|Eva Stalin|Eva Himmler|1|
 When did Eva Anna Paula die?|1945|1903|1965|1919|1|
 During World War 2, Project Orcon, led by B.F. Skinner was an attempt to develop guided bombs controlled by what?|Pigeons|Lasers|Heat|Parachutes|3|
+Where was Socrates born?|Athens|Rome|Sicily|Eretia|2|
+When was Socrates born?|470BC|240BC|330BC|50BC|4|
+When did Socrates die?|399BC|299BC|199BC|99BC|4|
+What age was Socrates die?|71|62|54|40|3|

@@ -159,7 +159,9 @@ class Person:
         hairStyles = MALE_HAIRSTYLES if self.isMale else None
         hair, hairImage = choice(list(hairStyles.items()))
         hair = self.checkIsImageAlreadyLoaded(hair, hairImage)
-        self.hair = BodyPart(self.game, hair, 3)
+        tintImage = hair.convert_alpha()
+        tintImage.fill(choice(HAIR_COLORS), special_flags=pg.BLEND_ADD)
+        self.hair = BodyPart(self.game, tintImage, 3)
 
     def getRandomEyes(self):
         eyes, eyeImage = choice(list(EYES.items()))
