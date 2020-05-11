@@ -85,9 +85,13 @@ class RoundTriggerHappy(Round):
         super().wrongAnswer()
         playerIsDead = self.isPlayerDead()
         if playerIsDead:
-            print("U DEAD")
+            self.killPlayer()
         else:
-            print("Still ALIVE")
+            pass
+
+    def killPlayer(self):
+        self.shotgun.rotationDegree = 0
+        self.shotgun.rotating = True
 
     def isPlayerDead(self):
         self.chanceOfDeath
@@ -154,6 +158,7 @@ class RoundTriggerHappy(Round):
         if pg.time.get_ticks() - self.lastUpdate > RESET_TIME:
             self.lastUpdate = 0
             self.generateQuestion()
+            self.changeToNextPlayer()
 
     def update(self):
         if not self.answerSelected:
@@ -176,9 +181,6 @@ class RoundTriggerHappy(Round):
                     tile.changeImage(newImage)
                     self.wrongAnswer()
                 tile.clicked = False
-                self.changeToNextPlayer()
-                print(self.currentPlayer.name)
-
 
 class Person:
     def __init__(self, game, male, quizGame):
@@ -207,6 +209,7 @@ class Person:
         eyes, eyeImage = choice(list(EYES.items()))
         eyes = self.checkIsImageAlreadyLoaded(eyes, eyeImage)
         self.eyes = BodyPart(self.game, eyes, 3)
+
 
     def getRandomNose(self):
         nose, noseImage = choice(list(NOSES.items()))

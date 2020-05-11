@@ -36,6 +36,8 @@ RESOLUTIONS = [(1920, 1080), (1280, 768)]
 
 TRIGGER_HAPPY_STARTING_DEATH_CHANCE = 1000 #1 in a thousand
 TRIGGER_HAPPY_QUESTION_TIME = 15 #MILIS 20 seconds
+SHOTGUN_ROTATE_SPEED = .3
+SHOTGUN_ROTATE_ANGLE = 15
 TIME_BEFORE_NEW_QUESTION = 3
 CORRECT_UPDATE_ANIM = 100 #millisecs
 RESET_TIME = 3000 # millisecs
@@ -67,7 +69,7 @@ DEFAULT_YPADDING = 15
 
 #CHARACTERS
 MALE_HEADS = {"01":"head0002.png"}
-MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png", "Posh":"hair0003.png", "Messy":"hair0004.png"}
+MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png", "Posh":"hair0003.png", "Messy":"hair0004.png", "Side Shave":"hair0005.png"}
 
 EYES = {"Alert":"eyes0001.png"}
 NOSES = {"The Pointer":"nose0001.png", "The ShadowMaker":"nose0002.png"}

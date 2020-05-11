@@ -78,6 +78,18 @@ class Shotgun(pg.sprite.Sprite):
         self.x = 2 * self.game.tilesizeWidth
         self.y = 8 * self.game.tilesizeHeight
         self.rect = self.image.get_rect()
+        self.rotating = False
+
+    def changeImage(self, img):
+        self.image = pg.transform.scale(img, (int(img.get_width() * self.game.fromOriginalWidth), int(img.get_height() * self.game.fromOriginalHeight)))
+
+    def update(self):
+        if self.rotating:
+            if self.rotationDegree < SHOTGUN_ROTATE_ANGLE:
+                self.rotationDegree += 1
+                self.changeImage(pg.transform.rotate(self.originalImage, self.rotationDegree))
+            else:
+                self.rotating = False
 
 class CountdownTimer(pg.sprite.Sprite):
     def __init__(self, game, quizGame):
