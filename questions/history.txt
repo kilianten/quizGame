@@ -41,3 +41,4 @@ Where was Socrates born?|Athens|Rome|Sicily|Eretia|2|
 When was Socrates born?|470BC|240BC|330BC|50BC|4|
 When did Socrates die?|399BC|299BC|199BC|99BC|4|
 What age was Socrates die?|71|62|54|40|3|
+Ouroboros is an acnient symbol depicting a serpent or dragon eating what?|Its tail|A globe|An hourglass|An eclipse|1|
