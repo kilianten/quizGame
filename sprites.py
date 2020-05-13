@@ -74,6 +74,7 @@ class Shotgun(pg.sprite.Sprite):
         self.groups = quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.game = game
+        self.quizGame = quizGame
         setImage(self, game.shotgunImage)
         self.x = 2 * self.game.tilesizeWidth
         self.y = 8 * self.game.tilesizeHeight
@@ -90,6 +91,7 @@ class Shotgun(pg.sprite.Sprite):
                 self.changeImage(pg.transform.rotate(self.originalImage, self.rotationDegree))
             else:
                 self.rotating = False
+                self.quizGame.round.currentPlayer.nose.image = self.game.shotFace
 
 class CountdownTimer(pg.sprite.Sprite):
     def __init__(self, game, quizGame):

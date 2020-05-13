@@ -60,6 +60,7 @@ class Main:
             self.menuTiles.append(pg.image.load(path.join(img_folder, image)).convert_alpha())
         self.arrowRightImage = pg.image.load(path.join(img_folder, ARROW_RIGHT)).convert_alpha()
         self.arrowRightHoverImage = pg.image.load(path.join(img_folder, ARROW_RIGHT_HOVER)).convert_alpha()
+        self.shotFace = pg.image.load(path.join(img_folder, SHOTFACE_IMAGE)).convert_alpha()
 
     def loadImage(self, image):
          return pg.image.load(path.join(self.img_folder, image)).convert_alpha()

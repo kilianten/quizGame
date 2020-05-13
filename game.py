@@ -208,7 +208,7 @@ class Person:
     def getRandomEyes(self):
         eyes, eyeImage = choice(list(EYES.items()))
         eyes = self.checkIsImageAlreadyLoaded(eyes, eyeImage)
-        self.eyes = BodyPart(self.game, eyes, 3)
+        self.eyes = BodyPart(self.game, eyes, 4)
 
 
     def getRandomNose(self):

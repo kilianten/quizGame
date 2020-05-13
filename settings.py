@@ -54,6 +54,7 @@ CORRECT_IMAGES = ["correct1.png", "correct2.png", "correct3.png", "correct4.png"
 MENU_TILES = ["menuTile001.png", "menuTile002.png", "menuTile003.png", "menuTile004.png", "menuTile005.png" ,"menuTile006.png", "menuTile007.png", "menuTile008.png", "menuTile009.png", "menuTile010.png", "menuTile011.png", "menuTile012.png", "menuTile013.png", "menuTile014.png"]
 ARROW_RIGHT = "arrowRight.png"
 ARROW_RIGHT_HOVER = "arrowRightHover.png"
+SHOTFACE_IMAGE = "shotFace.png"
 
 #PRIEST IMAGES
 PRIEST_IMAGE = "priestIdle.png"
