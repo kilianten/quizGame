@@ -9,7 +9,10 @@ class Game(Module):
         self.screen = screen
 
     def update(self):
-        self.round.update()
+        if self.round.ended == True:
+            self.generateNewRound()
+        else:
+            self.round.update()
 
     def checkKeyDownEvent(self, event):
         if event.key == pg.K_ESCAPE:
@@ -25,6 +28,16 @@ class Game(Module):
     def draw(self):
         self.round.draw()
 
+    def generateNewRound(self):
+        self.round.delete()
+        del self.round
+        round = choice(self.game.options.roundsEnabled)
+        if(round == "Trigger Happy"):
+            self.round = RoundTriggerHappy(self.game, self.contestants, self)
+
+    def removeContestant(self, contestant):
+        self.contestants.remove(contestant)
+
 class StandardGameMode(Game):
     def __init__(self, game, screen, numberOfBots, roundsEnabled, customCharacters):
         super().__init__(game, screen)
@@ -39,10 +52,33 @@ class StandardGameMode(Game):
         if(round == "Trigger Happy"):
             self.round = RoundTriggerHappy(self.game, self.contestants, self)
 
+class Timer:
+    def __init__(self, end):
+        self.startTime = pg.time.get_ticks()
+        self.endTime = end
+        self.ended = False
+
+    def update(self):
+        if(pg.time.get_ticks() - self.startTime > self.endTime):
+            self.ended = True
+
+class EndRoundTimer(Timer):
+    def __init__(self, end, round):
+        super().__init__(end)
+        round.quizGame.components["timers"].append(self)
+        self.round = round
+
+    def update(self):
+        super().update()
+        if self.ended:
+            self.round.ended = True
+
 class Round:
     def __init__(self, game, contestants):
         self.game = game
         self.contestants = contestants
+        self.Timer = None
+        self.ended = False
 
     def wrongAnswer(self):
         pass
@@ -73,6 +109,13 @@ class RoundTriggerHappy(Round):
         self.questions = self.game.categories
         self.generateQuestion()
         self.shotgun = Shotgun(self.game, quizGame)
+        self.endTimer = None
+
+    def delete(self):
+        self.killAllObjects()
+        self.longQuestionTile.kill()
+        self.shotgun.kill()
+        self.currentPlayer.removeAsCurrentPlayer()
 
     def createQuestionTiles(self):
         self.killAllObjects()
@@ -94,6 +137,7 @@ class RoundTriggerHappy(Round):
     def killPlayer(self):
         self.shotgun.rotationDegree = 0
         self.shotgun.rotating = True
+        self.quizGame.removeContestant(self.currentPlayer)
 
     def isPlayerDead(self):
         self.chanceOfDeath
@@ -106,7 +150,8 @@ class RoundTriggerHappy(Round):
 
     def draw(self):
         self.game.renderText("Chance Of Death: {}".format(self.chanceOfDeath), 10, 10)
-        self.game.renderText("Currnt Player: {}".format(self.currentPlayer.name), 10, 30)
+        self.game.renderText("Current Player: {}".format(self.currentPlayer.name), 10, 30)
+        self.game.renderText("Number Of Players: {}".format(len(self.contestants)), 10, 50)
 
     def killAllObjects(self):
         objects = [self.correctText, self.selectedTile, self.timer]
@@ -163,10 +208,11 @@ class RoundTriggerHappy(Round):
             self.changeToNextPlayer()
 
     def update(self):
-        if not self.answerSelected:
-            self.checkIfAnswerIsCorrect()
-        else:
-            self.checkReset()
+        if self.endTimer == None:
+            if not self.answerSelected:
+                self.checkIfAnswerIsCorrect()
+            else:
+                self.checkReset()
 
     def checkIfAnswerIsCorrect(self):
         for tile in self.tiles:
@@ -185,4 +231,4 @@ class RoundTriggerHappy(Round):
                 tile.clicked = False
 
     def endRound(self):
-        print("test")
+        self.endTimer = EndRoundTimer(4000, self)

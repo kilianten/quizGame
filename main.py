@@ -121,6 +121,8 @@ class Main:
         self.mouse.x, self.mouse.y =  pg.mouse.get_pos()
         self.module.update()
         self.module.components["sprites"].update()
+        for timer in self.module.components["timers"]:
+            timer.update()
 
     def draw_grid(self):
         for x in range(0, self.screenWidth, int(self.tilesizeWidth)):
@@ -131,6 +133,7 @@ class Main:
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
+        print(self.module)
         self.module.draw()
         for sprite in self.module.components["sprites"]:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))

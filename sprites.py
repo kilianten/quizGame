@@ -92,6 +92,7 @@ class Shotgun(pg.sprite.Sprite):
             else:
                 self.rotating = False
                 self.quizGame.round.currentPlayer.nose.image = self.game.shotFace
+                self.quizGame.round.endRound()
 
 class CountdownTimer(pg.sprite.Sprite):
     def __init__(self, game, quizGame):
@@ -215,15 +216,6 @@ class ArrowRightIcon(pg.sprite.Sprite):
         if self.isHoveredOn == False and self.originalImage == self.game.arrowRightHoverImage:
             setImage(self, self.game.arrowRightImage)
 
-def setImage(object, image):
-    object.originalImage = image
-    object.image = pg.transform.scale(image, (int(image.get_width() * object.game.fromOriginalWidth), int(image.get_height() * object.game.fromOriginalHeight)))
-
-def setRect(object):
-    object.rect = object.image.get_rect()
-    object.rect.x = object.x
-    object.rect.y = object.y
-
 class BodyPart(pg.sprite.Sprite):
     def __init__(self, game, image, layer):
         self._layer = layer
@@ -238,3 +230,12 @@ class BodyPart(pg.sprite.Sprite):
 
     def update(self):
         pass
+
+def setImage(object, image):
+    object.originalImage = image
+    object.image = pg.transform.scale(image, (int(image.get_width() * object.game.fromOriginalWidth), int(image.get_height() * object.game.fromOriginalHeight)))
+
+def setRect(object):
+    object.rect = object.image.get_rect()
+    object.rect.x = object.x
+    object.rect.y = object.y
