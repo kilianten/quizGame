@@ -35,3 +35,9 @@ What city was previously named Rangoon?|Yangon|Kathmandu|Bangkok|Dawei|5|
 In the 16th century, tulips were brought to Holland from which country?|Turkey|Norway|Philippines|India|3|
 What is the capital of Nigeria?|Abuja|Niamey|Lagos|Warri|3|
 Mount Everest is located in China and which other country?|Nepal|India|Pakistan|Mongolia|2|
+What is the capital of Iran?|Tehran|Baghdad|Tabriz|Iran City|2|
+What is the capital of North Korea?|Pyongyang|Seoul|Busan|Abu Dhabi|2|
+What is the capital of Cuba?|Havana|Bogota|San Tiago|Trinidad|1|
+Canberra is the capital of which country?|Australia|Peru|Andorra|Romania|1|
+What is the capital of Australia?|Sydney|Melbourne|Canberra|Brisbane|2|
+What is thhe capital of Venezuela?|Caracas|Lima|Maracay|Ciudad Bolivar|2|

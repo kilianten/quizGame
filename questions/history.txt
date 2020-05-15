@@ -42,3 +42,6 @@ When was Socrates born?|470BC|240BC|330BC|50BC|4|
 When did Socrates die?|399BC|299BC|199BC|99BC|4|
 What age was Socrates die?|71|62|54|40|3|
 Ouroboros is an acnient symbol depicting a serpent or dragon eating what?|Its tail|A globe|An hourglass|An eclipse|1|
+When was the Tehran Conference?|1943|1945|1867|1894|1|
+Which of these people did not attend the Tehran Conference?|President Franklin D. Roosevelt|Soviet Premier Joseph Stalin|Winston Churchill|Harry S. Truman|2|
+When did the Irish famine take place?|1840's|1820's|1790's|1800's|3|

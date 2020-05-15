@@ -133,7 +133,6 @@ class Main:
     def draw(self):
         self.screen.fill(BGCOLOR)
         self.draw_grid()
-        print(self.module)
         self.module.draw()
         for sprite in self.module.components["sprites"]:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
