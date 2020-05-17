@@ -32,11 +32,12 @@ class Main:
         self.fromOriginalWidth = 1
         self.fromOriginalHeight = 1
         #self.testViewAllQuestions()
-        self.myfont = pg.font.SysFont("Roman", 20)
         self.module = None
 
     def load_data(self):
         self.game_folder = path.dirname(__file__)
+        self.myfont = pg.font.SysFont("Roman", 20)
+        self.horrorFont = pg.font.Font(path.join(self.game_folder, "fonts", 'horrorFont.ttf'), 20)
         self.loadQuestions()
         self.loadImages()
 
@@ -215,10 +216,15 @@ class Main:
         self.tilesizeWidth = self.tilesizeWidth * self.scaleWidth
         self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
 
-    def renderText(self, text, x, y, object=None):
+    def renderText(self, text, x, y, object=None, font="default"):
+        if font == "horror":
+            font = self.horrorFont
+        else:
+            font = self.myfont
+
         if(object):
             objectWidth = object.rect.width
-            textSize = self.myfont.size(text)
+            textSize = font.size(text)
             availableWidth = objectWidth - object.xPadding * 2
             if(textSize[0] < availableWidth):
                 xOffset = (availableWidth - textSize[0]) / 2
@@ -228,7 +234,7 @@ class Main:
             else:
                 y = y + object.yPadding
 
-        levelText = self.myfont.render("{}".format(text), False, (0, 0, 0))
+        levelText = font.render("{}".format(text), False, (0, 0, 0))
         self.screen.blit(levelText, (x, y))
 
     def createModules(self):

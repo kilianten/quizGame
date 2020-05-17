@@ -150,8 +150,8 @@ class RoundTriggerHappy(Round):
 
     def draw(self):
         self.game.renderText("Chance Of Death: {}".format(self.chanceOfDeath), 10, 10)
-        self.game.renderText("Current Player: {}".format(self.currentPlayer.name), 10, 30)
-        self.game.renderText("Number Of Players: {}".format(len(self.contestants)), 10, 50)
+        self.game.renderText("Current Player: {}".format(self.currentPlayer.name), 10, 40)
+        self.game.renderText("Number Of Players: {}".format(len(self.contestants)), 10, 70)
 
     def killAllObjects(self):
         objects = [self.correctText, self.selectedTile, self.timer]

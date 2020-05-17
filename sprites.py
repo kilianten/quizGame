@@ -181,7 +181,7 @@ class MainMenuTile(Animation):
             self.lastUpdate = pg.time.get_ticks()
 
     def update(self):
-        self.game.renderText(self.text, 1, 1)
+        self.game.renderText(self.text, 1, 1, None,"horror")
         if self.isHoveredOn == False and self.selected != True:
             self.selected = False
         if self.animating == True and pg.time.get_ticks() - self.lastUpdate > MAIN_MENU_UPDATE_ANIM:
@@ -189,7 +189,7 @@ class MainMenuTile(Animation):
                 self.animating = False
 
     def drawText(self):
-        self.game.renderText(self.text, self.x, self.y, self)
+        self.game.renderText(self.text, self.x, self.y, self, "horror")
 
 class ArrowRightIcon(pg.sprite.Sprite):
     def __init__(self, game, x, y):
