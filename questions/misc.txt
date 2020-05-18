@@ -17,3 +17,7 @@ The first line of a haiku contains how many syllables?|5|7|3|1|2|
 What artifact from Greek mythology is now used as an idiom to describe "Any source of great and unexpected trouble"?|Pandora's Box|The Sword of Damocles|The Argo|The Golden Fleece|2|
 The 'American Eskimo Dog' was originally named?|German spitz|Australian Shepard|Dachshund|Bulldog|2|
 Complete this bible verse "Ask, and it shall be given to you; Seek, and ye shall find;"|Knock, and it shall be open unto you|Pray, and ye shall be heard|Jump, to be caught|Amen|2|
+In 2004 Randolph M. Nesse stated, "Being ____ is now the single largest demographic risk factor for early mortality in developed countries"|Male|Lower-class|Poor|African American|3|
+How does this quote end, "There is no great genious without a touch of"?|Madness|Conclusion|Selflessness|Animosity|2|
+Who famously said "There is no great genious without a touch of madness"?|Aristotle|Plato|Socrates|Karl Marx|2|
+For many events, roughly 80% of the effects come from 20% of the causes. What principle is this?|The Pareto principle|The Bianchi principle|The Bruno principle|The Toscani principle|3|
