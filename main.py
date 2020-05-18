@@ -37,7 +37,7 @@ class Main:
     def load_data(self):
         self.game_folder = path.dirname(__file__)
         self.myfont = pg.font.SysFont("Roman", 20)
-        self.horrorFont = pg.font.Font(path.join(self.game_folder, "fonts", 'horrorFont.ttf'), 20)
+        self.horrorFont = pg.font.Font(path.join(self.game_folder, "fonts", 'horrorFont.ttf'), 34)
         self.loadQuestions()
         self.loadImages()
 

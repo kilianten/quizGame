@@ -13,23 +13,28 @@ class Person:
         self.getRandomHair()
         self.getRandomEyes()
         self.getRandomNose()
+        self.getRandomEars()
         headImage = self.game.loadImage(MALE_HEADS["01"])  #TBC
         self.head = BodyPart(self.game, headImage, 2)
-        self.body = [self.hair, self.head, self.eyes, self.nose]
+        self.body = [self.hair, self.head, self.eyes, self.nose, self.ears]
 
     def getRandomHair(self):
         hairStyles = MALE_HAIRSTYLES if self.isMale else None
         hair, hairImage = choice(list(hairStyles.items()))
         hair = self.checkIsImageAlreadyLoaded(hair, hairImage)
-        tintImage = hair.convert_alpha()
-        tintImage.fill(choice(HAIR_COLORS), special_flags=pg.BLEND_ADD)
-        self.hair = BodyPart(self.game, tintImage, 3)
+        #tintImage = hair.convert_alpha()
+        #tintImage.fill(choice(HAIR_COLORS), special_flags=pg.BLEND_ADD)
+        self.hair = BodyPart(self.game, hair, 3)
 
     def getRandomEyes(self):
         eyes, eyeImage = choice(list(EYES.items()))
         eyes = self.checkIsImageAlreadyLoaded(eyes, eyeImage)
         self.eyes = BodyPart(self.game, eyes, 4)
 
+    def getRandomEars(self):
+        ears, earImage = choice(list(EARS.items()))
+        ears = self.checkIsImageAlreadyLoaded(ears, earImage)
+        self.ears = BodyPart(self.game, ears, 4)
 
     def getRandomNose(self):
         nose, noseImage = choice(list(NOSES.items()))

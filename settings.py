@@ -70,10 +70,11 @@ DEFAULT_YPADDING = 15
 
 #CHARACTERS
 MALE_HEADS = {"01":"head0002.png"}
-MALE_HAIRSTYLES = {"Shaggy":"hair0001.png", "Slick":"hair0002.png", "Posh":"hair0003.png", "Messy":"hair0004.png", "Side Shave":"hair0005.png"}
+MALE_HAIRSTYLES = {"tidy_brown":"hair0001.png", "tidy_red":"hair0001_red.png", "tidy_blone":"hair0001_blonde.png", "tidy_black":"hair0001_black.png", "tidy_fair":"hair0001_fair.png",  "posh_fair":"hair0002_fair.png", "posh_brown":"hair0002_brown.png", "posh_black":"hair0002_black.png", "posh_blonde":"hair0002_blonde.png", "posh_red":"hair0002_red.png"}
 
 EYES = {"Alert":"eyes0001.png"}
 NOSES = {"The Pointer":"nose0001.png", "The ShadowMaker":"nose0002.png"}
+EARS = {"default":"ear001.png"}
 
 #names
 MALE_NAMES = ["Kilian", "Thomas", "Ian", "Stephen", "Paul", "Sean", "Johnny", "Paddy", "Patrick", "Thom", "Ros", "Brendan", "Rick", "Richard", "Carl", "Karl", "Brian", "David", "Dave", "Peter", "Mark", "Greg", "Owen", "Eoin", "Fergus", "Niall", "Jack", "Jake", "Darragh", "Oliver", "Bill"]
