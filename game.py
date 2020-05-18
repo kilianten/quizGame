@@ -88,6 +88,7 @@ class Round:
         self.currentPlayer.removeAsCurrentPlayer()
         self.currentPlayer = self.contestants[(index + 1) % len(self.contestants)]
         self.currentPlayer.setToCurrentPlayer()
+        self.nameTile.text = self.currentPlayer.name
 
     def endRound(self):
         pass
@@ -106,6 +107,7 @@ class RoundTriggerHappy(Round):
         self.quizGame = quizGame
         self.timer = CountdownTimer(self.game, quizGame)
         self.createLongQuestionTile()
+        self.createNameTile()
         self.questions = self.game.categories
         self.generateQuestion()
         self.shotgun = Shotgun(self.game, quizGame)
@@ -150,8 +152,7 @@ class RoundTriggerHappy(Round):
 
     def draw(self):
         self.game.renderText("Chance Of Death: {}".format(self.chanceOfDeath), 10, 10)
-        self.game.renderText("Current Player: {}".format(self.currentPlayer.name), 10, 40)
-        self.game.renderText("Number Of Players: {}".format(len(self.contestants)), 10, 70)
+        self.game.renderText("Number Of Players: {}".format(len(self.contestants)), 10, 40)
 
     def killAllObjects(self):
         objects = [self.correctText, self.selectedTile, self.timer]
@@ -166,7 +167,11 @@ class RoundTriggerHappy(Round):
                 pass
 
     def createLongQuestionTile(self):
-        self.longQuestionTile = LongQuestionTile(self.game, 64, 384, self.quizGame)
+        self.longQuestionTile = LongQuestionTile(self.game, self.game.tilesizeWidth * 2, self.game.tilesizeHeight * 12, self.quizGame)
+
+    def createNameTile(self):
+        self.nameTile = NameTile(self.game, self.game.tilesizeWidth * 15, self.game.tilesizeHeight * 9, self.quizGame)
+        self.nameTile.text = str(self.currentPlayer.name)
 
     def createSelectedTile(self):
         self.selectedTile = SelectedTile(self.game, self.topLeft)

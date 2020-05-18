@@ -91,7 +91,7 @@ class Shotgun(pg.sprite.Sprite):
                 self.changeImage(pg.transform.rotate(self.originalImage, self.rotationDegree))
             else:
                 self.rotating = False
-                self.quizGame.round.currentPlayer.nose.image = self.game.shotFace
+                self.quizGame.round.currentPlayer.nose.setImage(self.game.shotFace)
                 self.quizGame.round.endRound()
 
 class CountdownTimer(pg.sprite.Sprite):
@@ -231,6 +231,9 @@ class BodyPart(pg.sprite.Sprite):
     def update(self):
         pass
 
+    def setImage(self, image):
+        setImage(self, image)
+
 def setImage(object, image):
     object.originalImage = image
     object.image = pg.transform.scale(image, (int(image.get_width() * object.game.fromOriginalWidth), int(image.get_height() * object.game.fromOriginalHeight)))
@@ -239,3 +242,22 @@ def setRect(object):
     object.rect = object.image.get_rect()
     object.rect.x = object.x
     object.rect.y = object.y
+
+
+class NameTile(pg.sprite.Sprite):
+    def __init__(self, game, x, y, quizGame):
+        self._layer = 10
+        self.groups = quizGame.components["texts"], quizGame.components["sprites"], game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        setImage(self, game.nameTileImage)
+        self.x = x
+        self.y = y
+        setRect(self)
+        self.text = None
+        self.xPadding = DEFAULT_XPADDING
+        self.yPadding = DEFAULT_YPADDING
+
+    def drawText(self):
+        if self.text:
+            self.game.renderText(self.text, self.x, self.y, self, None, (255,255,255))

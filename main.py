@@ -62,6 +62,7 @@ class Main:
         self.arrowRightImage = pg.image.load(path.join(img_folder, ARROW_RIGHT)).convert_alpha()
         self.arrowRightHoverImage = pg.image.load(path.join(img_folder, ARROW_RIGHT_HOVER)).convert_alpha()
         self.shotFace = pg.image.load(path.join(img_folder, SHOTFACE_IMAGE)).convert_alpha()
+        self.nameTileImage = pg.image.load(path.join(img_folder, NAME_TILE)).convert_alpha()
 
     def loadImage(self, image):
          return pg.image.load(path.join(self.img_folder, image)).convert_alpha()
@@ -216,7 +217,7 @@ class Main:
         self.tilesizeWidth = self.tilesizeWidth * self.scaleWidth
         self.tilesizeHeight = self.tilesizeHeight * self.scaleHeight
 
-    def renderText(self, text, x, y, object=None, font="default"):
+    def renderText(self, text, x, y, object=None, font="default", colour=(0,0,0)):
         if font == "horror":
             font = self.horrorFont
         else:
@@ -234,7 +235,7 @@ class Main:
             else:
                 y = y + object.yPadding
 
-        levelText = font.render("{}".format(text), False, (0, 0, 0))
+        levelText = font.render("{}".format(text), False, colour)
         self.screen.blit(levelText, (x, y))
 
     def createModules(self):

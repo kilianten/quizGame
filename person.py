@@ -56,3 +56,4 @@ class Person:
     def removeAsCurrentPlayer(self):
         for bodyPart in self.body:
             self.quizGame.components["sprites"].remove(bodyPart)
+        self.quizGame.round.nameTile.text = None

@@ -55,6 +55,7 @@ MENU_TILES = ["menuTile001.png", "menuTile002.png", "menuTile003.png", "menuTile
 ARROW_RIGHT = "arrowRight.png"
 ARROW_RIGHT_HOVER = "arrowRightHover.png"
 SHOTFACE_IMAGE = "shotFace.png"
+NAME_TILE = "namePanel.png"
 
 #PRIEST IMAGES
 PRIEST_IMAGE = "priestIdle.png"
