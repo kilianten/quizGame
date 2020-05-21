@@ -45,3 +45,5 @@ Ouroboros is an acnient symbol depicting a serpent or dragon eating what?|Its ta
 When was the Tehran Conference?|1943|1945|1867|1894|1|
 Which of these people did not attend the Tehran Conference?|President Franklin D. Roosevelt|Soviet Premier Joseph Stalin|Winston Churchill|Harry S. Truman|2|
 When did the Irish famine take place?|1840's|1820's|1790's|1800's|3|
+When did Congress approved the final text of the Declaration of Independence?|July 4th 1776|4th July 1777|4th Of July 1770|July 4th 1775|3|
+When did Congress approved the final text of the Declaration of Independence?|July 4th 1776|2nd September 1518|5th June 1692|10th February 1520|1| 

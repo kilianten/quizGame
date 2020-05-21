@@ -42,3 +42,5 @@ Canberra is the capital of which country?|Australia|Peru|Andorra|Romania|1|
 What is the capital of Australia?|Sydney|Melbourne|Canberra|Brisbane|2|
 What is the capital of Venezuela?|Caracas|Lima|Maracay|Ciudad Bolivar|2|
 What is the capital of New Zealand|Wellington|Auckland|Christchurch|Queenstown|2|
+Another Place is a modern sculpture, where is located?|Liverpool|Paris|Conrinth|Athens|4|
+Harare is the capital of which country?|Zimbabwe|Nigeria|Ethiopia|Zambia|3|
