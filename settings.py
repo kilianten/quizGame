@@ -32,7 +32,7 @@ SETTINGS = {"ISFULLSCREEN":False}
 
 DIFFICULTYLEVELS = ['1', '2', '3', '4', '5']
 
-RESOLUTIONS = [(1920, 1080), (1280, 768)]
+RESOLUTIONS = [(1920, 1080), (1280, 768), (1440, 900)]
 
 TRIGGER_HAPPY_STARTING_DEATH_CHANCE = 10 #1 in a thousand
 TRIGGER_HAPPY_QUESTION_TIME = 15 #MILIS 20 seconds
@@ -72,6 +72,7 @@ DEFAULT_YPADDING = 15
 #CHARACTERS
 MALE_HEADS = {"01":"head0002.png"}
 MALE_HAIRSTYLES = {"tidy_brown":"hair0001.png", "tidy_red":"hair0001_red.png", "tidy_blone":"hair0001_blonde.png", "tidy_black":"hair0001_black.png", "tidy_fair":"hair0001_fair.png",  "posh_fair":"hair0002_fair.png", "posh_brown":"hair0002_brown.png", "posh_black":"hair0002_black.png", "posh_blonde":"hair0002_blonde.png", "posh_red":"hair0002_red.png"}
+MALE_BODIES = {"WHITE_V_NECK":"body0001.png"}
 
 EYES = {"Alert":"eyes0001.png"}
 NOSES = {"The Pointer":"nose0001.png", "The ShadowMaker":"nose0002.png"}

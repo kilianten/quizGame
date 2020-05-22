@@ -177,6 +177,8 @@ class Main:
                     self.changeResolution(RESOLUTIONS[0])
                 if event.key == pg.K_F3:
                     self.changeResolution(RESOLUTIONS[1])
+                if event.key == pg.K_F4:
+                    self.changeResolution(RESOLUTIONS[2])
             if event.type == pg.MOUSEBUTTONUP:
                 for sprite in self.module.components["collidables"]:
                     if pg.sprite.collide_rect(sprite, self.mouse):
@@ -224,6 +226,7 @@ class Main:
             font = self.myfont
 
         if(object):
+
             objectWidth = object.rect.width
             textSize = font.size(text)
             availableWidth = objectWidth - object.xPadding * 2

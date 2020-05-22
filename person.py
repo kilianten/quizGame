@@ -14,9 +14,10 @@ class Person:
         self.getRandomEyes()
         self.getRandomNose()
         self.getRandomEars()
+        self.getRandomBody()
         headImage = self.game.loadImage(MALE_HEADS["01"])  #TBC
         self.head = BodyPart(self.game, headImage, 2)
-        self.body = [self.hair, self.head, self.eyes, self.nose, self.ears]
+        self.body = [self.hair, self.head, self.eyes, self.nose, self.ears, self.body]
 
     def getRandomHair(self):
         hairStyles = MALE_HAIRSTYLES if self.isMale else None
@@ -40,6 +41,11 @@ class Person:
         nose, noseImage = choice(list(NOSES.items()))
         nose = self.checkIsImageAlreadyLoaded(nose, noseImage)
         self.nose = BodyPart(self.game, nose, 3)
+
+    def getRandomBody(self):
+        body, bodyImage = choice(list(MALE_BODIES.items()))
+        body = self.checkIsImageAlreadyLoaded(body, bodyImage)
+        self.body = BodyPart(self.game, body, 3)
 
     def checkIsImageAlreadyLoaded(self, imageName, image):
         if(imageName in self.game.loadedPeopleImages):
