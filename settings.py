@@ -71,7 +71,9 @@ DEFAULT_YPADDING = 15
 
 #CHARACTERS
 MALE_HEADS = {"01":"head0002.png"}
-MALE_HAIRSTYLES = {"tidy_brown":"hair0001.png", "tidy_red":"hair0001_red.png", "tidy_blone":"hair0001_blonde.png", "tidy_black":"hair0001_black.png", "tidy_fair":"hair0001_fair.png",  "posh_fair":"hair0002_fair.png", "posh_brown":"hair0002_brown.png", "posh_black":"hair0002_black.png", "posh_blonde":"hair0002_blonde.png", "posh_red":"hair0002_red.png"}
+MALE_HAIRSTYLES = {"tidy_brown":"hair0001.png", "tidy_red":"hair0001_red.png", "tidy_blone":"hair0001_blonde.png", "tidy_black":"hair0001_black.png", "tidy_fair":"hair0001_fair.png",  "posh_fair":"hair0002_fair.png", "posh_brown":"hair0002_brown.png", "posh_black":"hair0002_black.png", "posh_blonde":"hair0002_blonde.png", "posh_red":"hair0002_red.png", "balding_brown":"hair0003_brown.png", "balding_black":"hair0003_black.png", "balding_blonde":"hair0003_blonde.png", "balding_grey":"hair0003_grey.png"}
+
+
 MALE_BODIES = {"WHITE_V_NECK":"body0001.png"}
 
 EYES = {"Alert":"eyes0001.png"}
