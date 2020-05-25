@@ -46,4 +46,7 @@ When was the Tehran Conference?|1943|1945|1867|1894|1|
 Which of these people did not attend the Tehran Conference?|President Franklin D. Roosevelt|Soviet Premier Joseph Stalin|Winston Churchill|Harry S. Truman|2|
 When did the Irish famine take place?|1840's|1820's|1790's|1800's|3|
 When did Congress approved the final text of the Declaration of Independence?|July 4th 1776|4th July 1777|4th Of July 1770|July 4th 1775|3|
-When did Congress approved the final text of the Declaration of Independence?|July 4th 1776|2nd September 1518|5th June 1692|10th February 1520|1| 
+When did Congress approved the final text of the Declaration of Independence?|July 4th 1776|2nd September 1518|5th June 1692|10th February 1520|1|
+What happened on July 16 1945?|Detonation of the first atomic bomb|The official end of World War 2|Hitler's suicide|Mussolini is executed by a firing squad|2|
+In what year did the moon landing take place?|1969|1972|1956|1948|3|
+Who was mainly involved in First Opium War (1840-1842)?|Britain & China|America & China|India & China|America & Cuba|2|

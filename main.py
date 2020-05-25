@@ -226,7 +226,6 @@ class Main:
             font = self.myfont
 
         if(object):
-
             objectWidth = object.rect.width
             textSize = font.size(text)
             availableWidth = objectWidth - object.xPadding * 2

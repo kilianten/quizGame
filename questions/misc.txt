@@ -25,3 +25,8 @@ For many events, roughly 80% of the effects come from 20% of the causes. What pr
 Finish this Buddha quote, "Three things cannot be hidden long: The sun, the moon and the ____ ":|Truth|The Earth|The Universe|The stars|2|
 "Three things cannot be hidden long: The sun, the moon and the truth" is a quote from whom?|Buddha|Gandhi|Shiva|Mother Teresa|2|
 "Let food be thy medicine and medicine be thy food" is a quote from whom?|Hippocrates|Plato|Epictetus|Alexander The Great|4|
+Who wrote Don Quixote?|Miguel de Cervantes|Gabriel García Márquez|Julia Alvarez|Jorge Luis Borges|4|
+What was the name of the Apollo 11 lunar module?|Eagle|Hope|Serenity|Hydra|2|
+Who was the lunar module pilot of Apollo 11?|Buzz Aldrin|Neil Armstrong|John W. Young|Thomas P. Stafford|1|
+Neil Armstrong, Edwin "Buzz" Aldrin were 2 of the astronauts of Apollo 11, who was the 3rd?|Micheal Collins|Bret Legweak|Thomas P. Stafford|Eugene A. Cernan|2|
+"Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that." is a quote from whom?|Martin Luther King Jr|Mother Teresa|Walt Disney|Mahatma Gandhi|2|

@@ -44,3 +44,6 @@ What is the capital of Venezuela?|Caracas|Lima|Maracay|Ciudad Bolivar|2|
 What is the capital of New Zealand|Wellington|Auckland|Christchurch|Queenstown|2|
 Another Place is a modern sculpture, where is located?|Liverpool|Paris|Conrinth|Athens|4|
 Harare is the capital of which country?|Zimbabwe|Nigeria|Ethiopia|Zambia|3|
+Which country handed over control of Hong Kong to China in 1997?|United Kingdom|Russia|United States of America|Amsterdam|1|
+In what year did the United Kingdom return control of HongKong to China?|1997|1993|1986|1989|3|
+America is named after who?|Amerigo Vespucci|Ron R. America|Almerica Andre|Amer icaran|3|
