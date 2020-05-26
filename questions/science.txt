@@ -30,3 +30,4 @@ What is the name of the hypothetical scenario where the universe continues to ex
 Marie Curie was born in 1867, in what country?|Poland|United States|England|Amsterdam|3|
 How did Marie Curie die in 1934?|Aplastic anemia|An explosion|Fatal Insomnia Insignia|Heart Attack|4|
 How big is the circumference of the earth?|40,075km|20,075km|60,075km|10,075km|4|
+When was aluminium first extracted from ore?|1825|1725|1881|1781|5|

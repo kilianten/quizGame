@@ -47,3 +47,6 @@ Harare is the capital of which country?|Zimbabwe|Nigeria|Ethiopia|Zambia|3|
 Which country handed over control of Hong Kong to China in 1997?|United Kingdom|Russia|United States of America|Amsterdam|1|
 In what year did the United Kingdom return control of HongKong to China?|1997|1993|1986|1989|3|
 America is named after who?|Amerigo Vespucci|Ron R. America|Almerica Andre|Amer icaran|3|
+Where is the Temple of Apollo?|Greece|Egypt|Turkey|Yemen|3|
+In which country was paper money first introduced?|China|America|Amsterdam|Greece|3|
+Damascus is the capital of which country?|Syria|Saudi Arabia|Turkey|Thimphu|2|
