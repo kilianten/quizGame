@@ -109,6 +109,7 @@ class CountdownTimer(pg.sprite.Sprite):
         self.tenthOfTime = TRIGGER_HAPPY_QUESTION_TIME / 10
         self.answerSelected = False
         self.finished = False
+        self.quizGame = quizGame
 
     def update(self):
         if not self.answerSelected:
@@ -118,6 +119,7 @@ class CountdownTimer(pg.sprite.Sprite):
                 self.startTime = pg.time.get_ticks()
                 self.lastUpdate = pg.time.get_ticks()
                 self.tenthOfTime =  TRIGGER_HAPPY_QUESTION_TIME / 10
+                self.quizGame.round.wrongAnswer()
 
             if timeRunning/1000 > self.tenthOfTime:
                 self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
