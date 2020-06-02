@@ -119,7 +119,12 @@ class CountdownTimer(pg.sprite.Sprite):
                 self.startTime = pg.time.get_ticks()
                 self.lastUpdate = pg.time.get_ticks()
                 self.tenthOfTime =  TRIGGER_HAPPY_QUESTION_TIME / 10
-                self.quizGame.round.wrongAnswer()
+                playerIsDead = self.quizGame.round.isPlayerDead()
+                if playerIsDead:
+                    self.quizGame.round.killPlayer()
+                else:
+                    self.quizGame.round.generateQuestion()
+                    self.quizGame.round.changeToNextPlayer()
 
             if timeRunning/1000 > self.tenthOfTime:
                 self.tenthOfTime += TRIGGER_HAPPY_QUESTION_TIME / 10
