@@ -50,3 +50,6 @@ America is named after who?|Amerigo Vespucci|Ron R. America|Almerica Andre|Amer 
 Where is the Temple of Apollo?|Greece|Egypt|Turkey|Yemen|3|
 In which country was paper money first introduced?|China|America|Amsterdam|Greece|3|
 Damascus is the capital of which country?|Syria|Saudi Arabia|Turkey|Thimphu|2|
+Bratislava is the capital of which country?|Slovakia|Skopje|Romania|Lithunia|2|
+What is the capital of Pakistan?|Islamabad|Tehran|Baghdad|Caracas|2|
+Asunción is the capital of which country?|Paraguay|Uraguay|Bolivia|Guyana|2|
