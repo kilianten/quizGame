@@ -62,3 +62,6 @@ Who conquered the Inca Empire in 1522?|Francisco Pizarro|Hernan Cortés|Christop
 Which empire did Francisco Pizarro conquer in 1522?|The Incas|The Aztecs|The Babylonians|The Kushites|2|
 Who wrote the original Frankenstein book?|Mary Shelley|George Elliot|Louisa May Alcott|Thomas Hardy|2|
 When was Mary Shelley's Frankenstein originally published?|1st January 1818|1st January 1918|1st January 1718|1st January 1618|3|
+What is the name of the superocean that surrounded thhe supercontent of Pangaea?|Panthalassa|Muruloa|Dodora|Marilla|3|
+Which of these is not a period in the Mesozoic Era?|The Curassic Period|The Triassic Period|The Jurassic Period|The Cretaceous Period|3|
+Approximately how long did the Mesozoic Era last?|248 million - 66 million years ago|539 million - 502 million years ago|444 million - 345 million years ago|64 million - 40 million years ago|3|

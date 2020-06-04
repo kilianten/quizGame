@@ -53,3 +53,9 @@ Damascus is the capital of which country?|Syria|Saudi Arabia|Turkey|Thimphu|2|
 Bratislava is the capital of which country?|Slovakia|Skopje|Romania|Lithunia|2|
 What is the capital of Pakistan?|Islamabad|Tehran|Baghdad|Caracas|2|
 Asunción is the capital of which country?|Paraguay|Uraguay|Bolivia|Guyana|2|
+Nuuk is the capital of which country?|Bangladesh|Greenland|Malaysia|Bahrain|3|
+Which building has its address as 1600 Pennsylvania Avenue?|The White House|American Gothic House|Franklin Court|Benjamin Franklin House|2|
+The Chicxulub crater is located where?|Yucatán, Mexico|Sao Paulo, Brazil|Medeillín, Colombia|Salvador, Brazil|3|
+What is the capital of the U.S. state of New Mexico?|Santa Fe|Roswell|Las Vegas|Las Cruces|4|
+Where would you find 'The Sea Organ'?|Zadar, Croatia|Alytus, Lithuania|Sopron, Hungary|Puno, Peru|5|
+Dodoma is the capital of which country?|Tanzania|Angola|Guyana|Bolivia|2|
