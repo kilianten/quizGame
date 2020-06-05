@@ -33,3 +33,5 @@ How big is the circumference of the earth?|40,075km|20,075km|60,075km|10,075km|4
 When was aluminium first extracted from ore?|1825|1725|1881|1781|5|
 The term coprolite, refers to what?|Fossilized feces|Fossilized organs|Fossilized ripples or patterns|Fossilized insects|3|
 Which animal has the strongest bite of any living creature?|The Nile Crocodile|Hippopotamus|American Alligator|Spotted Hyena|2|
+Approximately how many bones does a baby have?|300|200|350|400|3|
+How many bones does an adult have?|206|196|236|176|3|

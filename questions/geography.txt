@@ -59,3 +59,4 @@ The Chicxulub crater is located where?|Yucatán, Mexico|Sao Paulo, Brazil|Medeil
 What is the capital of the U.S. state of New Mexico?|Santa Fe|Roswell|Las Vegas|Las Cruces|4|
 Where would you find 'The Sea Organ'?|Zadar, Croatia|Alytus, Lithuania|Sopron, Hungary|Puno, Peru|5|
 Dodoma is the capital of which country?|Tanzania|Angola|Guyana|Bolivia|2|
+What is the capital of Niger?|Niamey|Abuja|Gaya|Lagos|3|
