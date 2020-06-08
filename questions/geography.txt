@@ -60,3 +60,6 @@ What is the capital of the U.S. state of New Mexico?|Santa Fe|Roswell|Las Vegas|
 Where would you find 'The Sea Organ'?|Zadar, Croatia|Alytus, Lithuania|Sopron, Hungary|Puno, Peru|5|
 Dodoma is the capital of which country?|Tanzania|Angola|Guyana|Bolivia|2|
 What is the capital of Niger?|Niamey|Abuja|Gaya|Lagos|3|
+Where is the largest street in the world?|Canada|The United States|United Kingdom|Australia|3|
+What is the longest street in the world?|Yonge Street, Toronto, Canada|Broadway, New York, USA|Bourbon Street, New Orleans, USA|Chandni Chowk, Delhi, India|3|
+What is the capital of Canada?|Ottawa|Toronto|Vancouver|Montreal|2|

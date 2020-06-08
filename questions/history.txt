@@ -65,3 +65,6 @@ When was Mary Shelley's Frankenstein originally published?|1st January 1818|1st 
 What is the name of the superocean that surrounded thhe supercontent of Pangaea?|Panthalassa|Muruloa|Dodora|Marilla|3|
 Which of these is not a period in the Mesozoic Era?|The Curassic Period|The Triassic Period|The Jurassic Period|The Cretaceous Period|3|
 Approximately how long did the Mesozoic Era last?|248 million - 66 million years ago|539 million - 502 million years ago|444 million - 345 million years ago|64 million - 40 million years ago|3|
+When did Albert Einstein die?|April 18th 1955|April 18th 1945|April 18th 1965|April 18th 1975|3|
+When was Albert Einstein born?|14 March 1879|14 March 1909|14 March 1899|14 March 1849|4|
+When did the titanic sink?|April 14 1912|April 14 1928|April 14 1943|April 14 1937|3|
