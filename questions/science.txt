@@ -35,3 +35,6 @@ The term coprolite, refers to what?|Fossilized feces|Fossilized organs|Fossilize
 Which animal has the strongest bite of any living creature?|The Nile Crocodile|Hippopotamus|American Alligator|Spotted Hyena|2|
 Approximately how many bones does a baby have?|300|200|350|400|3|
 How many bones does an adult have?|206|196|236|176|3|
+Who discovered Alzheimer's disease?|Dr. Alois Alzheimer|Dr. Andrew Alzheimer|Dr. Alveris Alzheimer|Dr. Alzheimer Muller|3|
+When was Alzheimer's disease discovered?|1906|1806|1706|1606|3|
+Sleep habits that involve a person sleeping for two segments per day is known as what?|Biphasic sleep|Bilateral sleep|Binaural sleep|Bimetric sleep|3|
