@@ -64,3 +64,4 @@ Where is the largest street in the world?|Canada|The United States|United Kingdo
 What is the longest street in the world?|Yonge Street, Toronto, Canada|Broadway, New York, USA|Bourbon Street, New Orleans, USA|Chandni Chowk, Delhi, India|3|
 What is the capital of Canada?|Ottawa|Toronto|Vancouver|Montreal|2|
 Nassau is the capital of which country?|The Bahamas|Bolivia|The Phillipines|Trinidad and Tobago|2|
+Sarajevo is the capital of which country?|Bosnia and Herzegovina|Kosovo|Moldova|Hungary|2|

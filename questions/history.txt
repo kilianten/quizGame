@@ -68,3 +68,6 @@ Approximately how long did the Mesozoic Era last?|248 million - 66 million years
 When did Albert Einstein die?|April 18th 1955|April 18th 1945|April 18th 1965|April 18th 1975|3|
 When was Albert Einstein born?|14 March 1879|14 March 1909|14 March 1899|14 March 1849|4|
 When did the titanic sink?|April 14 1912|April 14 1928|April 14 1943|April 14 1937|3|
+When was Franz Ferdinand assassinated?|28th of June 1914|28th of June 1904|28th of June 1934|28th of June 1884|1|
+Who was assassinated on 28th of June 1914?|Franz Ferdinand|Gandhi|Abraham Lincoln|Malcolm X|1|
+Where was Franz Ferdinand assassinated?|Sarajevo|Sofia|Budapest|Vienna|2|
