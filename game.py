@@ -9,10 +9,20 @@ class Game(Module):
         self.screen = screen
 
     def update(self):
-        if self.round.ended == True:
-            self.generateNewRound()
-        else:
-            self.round.update()
+        if self.paused == False:
+            if self.round.ended == True:
+                self.endRound()
+                #self.generateNewRound()
+            else:
+                self.round.update()
+
+    def endRound(self):
+        self.paused = True
+        self.killAll(self.components["sprites"])
+        self.killAll(self.components["collidables"])
+        panel = LargePanel(self.game, 0, 0, self)
+        DisplayObjectTimer(self, 4000, panel)
+        StartRoundTimer(self, 4500)
 
     def checkKeyDownEvent(self, event):
         if event.key == pg.K_ESCAPE:
@@ -29,6 +39,8 @@ class Game(Module):
         self.round.draw()
 
     def generateNewRound(self):
+        self.killAll(self.components["sprites"])
+        self.killAll(self.components["collidables"])
         self.round.delete()
         del self.round
         round = choice(self.game.options.roundsEnabled)
@@ -44,6 +56,7 @@ class StandardGameMode(Game):
         self.numberOfBots = numberOfBots
         self.numberOfPlayersAlive = numberOfBots + 1
         self.contestants = list(customCharacters)
+        self.originalContestants = list(customCharacters)
         numberOfBotsToCreate = numberOfBots - len(self.contestants)
         while(numberOfBotsToCreate > 0):
             self.contestants.append(self.createRandomCharacter())
@@ -72,6 +85,28 @@ class EndRoundTimer(Timer):
         super().update()
         if self.ended:
             self.round.ended = True
+
+class DisplayObjectTimer(Timer):
+    def __init__(self, quizGame, end, object):
+        super().__init__(end)
+        quizGame.components["timers"].append(self)
+        self.object = object
+
+    def update(self):
+        super().update()
+        if self.ended:
+            self.object.kill()
+
+class StartRoundTimer(Timer):
+    def __init__(self, quizGame, end):
+        super().__init__(end)
+        quizGame.components["timers"].append(self)
+        self.quizGame = quizGame
+
+    def update(self):
+        super().update()
+        if self.ended:
+            self.quizGame.generateNewRound()
 
 class Round:
     def __init__(self, game, contestants):

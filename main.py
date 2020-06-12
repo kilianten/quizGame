@@ -63,6 +63,7 @@ class Main:
         self.arrowRightHoverImage = pg.image.load(path.join(img_folder, ARROW_RIGHT_HOVER)).convert_alpha()
         self.shotFace = pg.image.load(path.join(img_folder, SHOTFACE_IMAGE)).convert_alpha()
         self.nameTileImage = pg.image.load(path.join(img_folder, NAME_TILE)).convert_alpha()
+        self.largePanelImage = pg.image.load(path.join(img_folder, LARGE_PANEL_IMAGE)).convert_alpha()
 
     def loadImage(self, image):
          return pg.image.load(path.join(self.img_folder, image)).convert_alpha()

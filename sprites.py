@@ -268,3 +268,14 @@ class NameTile(pg.sprite.Sprite):
     def drawText(self):
         if self.text:
             self.game.renderText(self.text, self.x, self.y, self, None, (255,255,255))
+
+class LargePanel(pg.sprite.Sprite):
+    def __init__(self, game, x, y, quizGame):
+        self._layer = 1
+        self.groups = quizGame.components["sprites"], game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        setImage(self, game.largePanelImage)
+        self.x = x
+        self.y = y
+        setRect(self)
