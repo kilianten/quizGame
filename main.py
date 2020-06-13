@@ -126,6 +126,8 @@ class Main:
         self.module.components["sprites"].update()
         for timer in self.module.components["timers"]:
             timer.update()
+            if timer.finished == True:
+                self.module.components["timers"].remove(timer)
 
     def draw_grid(self):
         for x in range(0, self.screenWidth, int(self.tilesizeWidth)):
@@ -184,6 +186,8 @@ class Main:
                 for sprite in self.module.components["collidables"]:
                     if pg.sprite.collide_rect(sprite, self.mouse):
                         sprite.clicked = True
+                        print("MAIN SEES ")
+                        print(sprite.text)
 
     def changeResolution(self, resolution):
         print("Setting resolution to " +  str(resolution))
