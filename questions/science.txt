@@ -42,3 +42,4 @@ Amyloid beta are crucially involved in what?|Diabetes|Alzheimer's disease|Herpes
 Where is insulin produced in your body?|Pancreas|Kidneys|Liver|Intestines|2|
 Who is credited with discovering penicillin?|Alexander Fleming|Edward Jenner|Louis Pasteur|Enrico Fermi|3|
 In what year did Alexander Fleming discover penicillin?|1928|1908|1948|1888|3|
+What is the current geographic epoch?|The Holocene|Miocene|Pliocene|Eocene|3|

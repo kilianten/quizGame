@@ -46,7 +46,6 @@ class Game(Module):
         round = choice(self.game.options.roundsEnabled)
         if(round == "Trigger Happy"):
             self.round = RoundTriggerHappy(self.game, self.contestants, self)
-            print(self.round)
 
     def removeContestant(self, contestant):
         self.contestants.remove(contestant)
@@ -121,7 +120,6 @@ class Round:
         self.contestants = contestants
         self.Timer = None
         self.ended = False
-        print("NEW EOuND")
 
     def wrongAnswer(self):
         pass
@@ -256,7 +254,6 @@ class RoundTriggerHappy(Round):
             self.changeToNextPlayer()
 
     def update(self):
-        print(self.endTimer)
         if self.endTimer == None:
             if not self.answerSelected:
                 self.checkIfAnswerIsCorrect()
@@ -265,11 +262,7 @@ class RoundTriggerHappy(Round):
 
     def checkIfAnswerIsCorrect(self):
         for tile in self.tiles:
-            print("CHECK IF ANSWER SEES FUNCTIoN")
-            print(tile.text)
             if tile.clicked:
-                print("CHECK IF ANSWER SEES CLICKED")
-                print(tile.text)
                 self.answerSelected = True
                 self.timer.answerSelected = True
                 self.lastUpdate = pg.time.get_ticks()

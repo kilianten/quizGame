@@ -186,8 +186,6 @@ class Main:
                 for sprite in self.module.components["collidables"]:
                     if pg.sprite.collide_rect(sprite, self.mouse):
                         sprite.clicked = True
-                        print("MAIN SEES ")
-                        print(sprite.text)
 
     def changeResolution(self, resolution):
         print("Setting resolution to " +  str(resolution))
@@ -253,7 +251,7 @@ class Main:
         self.mainMenu.createSprites()
 
     def changeModule(self, module):
-        self.module =   module
+        self.module = module
 
 class Sprite_Mouse_Location(pg.sprite.Sprite):
     def __init__(self,x,y, game):

@@ -65,3 +65,5 @@ What is the longest street in the world?|Yonge Street, Toronto, Canada|Broadway,
 What is the capital of Canada?|Ottawa|Toronto|Vancouver|Montreal|2|
 Nassau is the capital of which country?|The Bahamas|Bolivia|The Phillipines|Trinidad and Tobago|2|
 Sarajevo is the capital of which country?|Bosnia and Herzegovina|Kosovo|Moldova|Hungary|2|
+Which country has the world's only non-quadrilateral national flag?|Nepal|Bolivia|Madagascar|Mozambique|2|
+Where is the Atacama desert?|chile|Mongolia|Mexico|Namibia|2|

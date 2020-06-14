@@ -71,3 +71,5 @@ When did the titanic sink?|April 14 1912|April 14 1928|April 14 1943|April 14 19
 When was Franz Ferdinand assassinated?|28th of June 1914|28th of June 1904|28th of June 1934|28th of June 1884|1|
 Who was assassinated on 28th of June 1914?|Franz Ferdinand|Gandhi|Abraham Lincoln|Malcolm X|1|
 Where was Franz Ferdinand assassinated?|Sarajevo|Sofia|Budapest|Vienna|2|
+What war took place between 1861-1865?|American Civil War|The Napoleonic Wars|Spanish-American War|The War of 1812|3|
+Sound in film took off in what year?|1920's|1900's|1880's|1860's|3|
