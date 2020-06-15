@@ -211,7 +211,7 @@ class RoundTriggerHappy(Round):
         self.longQuestionTile = LongQuestionTile(self.game, self.game.tilesizeWidth * 2, self.game.tilesizeHeight * 12, self.quizGame)
 
     def createNameTile(self):
-        self.nameTile = NameTile(self.game, self.game.tilesizeWidth * 15, self.game.tilesizeHeight * 9, self.quizGame)
+        self.nameTile = NameTile(self.game, self.game.tilesizeWidth * 16, self.game.tilesizeHeight * 10, self.quizGame)
         self.nameTile.text = str(self.currentPlayer.name)
 
     def createSelectedTile(self):

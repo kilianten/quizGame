@@ -262,8 +262,8 @@ class NameTile(pg.sprite.Sprite):
         self.y = y
         setRect(self)
         self.text = None
-        self.xPadding = DEFAULT_XPADDING
-        self.yPadding = DEFAULT_YPADDING
+        self.xPadding = 0
+        self.yPadding = 0
 
     def drawText(self):
         if self.text:
