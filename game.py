@@ -16,6 +16,11 @@ class Game(Module):
             else:
                 self.round.update()
 
+    def setOriginalContestantToDead(self, person):
+        index = self.originalContestants.index(person)
+        self.originalContestants[index].isDead = True
+        print(person.name)
+
     def endRound(self):
         self.paused = True
         self.killAll(self.components["sprites"])
@@ -28,8 +33,9 @@ class Game(Module):
     def displayOriginalContestants(self):
         xPosition = yPosition = self.game.tilesizeWidth
         for contestant in self.originalContestants:
-            print(contestant.name)
-            Text(self.game, xPosition, self.game.tilesizeWidth * 2, contestant.name)
+            text = Text(self.game, xPosition, self.game.tilesizeWidth * 2, contestant.name)
+            if contestant.isDead:
+                text.color = (RED)
             xPosition += self.game.tilesizeWidth * 4
 
     def checkKeyDownEvent(self, event):
@@ -188,6 +194,7 @@ class RoundTriggerHappy(Round):
     def killPlayer(self):
         self.shotgun.rotationDegree = 0
         self.shotgun.rotating = True
+        self.quizGame.setOriginalContestantToDead(self.currentPlayer)
         self.quizGame.removeContestant(self.currentPlayer)
 
     def isPlayerDead(self):

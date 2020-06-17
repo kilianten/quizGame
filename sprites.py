@@ -291,6 +291,7 @@ class Text():
         self.x = x
         self.y = y
         self.text = text
+        self.color = (255,255,255)
 
     def drawText(self):
-        self.game.renderText(self.text, self.x, self.y)
+        self.game.renderText(self.text, self.x, self.y, None, "default", self.color)
