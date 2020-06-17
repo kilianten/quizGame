@@ -143,6 +143,9 @@ class Main:
             self.screen.blit(sprite.image, (sprite.x, sprite.y))
         for text in self.module.components["texts"]:
             text.drawText()
+        for text in self.module.tempTexts:
+            text.drawText()
+
         pg.display.flip()
 
     def show_start_screen(self):

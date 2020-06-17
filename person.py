@@ -63,3 +63,8 @@ class Person:
         for bodyPart in self.body:
             self.quizGame.components["sprites"].remove(bodyPart)
         self.quizGame.round.nameTile.text = None
+
+    def scalePlayer(self):
+        for bodyPart in self.body:
+            bodyPart.scale(bodyPart.image)
+            self.quizGame.components["sprites"].add(bodyPart)

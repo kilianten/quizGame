@@ -241,6 +241,10 @@ class BodyPart(pg.sprite.Sprite):
     def setImage(self, image):
         setImage(self, image)
 
+    def scale(object, image):
+        object.originalImage = image
+        object.image = pg.transform.scale(image, (int((image.get_width() * object.game.fromOriginalWidth)/2), int((image.get_height() * object.game.fromOriginalHeight)/2)))
+
 def setImage(object, image):
     object.originalImage = image
     object.image = pg.transform.scale(image, (int(image.get_width() * object.game.fromOriginalWidth), int(image.get_height() * object.game.fromOriginalHeight)))
@@ -279,3 +283,14 @@ class LargePanel(pg.sprite.Sprite):
         self.x = x
         self.y = y
         setRect(self)
+
+class Text():
+    def __init__(self, game, x, y, text):
+        self.game = game
+        self.game.module.tempTexts.append(self)
+        self.x = x
+        self.y = y
+        self.text = text
+
+    def drawText(self):
+        self.game.renderText(self.text, self.x, self.y)

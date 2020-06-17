@@ -23,6 +23,14 @@ class Game(Module):
         panel = LargePanel(self.game, 0, 0, self)
         DisplayObjectTimer(self, 4000, panel)
         StartRoundTimer(self, 4500)
+        self.displayOriginalContestants()
+
+    def displayOriginalContestants(self):
+        xPosition = yPosition = self.game.tilesizeWidth
+        for contestant in self.originalContestants:
+            print(contestant.name)
+            Text(self.game, xPosition, 0, contestant.name)
+            xPosition += self.game.tilesizeWidth * 4
 
     def checkKeyDownEvent(self, event):
         if event.key == pg.K_ESCAPE:
@@ -56,7 +64,6 @@ class StandardGameMode(Game):
         self.numberOfBots = numberOfBots
         self.numberOfPlayersAlive = numberOfBots + 1
         self.contestants = list(customCharacters)
-        self.originalContestants = list(customCharacters)
         numberOfBotsToCreate = numberOfBots - len(self.contestants)
         while(numberOfBotsToCreate > 0):
             self.contestants.append(self.createRandomCharacter())
@@ -64,6 +71,7 @@ class StandardGameMode(Game):
         round = choice(self.game.options.roundsEnabled)
         if(round == "Trigger Happy"):
             self.round = RoundTriggerHappy(self.game, self.contestants, self)
+        self.originalContestants = list(self.contestants)
 
 class Timer:
     def __init__(self, end):

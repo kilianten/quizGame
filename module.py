@@ -5,6 +5,7 @@ class Module:
         self.paused = False
         self.game = game
         self.components = {"sprites": pg.sprite.LayeredUpdates(), "texts":pg.sprite.Group(), "collidables": pg.sprite.Group(), "timers":[]}
+        self.tempTexts = []
 
     def draw(self):
         pass
