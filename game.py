@@ -29,7 +29,7 @@ class Game(Module):
         xPosition = yPosition = self.game.tilesizeWidth
         for contestant in self.originalContestants:
             print(contestant.name)
-            Text(self.game, xPosition, 0, contestant.name)
+            Text(self.game, xPosition, self.game.tilesizeWidth * 2, contestant.name)
             xPosition += self.game.tilesizeWidth * 4
 
     def checkKeyDownEvent(self, event):

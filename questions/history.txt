@@ -73,3 +73,6 @@ Who was assassinated on 28th of June 1914?|Franz Ferdinand|Gandhi|Abraham Lincol
 Where was Franz Ferdinand assassinated?|Sarajevo|Sofia|Budapest|Vienna|2|
 What war took place between 1861-1865?|American Civil War|The Napoleonic Wars|Spanish-American War|The War of 1812|3|
 Sound in film took off in what year?|1920's|1900's|1880's|1860's|3|
+In what year did Rosa Parks pass away?|2005|1985|1945|1915|3|
+When was Rosa Parks born?|1913|1933|1883|1863|3|
+In 1955, who was the famous activist that refused to give up their seat on a public bus to a white man?|Rosa Parks|Martin Luther King Jr.|Ella Baker|James Baldwin|1|

@@ -67,3 +67,4 @@ Nassau is the capital of which country?|The Bahamas|Bolivia|The Phillipines|Trin
 Sarajevo is the capital of which country?|Bosnia and Herzegovina|Kosovo|Moldova|Hungary|2|
 Which country has the world's only non-quadrilateral national flag?|Nepal|Bolivia|Madagascar|Mozambique|2|
 Where is the Atacama desert?|chile|Mongolia|Mexico|Namibia|2|
+What is the capital of Afghanistan?|Kabul|Baghdad|Herat|Khost|2|

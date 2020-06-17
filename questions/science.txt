@@ -43,3 +43,6 @@ Where is insulin produced in your body?|Pancreas|Kidneys|Liver|Intestines|2|
 Who is credited with discovering penicillin?|Alexander Fleming|Edward Jenner|Louis Pasteur|Enrico Fermi|3|
 In what year did Alexander Fleming discover penicillin?|1928|1908|1948|1888|3|
 What is the current geographic epoch?|The Holocene|Miocene|Pliocene|Eocene|3|
+Only which bees sting?|Male|Female|Both Male and Female|Neither|2|
+What is the paradox which describes the apparent contradiction between the lack of evidence and high possibility for extraterrestrial life?|The Fermi Paradox|The Elevator Paradox|The Fletcher's Paradox|Socratic Paradox|2|
+The branch of science concerned with classification, especially of organisms|Taxonomy|Demonomy|Ergonomy|Etymology|2|
