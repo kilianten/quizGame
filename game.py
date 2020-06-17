@@ -8,6 +8,10 @@ class Game(Module):
         super().__init__(game)
         self.screen = screen
 
+    def resetContestants(self, contestants):
+        for contestant in contestants:
+            contestant.resetState()
+
     def update(self):
         if self.paused == False:
             if self.round.ended == True:
@@ -35,14 +39,18 @@ class Game(Module):
         yPosition = 0
 
         for contestant in self.originalContestants:
+            contestant.scaleDownToFitPanel()
+            contestant.setToCurrentPlayer()
             if xPosition > self.game.tilesizeWidth * 35:
                 xPosition = self.game.tilesizeWidth
                 yPosition += self.game.tilesizeHeight + 9 * self.game.tilesizeHeight
-            ContestantBackground(self.game, self.game.tilesizeWidth * 1 + xPosition, self.game.tilesizeHeight * 2 + yPosition, self)
+            background = ContestantBackground(self.game, self.game.tilesizeWidth * 1 + xPosition, self.game.tilesizeHeight * 2 + yPosition, self)
             text = Text(self.game, xPosition + self.game.tilesizeWidth, self.game.tilesizeHeight * 11 + yPosition, contestant.name)
             if contestant.isDead:
                 text.color = (RED)
             xPosition += self.game.tilesizeWidth * 9
+            contestant.setX(background.x - self.game.tilesizeWidth)
+            contestant.setY(background.y - self.game.tilesizeHeight / 4)
 
     def checkKeyDownEvent(self, event):
         if event.key == pg.K_ESCAPE:
@@ -62,6 +70,7 @@ class Game(Module):
         self.tempTexts.clear()
         self.killAll(self.components["sprites"])
         self.killAll(self.components["collidables"])
+        self.resetContestants(self.contestants)
         self.round.delete()
         del self.round
         round = choice(self.game.options.roundsEnabled)

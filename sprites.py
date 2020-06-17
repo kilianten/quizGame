@@ -242,8 +242,10 @@ class BodyPart(pg.sprite.Sprite):
         setImage(self, image)
 
     def scale(object, image):
-        object.originalImage = image
         object.image = pg.transform.scale(image, (int((image.get_width() * object.game.fromOriginalWidth)/2), int((image.get_height() * object.game.fromOriginalHeight)/2)))
+
+    def scaleDownToFitPanel(self):
+        self.image = pg.transform.scale(self.originalImage, (int((self.originalImage.get_width() * self.game.fromOriginalWidth)/1.3), int((self.originalImage.get_height() * self.game.fromOriginalHeight)/1.3)))
 
 def setImage(object, image):
     object.originalImage = image
