@@ -295,3 +295,14 @@ class Text():
 
     def drawText(self):
         self.game.renderText(self.text, self.x, self.y, None, "default", self.color)
+
+class ContestantBackground(pg.sprite.Sprite):
+    def __init__(self, game, x, y, quizGame):
+        self._layer = 2
+        self.groups = quizGame.components["sprites"], game.scalable
+        pg.sprite.Sprite.__init__(self, self.groups)
+        self.game = game
+        setImage(self, game.ContestantBackground)
+        self.x = x
+        self.y = y
+        setRect(self)

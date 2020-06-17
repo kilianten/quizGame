@@ -25,18 +25,24 @@ class Game(Module):
         self.paused = True
         self.killAll(self.components["sprites"])
         self.killAll(self.components["collidables"])
-        panel = LargePanel(self.game, 0, 0, self)
-        DisplayObjectTimer(self, 4000, panel)
-        StartRoundTimer(self, 4500)
+        panel = LargePanel(self.game, self.game.tilesizeWidth * .5, 0, self)
+        DisplayObjectTimer(self, 6000, panel)
+        StartRoundTimer(self, 5500)
         self.displayOriginalContestants()
 
     def displayOriginalContestants(self):
-        xPosition = yPosition = self.game.tilesizeWidth
+        xPosition = self.game.tilesizeWidth
+        yPosition = 0
+
         for contestant in self.originalContestants:
-            text = Text(self.game, xPosition, self.game.tilesizeWidth * 2, contestant.name)
+            if xPosition > self.game.tilesizeWidth * 35:
+                xPosition = self.game.tilesizeWidth
+                yPosition += self.game.tilesizeHeight + 9 * self.game.tilesizeHeight
+            ContestantBackground(self.game, self.game.tilesizeWidth * 1 + xPosition, self.game.tilesizeHeight * 2 + yPosition, self)
+            text = Text(self.game, xPosition + self.game.tilesizeWidth, self.game.tilesizeHeight * 11 + yPosition, contestant.name)
             if contestant.isDead:
                 text.color = (RED)
-            xPosition += self.game.tilesizeWidth * 4
+            xPosition += self.game.tilesizeWidth * 9
 
     def checkKeyDownEvent(self, event):
         if event.key == pg.K_ESCAPE:
@@ -53,6 +59,7 @@ class Game(Module):
         self.round.draw()
 
     def generateNewRound(self):
+        self.tempTexts.clear()
         self.killAll(self.components["sprites"])
         self.killAll(self.components["collidables"])
         self.round.delete()

@@ -57,6 +57,7 @@ ARROW_RIGHT_HOVER = "arrowRightHover.png"
 SHOTFACE_IMAGE = "shotFace.png"
 NAME_TILE = "namePanel.png"
 LARGE_PANEL_IMAGE = "largePanel.png"
+CONTESTANT_BACKGROUND_IMAGE = "ContestantBackground.png"
 
 #PRIEST IMAGES
 PRIEST_IMAGE = "priestIdle.png"
