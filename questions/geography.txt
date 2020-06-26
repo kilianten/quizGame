@@ -68,3 +68,14 @@ Sarajevo is the capital of which country?|Bosnia and Herzegovina|Kosovo|Moldova|
 Which country has the world's only non-quadrilateral national flag?|Nepal|Bolivia|Madagascar|Mozambique|2|
 Where is the Atacama desert?|chile|Mongolia|Mexico|Namibia|2|
 What is the capital of Afghanistan?|Kabul|Baghdad|Herat|Khost|2|
+What is the largest country in the world?|Russia|Canada|United States|China|1|
+What is the second largest country in the world?|Canada|Russia|China|United States|2|
+What is the third largest country in the world?|United States|Canada|China|Brazil|2|
+What is the fourth largest country in the world?|China|United States|Brazil|India|2|
+What is the fifth largest country in the world?|Brazil|China|India|Russia|2|
+What is the sixth largest country in the world?|Australia|China|United States|Russia|3|
+What is the seventh largest country in the world?|India|Brazil|United States|Canada|3|
+What is the eighth largest country in the world?|Argentina|Brazil|China|Russia|4|
+What is the ninth largest country in the world?|Kazakhstan|Argentina|India|Australia|4|
+Which of these countries is the smallest?|India|Australia|Brazil|China|3|
+Which of these countries is the smallest?|Kazakhstan|Argentina|India|Australia|3|
