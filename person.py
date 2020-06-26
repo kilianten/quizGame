@@ -8,6 +8,7 @@ class Person:
         self.isMale = male
         self.quizGame = quizGame
         self.isDead = False
+        self.isBot = False
 
     def makeRandom(self):
         self.name = choice(MALE_NAMES if self.isMale else None)

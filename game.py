@@ -23,7 +23,6 @@ class Game(Module):
     def setOriginalContestantToDead(self, person):
         index = self.originalContestants.index(person)
         self.originalContestants[index].isDead = True
-        print(person.name)
 
     def endRound(self):
         self.paused = True
@@ -56,11 +55,13 @@ class Game(Module):
         if event.key == pg.K_ESCAPE:
             self.game.changeModule(self.game.mainMenu)
 
-    def createRandomCharacter(self, male=None):
+    def createRandomCharacter(self, male=None, isBot=True):
         male = choice([True, False])
         male = True #TBC
         person = Person(self.game, male, self)
         person.makeRandom()
+        if isBot:
+            person.isBot = True
         return person
 
     def draw(self):
@@ -81,15 +82,19 @@ class Game(Module):
         self.contestants.remove(contestant)
 
 class StandardGameMode(Game):
-    def __init__(self, game, screen, numberOfBots, roundsEnabled, customCharacters):
+    def __init__(self, game, screen, numberOfBots, roundsEnabled, customCharacters, numOfHumanPlayers):
         super().__init__(game, screen)
         self.numberOfBots = numberOfBots
         self.numberOfPlayersAlive = numberOfBots + 1
         self.contestants = list(customCharacters)
+        self.numOfHumanPlayers = numOfHumanPlayers
         numberOfBotsToCreate = numberOfBots - len(self.contestants)
         while(numberOfBotsToCreate > 0):
             self.contestants.append(self.createRandomCharacter())
             numberOfBotsToCreate -= 1
+        while(numOfHumanPlayers > 0):
+            self.contestants.append(self.createRandomCharacter(None, False))
+            numOfHumanPlayers -= 1
         round = choice(self.game.options.roundsEnabled)
         if(round == "Trigger Happy"):
             self.round = RoundTriggerHappy(self.game, self.contestants, self)
@@ -150,6 +155,7 @@ class Round:
         self.contestants = contestants
         self.Timer = None
         self.ended = False
+        self.clickedEnabled = True
 
     def wrongAnswer(self):
         pass
@@ -159,6 +165,8 @@ class Round:
         self.currentPlayer.removeAsCurrentPlayer()
         self.currentPlayer = self.contestants[(index + 1) % len(self.contestants)]
         self.currentPlayer.setToCurrentPlayer()
+        self.clickedEnabled = not self.currentPlayer.isBot
+        self.clickedEnabled = False
         self.nameTile.text = self.currentPlayer.name
 
     def endRound(self):
@@ -168,6 +176,7 @@ class RoundTriggerHappy(Round):
     def __init__(self, game, contestants, quizGame):
         super().__init__(game, contestants)
         startingPlayer = choice(contestants)
+        self.clickedEnabled = not startingPlayer.isBot
         self.currentPlayer = startingPlayer
         startingPlayer.setToCurrentPlayer()
         self.chanceOfDeath = TRIGGER_HAPPY_STARTING_DEATH_CHANCE
@@ -293,7 +302,7 @@ class RoundTriggerHappy(Round):
 
     def checkIfAnswerIsCorrect(self):
         for tile in self.tiles:
-            if tile.clicked:
+            if tile.clicked and self.clickedEnabled:
                 self.answerSelected = True
                 self.timer.answerSelected = True
                 self.lastUpdate = pg.time.get_ticks()

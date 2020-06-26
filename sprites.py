@@ -150,7 +150,7 @@ class Animation(pg.sprite.Sprite):
 class correctIncorrectHUD(Animation):
     def __init__(self, game, answerResult):
         super().__init__(game, game.correctImages, CORRECT_UPDATE_ANIM)
-        self._layer = 3
+        self._layer = 10
         self.groups = game.quizGame.components["sprites"], game.scalable
         pg.sprite.Sprite.__init__(self, self.groups)
         self.x = 10 * self.game.tilesizeWidth
@@ -239,7 +239,8 @@ class BodyPart(pg.sprite.Sprite):
         pass
 
     def setImage(self, image):
-        setImage(self, image)
+        self.originalImage = image
+        self.image = pg.transform.scale(image, (int(image.get_width() * self.game.fromOriginalWidth), int(image.get_height() * self.game.fromOriginalHeight)))
 
     def scale(object, image):
         object.image = pg.transform.scale(image, (int((image.get_width() * object.game.fromOriginalWidth)/2), int((image.get_height() * object.game.fromOriginalHeight)/2)))
