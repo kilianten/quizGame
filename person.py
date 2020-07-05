@@ -90,7 +90,7 @@ class Person:
             bodyPart.x = 13 * self.game.tilesizeWidth
 
     def guessCorrectAnswer(self):
-        chance = choice([1, 2, 3, 4, 5, 6])
+        chance = choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
         if chance == 1:
             return False
         else:

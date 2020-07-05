@@ -23,3 +23,5 @@ Thom Yorke is the lead singer of which group?|Radiohead|The Pixies|Nick Cave and
 "Questions you cannot answer are usually far better for you than answers you cannot question" is taken from a book by Yuval Noah Harari entitled, what?|Sapiens|The Selfish Gene|No Logo|Rights of Women|3|
 Which band's album artwork is based off radio waves from pulsar CP 1919, which was believed to possibly be a message from an alien civilization?|Joy Division|Pink Floyd|Kings of Leon|Nirvana|3|
 The character Dracula was inspired by which of these historic figures?|Napoleon|Vlad the Impaler|Ivan the Terrible|Aldolf Hitler|3|
+"It always seems impossible until it's done"  is a quote from whom?|Nelson Mandela|Bill Gates|Steve Jobs|Thomas Sowell|3|
+To whom is this maxim normally attributed to, "I do not agree with what you say, but I will defend to the death your right to say it"?|Francois Marie Arouet Voltaire|Jean-Jacques Rousseau|Bertrand Russel|Amerigo Vespucci|4|

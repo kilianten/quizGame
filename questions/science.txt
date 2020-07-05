@@ -46,3 +46,5 @@ What is the current geographic epoch?|The Holocene|Miocene|Pliocene|Eocene|3|
 Only which bees sting?|Male|Female|Both Male and Female|Neither|2|
 What is the paradox which describes the apparent contradiction between the lack of evidence and high possibility for extraterrestrial life?|The Fermi Paradox|The Elevator Paradox|The Fletcher's Paradox|Socratic Paradox|2|
 The branch of science concerned with classification, especially of organisms|Taxonomy|Demonomy|Ergonomy|Etymology|2|
+Which of these is an example of a vestigial trait of a human?|Wisdom Teeth|Eyesight|Thumbs|Nasal bone|3|
+Which of these is not example of a vestigial trait of a human?|Ulna|Tail bone|Wisdom Teeth|Palmar Grasp Reflex|4|

@@ -83,3 +83,14 @@ Which animal is the symbol of Russia?|A bear|A wolverines|An wolf|A fox|2|
 Tallinn is the capital of which country?|Estonia|Bosnia and Herzegovina|Angola|Somalia|3|
 Bogotá is the capital of which country?|Columbia|Guyana|Zimbabwe|Paraguay|3|
 What is the capital of Puerto Rico|San Jaun|Puerto Rico City|Ponce|Delmas|3|
+Belgrade is the capital of which country?|Serbia|Estonia|New Zealand|The Falkan Islands|3|
+What is the primary language of Brazil?|Portuguese|English|French|Spanish|1|
+Which of these South American countries does not speak English as it's primary language?|Suriname|South Georgia|Falkland Islands|Guyana|3|
+What of these South American countries does not have Spanish as its primary language?|Guyana|Colombia|Bolivia|Ecuador|3|
+What of these South American countries does not have Spanish as its primary language?|Brazil|Colombia|Chile|Ecuador|1|
+What of these South American countries does not have Spanish as its primary language?|French Guyana|Colombia|Chile|Uruguay|2|
+What is the official language of the Falkland Islands?|English|French|Spanish|Dutch|2|
+What is the official language of Guyana?|English|French|Spanish|German|2|
+What is the official language of South Georgia?|English|French|Spanish|German|2|
+What is the official language of Suriname?|Dutch|French|Spanish|English|3|
+What is the official language of French Guyana?|French|Portuguese|Spanish|English|1|

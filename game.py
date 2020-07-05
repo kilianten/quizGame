@@ -302,14 +302,10 @@ class RoundTriggerHappy(Round):
 
         if self.currentPlayer.isBot:
             if self.currentPlayer.guessCorrectAnswer():
-                print("TRUE")
                 for tile in self.tiles:
-                    print(self.question.answer)
-                    print(tile.text)
                     if self.question.answer == tile.text:
                         tile.clicked = True
             else:
-                print("FALSE")
                 noAnswerSelected = True
                 while noAnswerSelected:
                     tile = choice(self.tiles)
