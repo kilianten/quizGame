@@ -79,3 +79,7 @@ What is the eighth largest country in the world?|Argentina|Brazil|China|Russia|4
 What is the ninth largest country in the world?|Kazakhstan|Argentina|India|Australia|4|
 Which of these countries is the smallest?|India|Australia|Brazil|China|3|
 Which of these countries is the smallest?|Kazakhstan|Argentina|India|Australia|3|
+Which animal is the symbol of Russia?|A bear|A wolverines|An wolf|A fox|2|
+Tallinn is the capital of which country?|Estonia|Bosnia and Herzegovina|Angola|Somalia|3|
+Bogotá is the capital of which country?|Columbia|Guyana|Zimbabwe|Paraguay|3|
+What is the capital of Puerto Rico|San Jaun|Puerto Rico City|Ponce|Delmas|3|

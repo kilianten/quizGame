@@ -77,3 +77,6 @@ In what year did Rosa Parks pass away?|2005|1985|1945|1915|3|
 When was Rosa Parks born?|1913|1933|1883|1863|3|
 In 1955, who was the famous activist that refused to give up their seat on a public bus to a white man?|Rosa Parks|Martin Luther King Jr.|Ella Baker|James Baldwin|1|
 Which Apollo mission was first to land on the moon?|Apollo 11|Apollo 8|Apollo 10|Apollo 13|1|
+When was the Berlin Wall built?|1961|1971|1951|1941|3|
+When did the Berlin Wall come down?|1991|1981|1971|1961|3|
+Where was Vlad the Impaler from?|Romania|Russia|Mongolia|Bhutan|3|
