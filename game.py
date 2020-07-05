@@ -300,9 +300,26 @@ class RoundTriggerHappy(Round):
             else:
                 self.checkReset()
 
+        if self.currentPlayer.isBot:
+            if self.currentPlayer.guessCorrectAnswer():
+                print("TRUE")
+                for tile in self.tiles:
+                    print(self.question.answer)
+                    print(tile.text)
+                    if self.question.answer == tile.text:
+                        tile.clicked = True
+            else:
+                print("FALSE")
+                noAnswerSelected = True
+                while noAnswerSelected:
+                    tile = choice(self.tiles)
+                    if self.question.answer != tile.text:
+                        tile.clicked = True
+                        noAnswerSelected = False
+
     def checkIfAnswerIsCorrect(self):
         for tile in self.tiles:
-            if tile.clicked and self.clickedEnabled:
+            if tile.clicked:
                 self.answerSelected = True
                 self.timer.answerSelected = True
                 self.lastUpdate = pg.time.get_ticks()

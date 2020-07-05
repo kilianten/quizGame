@@ -88,3 +88,10 @@ class Person:
             bodyPart.y = 0
             bodyPart.setImage(bodyPart.originalImage)
             bodyPart.x = 13 * self.game.tilesizeWidth
+
+    def guessCorrectAnswer(self):
+        chance = choice([1, 2, 3, 4, 5, 6])
+        if chance == 1:
+            return False
+        else:
+            return True
